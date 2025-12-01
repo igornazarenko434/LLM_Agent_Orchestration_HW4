@@ -42,7 +42,7 @@ agents:
   # LLM provider and runtime limits for query generation
   # Type: str, Default: "mock", Valid: ["ollama", "openai", "claude", "gemini", "mock", "auto"]
   # "auto" will try: claude > openai > gemini > ollama > mock (in priority order)
-  llm_provider: "claude"
+  llm_provider: "auto"
   # Type: float, Default: 10.0, Valid: 5.0-60.0
   llm_query_timeout: 30.0  # INCREASED from 20s for 8-step routes
   # Type: int, Default: 3, Valid: 1-5
@@ -155,7 +155,7 @@ judge:
   # LLM provider: "ollama", "openai", "claude", "gemini", "mock", "auto"
   # Type: str, Default: "mock", Valid: ["ollama", "openai", "claude", "gemini", "mock", "auto"]
   # "auto" will try: claude > openai > gemini > ollama > mock (in priority order)
-  llm_provider: "claude"
+  llm_provider: "auto"
 
   # Max prompt characters to avoid runaway cost
   llm_max_prompt_chars: 6000  # INCREASED from 4000 for rich agent results (Wikipedia)
