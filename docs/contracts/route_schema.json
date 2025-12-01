@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Final Route Output",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "step_number": { "type": "integer", "minimum": 1 },
+      "location": { "type": "string" },
+      "agents": {
+        "type": "object",
+        "properties": {
+          "video": { "$ref": "agent_result_schema.json" },
+          "song": { "$ref": "agent_result_schema.json" },
+          "knowledge": { "$ref": "agent_result_schema.json" }
+        },
+        "required": ["video", "song", "knowledge"],
+        "additionalProperties": false
+      },
+      "judge": { "$ref": "judge_decision_schema.json" },
+      "timestamp": { "type": "string" }
+    },
+    "required": ["step_number", "location", "agents", "judge", "timestamp"],
+    "additionalProperties": false
+  }
+}

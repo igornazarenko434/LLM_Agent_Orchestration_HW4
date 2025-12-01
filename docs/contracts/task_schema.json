@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Scheduler Task",
+  "type": "object",
+  "properties": {
+    "transaction_id": { "type": "string" },
+    "step_number": { "type": "integer", "minimum": 1 },
+    "location_name": { "type": "string" },
+    "coordinates": {
+      "type": "object",
+      "properties": {
+        "lat": { "type": "number" },
+        "lng": { "type": "number" }
+      },
+      "required": ["lat", "lng"],
+      "additionalProperties": false
+    },
+    "instructions": { "type": "string" },
+    "timestamp": { "type": ["string", "number"] },
+    "address": { "type": ["string", "null"] },
+    "search_hint": { "type": ["string", "null"] },
+    "route_context": { "type": ["string", "null"] },
+    "emit_timestamp": { "type": ["string", "number", "null"] }
+  },
+  "required": ["transaction_id", "step_number", "location_name", "coordinates", "instructions", "timestamp"],
+  "additionalProperties": false
+}

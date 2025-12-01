@@ -1,0 +1,57 @@
+{
+  "transaction_id": "demo_boston_mit",
+  "tasks": [
+    {
+      "transaction_id": "demo_boston_mit",
+      "step_number": 1,
+      "location_name": "Boston Common",
+      "address": "139 Tremont St, Boston, MA 02111",
+      "coordinates": { "lat": 42.3550, "lng": -71.0656 },
+      "instructions": "Head northwest on Charles St toward Beacon St",
+      "search_hint": "Boston Common history Swan Boats",
+      "route_context": "Tour from Boston Common to MIT",
+      "timestamp": 1736442000
+    },
+    {
+      "transaction_id": "demo_boston_mit",
+      "step_number": 2,
+      "location_name": "Charles River Esplanade",
+      "address": "Storrow Dr, Boston, MA 02116",
+      "coordinates": { "lat": 42.3549, "lng": -71.0738 },
+      "instructions": "Continue along the Charles River paths",
+      "search_hint": "Charles River esplanade scenic views kayaking",
+      "route_context": "Tour from Boston Common to MIT",
+      "timestamp": 1736442060
+    },
+    {
+      "transaction_id": "demo_boston_mit",
+      "step_number": 3,
+      "location_name": "Harvard Bridge",
+      "address": "Massachusetts Ave Bridge, Boston, MA",
+      "coordinates": { "lat": 42.3543, "lng": -71.0880 },
+      "instructions": "Cross the Harvard Bridge toward Cambridge",
+      "search_hint": "Harvard Bridge smoots MIT lore",
+      "route_context": "Tour from Boston Common to MIT",
+      "timestamp": 1736442120
+    },
+    {
+      "transaction_id": "demo_boston_mit",
+      "step_number": 4,
+      "location_name": "MIT Stata Center",
+      "address": "32 Vassar St, Cambridge, MA 02139",
+      "coordinates": { "lat": 42.3617, "lng": -71.0905 },
+      "instructions": "Arrive at MIT Stata Center",
+      "search_hint": "MIT Stata Center architecture Frank Gehry",
+      "route_context": "Tour from Boston Common to MIT",
+      "timestamp": 1736442180
+    }
+  ],
+  "metadata": {
+    "origin": "Boston, MA",
+    "destination": "MIT",
+    "distance": "3.0 mi",
+    "duration": "15 mins",
+    "route_context": "Tour from Boston Common to MIT",
+    "timestamp": 1736442000
+  }
+}

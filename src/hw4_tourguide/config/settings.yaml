@@ -1,0 +1,340 @@
+# Route Enrichment Tour-Guide System - Configuration File
+# Generated for Mission M3 - Configuration & Security Layer
+# All settings can be overridden via CLI arguments or environment variables
+
+# ================================================================================
+# SCHEDULER CONFIGURATION
+# ================================================================================
+scheduler:
+  # Interval between emitting route steps to queue (seconds)
+  # Type: float, Default: 2.0, Valid: 0.5-10.0
+  interval: 2.0
+
+  # Enable scheduler daemon thread (set false for testing)
+  # Type: bool, Default: true
+  enabled: true
+
+# ================================================================================
+# ORCHESTRATOR CONFIGURATION
+# ================================================================================
+orchestrator:
+  # Maximum worker threads in ThreadPoolExecutor
+  # Type: int, Default: 5, Valid: 1-20
+  # 5 is sufficient: 3 agents (video/song/knowledge) can run in parallel per step
+  max_workers: 5
+
+  # Queue timeout for task retrieval (seconds)
+  # Type: float, Default: 1.0, Valid: 0.1-5.0
+  queue_timeout: 1.0
+
+  # Graceful shutdown wait time (seconds)
+  # Type: float, Default: 30.0, Valid: 5.0-120.0
+  # INCREASED from 30s to allow 8-step routes to complete cleanup
+  shutdown_timeout: 60.0
+
+# ================================================================================
+# AGENT CONFIGURATION
+# ================================================================================
+agents:
+  # Enable LLM-based query generation for agents (video/song/knowledge)
+  # Type: bool, Default: false
+  use_llm_for_queries: true
+  # LLM provider and runtime limits for query generation
+  # Type: str, Default: "mock", Valid: ["ollama", "openai", "claude", "gemini", "mock", "auto"]
+  # "auto" will try: claude > openai > gemini > ollama > mock (in priority order)
+  llm_provider: "claude"
+  # Type: float, Default: 10.0, Valid: 5.0-60.0
+  llm_query_timeout: 30.0  # INCREASED from 20s for 8-step routes
+  # Type: int, Default: 3, Valid: 1-5
+  llm_retries: 3
+  # Type: str, Default: "exponential", Valid: ["exponential", "linear"]
+  llm_backoff: "exponential"
+  # Max prompt characters to keep cost bounded
+  llm_max_prompt_chars: 5000  # INCREASED from 4000 for longer contexts
+  # Max tokens per LLM call (NOT per-run budget)
+  # For 8-step routes: Each agent makes 8 LLM calls (1 per step), ~1040 tokens each
+  # Type: int, Default: 4000, Valid: 1000-100000
+  llm_max_tokens: 4000  # Sufficient: typical call uses ~1040 tokens
+  # Fallback to heuristics when LLM fails
+  llm_fallback: true
+  # Future toggle: LLM rerank/selection (not implemented; reserved)
+  use_llm_for_selection: false
+  # Enable/disable the use of secondary (alternative) API sources for agents.
+  # If true, agents like SongAgent and KnowledgeAgent will attempt to query a secondary source
+  # if their primary source yields insufficient results or if configured to always use secondary.
+  # Type: bool, Default: false
+  use_secondary_source: true
+  # Heuristic genre/mood inference for SongAgent (simple mapping from hints/context)
+  infer_song_mood: false
+  video:
+    # Agent name identifier
+    name: "VideoAgent"
+
+    # Enable/disable this agent
+    # Type: bool, Default: true
+    enabled: true
+
+    # Search result limit (number of candidates)
+    # Type: int, Default: 3, Valid: 1-10
+    search_limit: 3
+
+    # API timeout (seconds)
+    # Type: float, Default: 10.0, Valid: 5.0-30.0
+    timeout: 10.0
+
+    # Retry attempts on failure
+    # Type: int, Default: 3, Valid: 1-5
+    retry_attempts: 3
+
+    # Retry backoff strategy (exponential or linear)
+    # Type: str, Default: "exponential", Valid: ["exponential", "linear"]
+    retry_backoff: "exponential"
+    # Enable live API usage (YouTube) when key is present; false forces stub
+    use_live: true       # enable YouTube when key is present; set false to force stub
+    # Force mock/stub behavior regardless of keys (useful for tests/offline)
+    mock_mode: false
+    # Safety cap on search calls per run to avoid quota issues
+    # For 8-step routes: 8 steps × 3 queries/step = 24 searches minimum
+    # Setting to 32 provides 33% buffer for retries
+    # Type: int, Default: 32, Valid: 5-50
+    max_search_calls_per_run: 32  # CRITICAL: Was 5, now 32 for 8-step routes
+    # Geospatial search parameters (YouTube) if coordinates present
+    use_geosearch: true
+    geosearch_radius_km: 5
+    # Duration filtering (seconds); set to null to disable
+    min_duration_seconds: null
+    max_duration_seconds: null
+    # Markdown prompt file (used by PromptLoader)
+    prompt_file: ".claude/agents/video_agent.md"
+
+  song:
+    name: "SongAgent"
+    enabled: true
+    search_limit: 3
+    timeout: 15.0  # INCREASED from 10s for 8-step routes
+    retry_attempts: 3
+    retry_backoff: "exponential"
+    use_live: true       # enable Spotify/YouTube when keys are present; set false to force stub
+    mock_mode: false
+    # If both Spotify and YouTube are available, combine sources
+    use_youtube_secondary: true
+    # For 8-step routes: 8 steps × 3 queries/step = 24 searches + buffer
+    max_search_calls_per_run: 32  # CRITICAL: Was 5, now 32 for 8-step routes
+    prompt_file: ".claude/agents/song_agent.md"
+
+  knowledge:
+    name: "KnowledgeAgent"
+    enabled: true
+    search_limit: 3
+    timeout: 15.0  # INCREASED from 10s for 8-step routes
+    retry_attempts: 3
+    retry_backoff: "exponential"
+    use_live: true       # enable Wikipedia/DDG (keyless); set false to force stub
+    mock_mode: false
+    # Enable DuckDuckGo secondary source
+    use_secondary_source: true
+    # Boost authority domains (.gov/.edu), optionally filter via DuckDuckGo site: queries
+    boost_authority_domains: true
+    use_site_filter: false
+    # For 8-step routes: 8 steps × 3 queries/step = 24 searches + buffer
+    max_search_calls_per_run: 32  # CRITICAL: Was 5, now 32 for 8-step routes
+    prompt_file: ".claude/agents/knowledge_agent.md"
+
+# ================================================================================
+# JUDGE CONFIGURATION
+# ================================================================================
+judge:
+  # Scoring mode: "heuristic", "llm", or "hybrid"
+  # Type: str, Default: "heuristic", Valid: ["heuristic", "llm", "hybrid"]
+  scoring_mode: "llm"
+
+  # Enable LLM-assisted scoring (requires LLM API key)
+  # Type: bool, Default: false
+  use_llm: true
+
+  # LLM provider: "ollama", "openai", "claude", "gemini", "mock", "auto"
+  # Type: str, Default: "mock", Valid: ["ollama", "openai", "claude", "gemini", "mock", "auto"]
+  # "auto" will try: claude > openai > gemini > ollama > mock (in priority order)
+  llm_provider: "claude"
+
+  # Max prompt characters to avoid runaway cost
+  llm_max_prompt_chars: 6000  # INCREASED from 4000 for rich agent results (Wikipedia)
+
+  # Max tokens per LLM call (NOT per-run budget)
+  # For 8-step routes: Judge makes 8 LLM calls (1 per step), ~2650 tokens each
+  # Wikipedia snippets can be long, so increased from 10k to 12k for headroom
+  # Type: int, Default: 12000, Valid: 5000-50000
+  llm_max_tokens: 12000  # INCREASED from 10000 for long Wikipedia results
+
+  # LLM timeout (seconds)
+  # Type: float, Default: 30.0, Valid: 10.0-60.0
+  llm_timeout: 40.0  # INCREASED from 30s for 8-step routes
+
+  # Fallback to heuristic on LLM failure
+  # Type: bool, Default: true
+  llm_fallback: true
+
+# ================================================================================
+# LOGGING CONFIGURATION
+# ================================================================================
+logging:
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  # Type: str, Default: "INFO", Valid: ["DEBUG", "INFO", "WARNING", "ERROR"]
+  level: "INFO"
+
+  # Log file path (relative to project root)
+  # Type: str, Default: "logs/system.log"
+  file: "logs/system.log"
+
+  # Error-only log file path
+  # Type: str, Default: "logs/errors.log"
+  error_file: "logs/errors.log"
+
+  # Maximum log file size before rotation (MB)
+  # Type: int, Default: 10, Valid: 1-100
+  max_file_size_mb: 10
+
+  # Number of backup log files to keep
+  # Type: int, Default: 5, Valid: 1-10
+  backup_count: 5
+
+  # Log format template
+  # Type: str, Default: timestamp|level|module|event|message
+  format: "%(asctime)s | %(levelname)-8s | %(name)s | %(event_tag)s | %(message)s"
+
+  # Enable console output
+  # Type: bool, Default: true
+  console_enabled: true
+
+  # Module-specific log files for detailed debugging
+  # Each module can have its own dedicated log file
+  modules:
+    # Agent logging (video, song, knowledge agents)
+    agents:
+      enabled: true
+      file: "logs/agents.log"
+      level: "INFO"  # Set to DEBUG for verbose agent activity
+      max_bytes: 10485760  # 10MB
+      backup_count: 5
+
+    # Judge logging (content evaluation and selection)
+    judge:
+      enabled: true
+      file: "logs/judge.log"
+      level: "INFO"  # Set to DEBUG for score component breakdown
+      max_bytes: 10485760  # 10MB
+      backup_count: 5
+
+    # API client logging (YouTube, Spotify, Wikipedia, DDG, Google Maps, Gemini)
+    apis:
+      enabled: true
+      file: "logs/apis.log"
+      level: "INFO"  # Set to DEBUG for request/response details
+      max_bytes: 10485760  # 10MB
+      backup_count: 5
+
+    # Route provider logging (Google Maps directions and geocoding)
+    route_provider:
+      enabled: true
+      file: "logs/route_provider.log"
+      level: "INFO"
+      max_bytes: 10485760  # 10MB
+      backup_count: 5
+
+# ================================================================================
+# OUTPUT CONFIGURATION
+# ================================================================================
+output:
+  # Base directory for run-specific output organization
+  # Type: str, Default: "output"
+  # Each run creates a subdirectory: YYYY-MM-DD_HH-MM-SS_Origin_to_Destination
+  base_dir: "output"
+
+  # Primary output file path (JSON)
+  # Type: str, Default: "output/final_route.json"
+  # NOTE: For run-specific directories, only the filename (final_route.json) is used
+  # For custom --output paths, the full path is used as-is
+  json_file: "output/final_route.json"
+
+  # Markdown summary file path
+  # Type: str, Default: "output/final_route.md"
+  # NOTE: Filename (final_route.md) used for run-specific dirs, full path for custom --output
+  markdown_file: "output/final_route.md"
+
+  # CSV export file path (for tour guides)
+  # Type: str, Default: "output/final_route.csv"
+  # NOTE: Filename (final_route.csv) used for run-specific dirs, full path for custom --output
+  csv_file: "output/final_route.csv"
+
+  # Checkpoint directory for intermediate files
+  # Type: str, Default: "output/checkpoints"
+  checkpoint_dir: "output/checkpoints"
+
+  # Enable checkpoint file writing (disable for performance testing)
+  # Type: bool, Default: true
+  checkpoints_enabled: true
+
+  # Auto-delete checkpoints older than N days (0 = never delete)
+  # Type: int, Default: 7, Valid: 0-30
+  checkpoint_retention_days: 7
+
+# ================================================================================
+# ROUTE PROVIDER CONFIGURATION
+# ================================================================================
+route_provider:
+  # Provider mode: "live" (Google Maps API) or "cached" (local files)
+  # Type: str, Default: "cached", Valid: ["live", "cached"]
+  mode: "live"
+
+  # Maximum route steps allowed (hard limit for API quota management)
+  # Type: int, Default: 8, Valid: 1-15
+  # Rationale: 8 steps balances rich user experience with:
+  #   - YouTube API quota (2,424 units per 8-step route; 10k daily free quota = ~4 routes/day)
+  #   - Reasonable execution time (~4-5 minutes per route)
+  #   - Cost management (~$0.045 per route for Google Maps APIs)
+  # If user requests route with >8 steps, system will reject and ask for shorter route
+  max_steps: 8
+
+  # Cached routes directory
+  # Type: str, Default: "data/routes"
+  cache_dir: "data/routes"
+
+  # Google Maps API retry attempts
+  # Type: int, Default: 3, Valid: 1-5
+  api_retry_attempts: 3
+
+  # Google Maps API timeout (seconds)
+  # Type: float, Default: 20.0, Valid: 5.0-30.0
+  api_timeout: 20.0
+
+# ================================================================================
+# CIRCUIT BREAKER CONFIGURATION (ADR-010)
+# ================================================================================
+circuit_breaker:
+  # Enable circuit breaker pattern for external APIs
+  # Type: bool, Default: true
+  enabled: true
+
+  # Failure threshold before opening circuit
+  # Type: int, Default: 5, Valid: 3-10
+  failure_threshold: 5
+
+  # Timeout before attempting half-open (seconds)
+  # Type: float, Default: 60.0, Valid: 30.0-300.0
+  timeout: 60.0
+
+# ================================================================================
+# METRICS CONFIGURATION (ADR-011)
+# ================================================================================
+metrics:
+  # Enable metrics collection
+  # Type: bool, Default: true
+  enabled: true
+
+  # Metrics output file path (JSON)
+  # Type: str, Default: "logs/metrics.json"
+  file: "logs/metrics.json"
+
+  # Metrics update interval (seconds)
+  # Type: float, Default: 5.0, Valid: 1.0-30.0
+  update_interval: 5.0

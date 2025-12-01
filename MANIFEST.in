@@ -1,0 +1,22 @@
+include pyproject.toml
+include README.md
+include LICENSE
+include .env.example
+include *.md
+recursive-include config *.yaml
+recursive-include .claude/agents *.md
+
+# Package internal resources
+recursive-include src/hw4_tourguide/config *.yaml
+recursive-include src/hw4_tourguide/data *.json
+recursive-include src/hw4_tourguide/prompts *.md
+include src/hw4_tourguide/py.typed
+
+# Documentation (Source distribution only)
+recursive-include docs *
+
+# Tests (Source distribution only)
+recursive-include tests *
+
+# Scripts (Source distribution only)
+recursive-include scripts *

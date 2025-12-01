@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agent Result",
+  "type": "object",
+  "properties": {
+    "agent_type": { "type": "string", "enum": ["video", "song", "knowledge"] },
+    "status": { "type": "string", "enum": ["ok", "unavailable", "error"] },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "url": { "type": "string" },
+        "description": { "type": "string" },
+        "score": { "type": ["number", "null"] },
+        "source": { "type": "string" },
+        "view_count": { "type": ["integer", "null"] },
+        "popularity": { "type": ["integer", "null"] },
+        "published_at": { "type": ["string", "null"] },
+        "released_at": { "type": ["string", "null"] },
+        "citations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": { "type": "string" },
+              "url": { "type": "string" },
+              "excerpt": { "type": "string" }
+            },
+            "required": ["title", "url"],
+            "additionalProperties": true
+          }
+        },
+        "reasoning": { "type": "string" }
+      },
+      "required": ["title", "url"],
+      "additionalProperties": true
+    },
+    "reasoning": { "type": "string" },
+    "timestamp": { "type": "string" },
+    "error": { "type": ["string", "null"] }
+  },
+  "required": ["agent_type", "status", "metadata", "timestamp"],
+  "additionalProperties": false
+}

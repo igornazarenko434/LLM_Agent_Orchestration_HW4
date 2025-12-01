@@ -1,0 +1,123 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hw4_tourguide"
+version = "0.1.0"
+description = "Multi-agent orchestration platform for enriching driving routes with curated content"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Route Enrichment Team", email = "team@example.com"}
+]
+keywords = [
+    "route-enrichment",
+    "tour-guide",
+    "multi-agent",
+    "orchestration",
+    "google-maps",
+    "content-curation"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+# Runtime dependencies
+dependencies = [
+    "requests>=2.31.0",        # HTTP client for external APIs (Google Maps, YouTube, etc.)
+    "pyyaml>=6.0",             # YAML configuration file parsing
+    "python-dotenv>=1.0.0",    # Load secrets from .env files
+]
+
+[project.optional-dependencies]
+# Development dependencies (testing, linting, documentation)
+dev = [
+    "pytest>=7.4.0",           # Test framework
+    "pytest-cov>=4.1.0",       # Coverage plugin for pytest
+    "pytest-timeout>=2.2.0",   # Timeout plugin for hanging tests
+    "jupyter>=1.0.0",          # Jupyter notebooks for analysis
+    "matplotlib>=3.8.0",       # Plotting for research analysis
+    "seaborn>=0.13.0",         # Statistical visualizations
+    "pandas>=2.1.0",           # Data analysis for metrics
+]
+
+# Optional dependencies for specific features
+all = [
+    "hw4_tourguide[dev]",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/hw4_tourguide"
+Documentation = "https://github.com/yourusername/hw4_tourguide/blob/main/README.md"
+Repository = "https://github.com/yourusername/hw4_tourguide"
+"Bug Tracker" = "https://github.com/yourusername/hw4_tourguide/issues"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+hw4_tourguide = [
+    "py.typed",
+    "prompts/agents/*.md",
+    "config/*.yaml",
+    "data/routes/*.json",
+]
+
+# Pytest configuration
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "-v",                      # Verbose output
+    "--strict-markers",        # Strict marker validation
+    "--tb=short",              # Shorter traceback format
+    "--cov=hw4_tourguide",     # Coverage for hw4_tourguide package
+    "--cov-report=term-missing", # Show missing lines in coverage report
+    "--cov-report=html",       # Generate HTML coverage report
+    "--cov-fail-under=85",     # Fail if coverage below 85%
+]
+markers = [
+    "unit: Unit tests (fast, isolated)",
+    "integration: Integration tests (slower, multiple components)",
+    "concurrency: Concurrency and threading tests",
+    "resilience: Resilience and retry logic tests",
+    "slow: Slow-running tests",
+]
+
+# Coverage configuration
+[tool.coverage.run]
+source = ["hw4_tourguide"]
+omit = [
+    "*/tests/*",
+    "*/__pycache__/*",
+]
+
+[tool.coverage.report]
+precision = 2
+show_missing = true
+skip_covered = false
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "@abstractmethod",
+]
