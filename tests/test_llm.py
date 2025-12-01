@@ -99,3 +99,51 @@ def test_llm_factory_ollama_call(monkeypatch):
     client = llm_factory({"llm_provider": "ollama", "llm_timeout": 0.1, "llm_model": "llama3"}, lambda k: None)
     res = client.query("hello")
     assert "text" in res
+
+
+@pytest.mark.unit
+def test_llm_factory_auto_selection(monkeypatch):
+    """
+    Test the 'auto' LLM provider selection logic: claude > openai > gemini > ollama > mock.
+    We mock the environment variable retrieval for API keys.
+    For this test, we simplify Ollama's availability to be dependent on 'ollama_host' in config.
+    """
+    config_base = {"llm_provider": "auto", "llm_timeout": 0.1}
+
+    # Helper to mock the 'secrets' callable
+    class MockSecrets:
+        def __init__(self, env_vars: Dict[str, str]):
+            self.env_vars = env_vars
+        def __call__(self, key: str) -> Optional[str]:
+            return self.env_vars.get(key)
+
+    # Scenario 1: Only Anthropic (Claude) key exists
+    secrets_mock = MockSecrets({"ANTHROPIC_API_KEY": "fake_key"})
+    client = llm_factory(config_base, secrets_mock)
+    assert client.__class__.__name__ == "ClaudeClient"
+
+    # Scenario 2: Only OpenAI key exists
+    secrets_mock = MockSecrets({"OPENAI_API_KEY": "fake_key"})
+    client = llm_factory(config_base, secrets_mock)
+    assert client.__class__.__name__ == "OpenAIClient"
+
+    # Scenario 3: Only Gemini key exists
+    secrets_mock = MockSecrets({"GEMINI_API_KEY": "fake_key"})
+    client = llm_factory(config_base, secrets_mock)
+    assert client.__class__.__name__ == "GeminiClient"
+
+    # Scenario 4: Only Ollama host configured
+    secrets_mock = MockSecrets({}) # No API keys
+    config_ollama = {"llm_provider": "auto", "llm_timeout": 0.1, "ollama_host": "http://localhost:11434"}
+    client = llm_factory(config_ollama, secrets_mock)
+    assert client.__class__.__name__ == "OllamaClient"
+
+    # Scenario 5: No API keys, no Ollama host -> should fallback to MockLLMClient
+    secrets_mock = MockSecrets({})
+    client = llm_factory(config_base, secrets_mock)
+    assert isinstance(client, MockLLMClient)
+
+    # Scenario 6: Explicitly set to mock, even if keys exist
+    secrets_mock = MockSecrets({"ANTHROPIC_API_KEY": "fake_key"})
+    client = llm_factory({"llm_provider": "mock", "llm_timeout": 0.1}, secrets_mock)
+    assert isinstance(client, MockLLMClient)
