@@ -172,16 +172,18 @@ LLM_Agent_Orchestration_HW4/
 
 ### Installation as a Library (No Git Clone)
 
-This section guides you on installing the `hw4_tourguide` package using pre-built distribution files (`.whl` or `.tar.gz`), simulating installation from PyPI or a manual release. This is how end-users would typically install the package once it's officially distributed.
+This section guides you on how to obtain and install the `hw4_tourguide` package using distribution files (`.whl` or `.tar.gz`) directly downloaded from this repository's GitHub Releases. This is suitable for users who do not wish to clone the entire repository or build the package from source.
 
 **How packaging works (`pyproject.toml` & `MANIFEST.in`):**
 The packaging process is configured by two crucial files in the project root:
 *   **`pyproject.toml`**: This modern standard defines the build system (`setuptools`), project metadata (name, version, dependencies, Python compatibility), and importantly, specifies which non-Python files (like `config/*.yaml`, `prompts/agents/*.md`, `data/routes/*.json`) should be included *inside the installed Python package* via its `[tool.setuptools.package-data]` section.
-*   **`MANIFEST.in`**: This file instructs the build tools on what additional files and directories (like documentation, tests, scripts, and configuration files in the root) should be included when creating a **source distribution (`.tar.gz`)**. This ensures a complete source archive for developers.
+*   **`MANIFEST.in`**: This file instructs the build tools on what additional files and directories (like documentation, tests, scripts, and configuration files in the root) should be included when creating a **source distribution (`.tar.gz`)**. This ensures a complete snapshot of your repository, including non-code assets, is bundled for distribution.
 
-These files ensure that when you build the package, all necessary components are correctly bundled.
+**Content of Package Files:**
+*   **`hw4_tourguide-X.Y.Z.tar.gz` (Source Distribution - sdist):** This archive contains your project's *source code*, `pyproject.toml`, `MANIFEST.in`, `LICENSE`, `README.md`, all `.claude/` files, `config/` files (including `config/settings.yaml`), `docs/` (documentation), `tests/` (test suite), and `scripts/` (utility scripts). It's a complete snapshot of your repository, used primarily for archiving or when a wheel isn't available for a specific environment.
+*   **`hw4_tourguide-X.Y.Z-py3-none-any.whl` (Wheel Distribution - wheel):** This is a pre-built, optimized package format. It contains the compiled Python code (if any, though yours is pure Python), the `hw4_tourguide` Python package (`src/hw4_tourguide` directory), along with its bundled `config` and `data` files (as specified by `tool.setuptools.package-data` in `pyproject.toml`). Crucially, it **does NOT** include `docs/`, `tests/`, `scripts/`, or the top-level `config/` and `.claude/` folders; it only contains what's necessary for runtime. This is the recommended format for installation, as `pip` prefers wheels.
 
-**Steps to Install from Distribution Files:**
+**Steps to Install from Distribution Files (downloaded from GitHub Releases):**
 
 1.  **Create and activate a virtual environment:**
     ```bash
@@ -190,41 +192,19 @@ These files ensure that when you build the package, all necessary components are
     # .venv\Scripts\Activate.ps1 # For Windows PowerShell
     ```
 
-2.  **Obtain the package distribution file:**
-    You will need a `.whl` (wheel) or `.tar.gz` (source distribution) file for `hw4_tourguide`.
+2.  **Download the package distribution file:**
+    Navigate to the [Releases section](https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4/releases) of this repository. Download the desired `hw4_tourguide-X.Y.Z-py3-none-any.whl` file (recommended) or a `.tar.gz` to a known location on your system.
+    *(Replace `X.Y.Z` with the actual version number, e.g., `0.1.0`)*
 
-    *   **Option A: Install from PyPI (Recommended for end-users)**
-        Once the `hw4_tourguide` package is published on PyPI, simply run:
+3.  **Install the package:**
+    *   Navigate to the directory where you downloaded the file.
+    *   Install using `pip`:
         ```bash
-        pip install hw4_tourguide
+        pip install hw4_tourguide-X.Y.Z-py3-none-any.whl
         ```
-        This is the easiest method as `pip` handles finding and downloading the latest version.
+        *(Replace `X.Y.Z` with the actual version number)*
 
-    *   **Option B: Download a pre-built file (e.g., from GitHub Releases)**
-        If you have downloaded a specific `hw4_tourguide-0.1.0-py3-none-any.whl` file (or a `.tar.gz`) to a known location, install it using its path:
-        ```bash
-        pip install path/to/your/hw4_tourguide-0.1.0-py3-none-any.whl
-        ```
-
-    *   **Option C: Build it yourself (for developers or testing packaging)**
-        If you have cloned the repository and want to test the packaging process by building the files locally:
-        *   **Install the build tool:**
-            ```bash
-            pip install build
-            ```
-        *   **Build the distribution files:**
-            ```bash
-            python -m build
-            ```
-            This will create `hw4_tourguide-0.1.0.tar.gz` (source distribution) and `hw4_tourguide-0.1.0-py3-none-any.whl` (binary distribution) in the `dist/` directory of your cloned repository.
-        *   **Install from your locally built `.whl` file:**
-            ```bash
-            pip uninstall hw4_tourguide # Optional: uninstall if you previously ran pip install .
-            pip install dist/hw4_tourguide-0.1.0-py3-none-any.whl
-            ```
-            This command simulates installing your package as if it came from PyPI.
-
-3.  **Run your application:**
+4.  **Run your application:**
     ```bash
     python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached
     ```
@@ -322,43 +302,21 @@ Notes:
 |11 | Cached run check | `python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached` | Outputs under `output/` | Ensure cached JSON exists (`data/routes/demo_boston_mit.json`) |
 |12 | Live run smoke (optional) | `python -m hw4_tourguide --from "A" --to "B" --mode live` | Logs + outputs | Set API keys in `.env` |
 
-### 6.1 Package Distribution Strategy
+### 6.1 Package Distribution Strategy Overview
 
-While `pip install .` and installing directly from a built `.whl` file work, for broader accessibility and ease of use, a proper package distribution strategy is essential. We recommend a two-pronged approach for this project:
+For broader accessibility and ease of use, a proper package distribution strategy is crucial. For this project, a two-pronged approach is recommended and implemented:
 
 1.  **PyPI Publication (Primary Distribution Channel)**
-    *   **Description:** Uploading your package to the Python Package Index (PyPI) is the standard and most frictionless way for users to install your library.
-    *   **How it works:** Once published, users can simply run `pip install hw4_tourguide`. `pip` automatically fetches the correct version and handles dependencies.
-    *   **Benefits:**
-        *   **Ease of Use:** Simplest installation for end-users.
-        *   **Discoverability:** Your package becomes discoverable on `pypi.org`.
-        *   **Dependency Management:** `pip` handles resolution of other required packages.
-    *   **Action Required (by you):**
-        1.  Ensure `pyproject.toml` is finalized (already done).
-        2.  Build distribution files using `python -m build`.
-            *   **`hw4_tourguide-X.Y.Z.tar.gz` (Source Distribution - sdist):** This archive contains your project's *source code*, `pyproject.toml`, `MANIFEST.in`, `LICENSE`, `README.md`, all `.claude/` files, `config/` files, `docs/` (documentation), `tests/` (test suite), and `scripts/` (utility scripts). It's a complete snapshot of your repository, used primarily for archiving or when a wheel isn't available for a specific environment.
-            *   **`hw4_tourguide-X.Y.Z-py3-none-any.whl` (Wheel Distribution - wheel):** This is a pre-built, optimized package format. It contains the compiled Python code (if any, though yours is pure Python), the `hw4_tourguide` Python package (`src/hw4_tourguide` directory), along with its bundled `config` and `data` files (as specified by `tool.setuptools.package-data` in `pyproject.toml`). Crucially, it **does NOT** include `docs/`, `tests/`, `scripts/`, or the top-level `config/` and `.claude/` folders; it only contains what's necessary for runtime. This is the recommended format for installation.
-        3.  Register on PyPI and obtain an API token.
-        4.  Upload using `twine upload dist/*`. (This is a manual step for the developer).
+    *   **Purpose:** To enable standard, frictionless installation via `pip install hw4_tourguide` for any Python user.
+    *   **Why it's a best practice:** PyPI is the official third-party package repository for Python. It simplifies dependency management and makes packages easily discoverable and installable.
+    *   **Status for this project:** All local packaging configurations (`pyproject.toml`, `MANIFEST.in`, `LICENSE`) are correctly set up and verified, making the project ready for PyPI upload. *Publication to PyPI is a manual step for the developer (e.g., using `twine upload dist/*`) and is outside the scope of automated project setup.*
 
-2.  **GitHub Releases (Complementary Distribution - Recommended for this project's artifacts)**
-    *   **Description:** Attaching your built package files (`.whl`, `.tar.gz`) to a GitHub Release allows direct downloads associated with a specific version in your Git history. This is the recommended place for the generated `v0.1.0` artifacts from this project.
-    *   **How it works:** For each version (e.g., `v0.1.0`), you create a Git tag, and then draft a new Release on GitHub. You then upload the built `dist/*.whl` and `dist/*.tar.gz` files as "release assets".
-    *   **Benefits:**
-        *   **Version Control Integration:** Directly ties binaries to specific Git tags.
-        *   **Showcasing:** Clearly displays released versions and their assets on your GitHub repository.
-        *   **Direct Download:** Provides an alternative for users who prefer to download files directly.
-    *   **Action Required (by you, for this project's `v0.1.0` release):**
-        1.  Create a Git tag for the current version: `git tag v0.1.0`
-        2.  Push the tag to your remote repository: `git push origin v0.1.0`
-        3.  Build distribution files locally: `python -m build`
-        4.  Go to GitHub -> your repo -> Releases -> Draft a new release.
-        5.  Select the `v0.1.0` tag.
-        6.  Provide a title and release notes.
-        7.  **Upload the generated `.whl` and `.tar.gz` files from your local `dist/` folder** as release assets.
-        8.  Publish the release.
+2.  **GitHub Releases (Complementary Distribution)**
+    *   **Purpose:** To associate built package files (`.whl`, `.tar.gz`) directly with specific Git versions/tags, offering a version-controlled download source.
+    *   **Why it's a best practice:** Provides a direct link between source code versions and their binary distributions, useful for showcasing releases and offering alternative download options.
+    *   **Status for this project:** The `v0.1.0` tag has been created and pushed. The built `hw4_tourguide-0.1.0.tar.gz` and `hw4_tourguide-0.1.0-py3-none-any.whl` files are available locally in `dist/` and are ready to be uploaded to a new GitHub Release for the `v0.1.0` tag. *This is a manual step for the developer.*
 
-**Current Status:** All necessary local packaging configurations (`pyproject.toml`, `MANIFEST.in`, `LICENSE`) are correctly set up and verified. The next logical step for distribution is for you to manually perform the PyPI upload and/or GitHub Release creation.
+This strategy ensures the project can be installed conventionally via `pip` (once on PyPI) or by downloading specific versioned assets directly from GitHub.
 
 ## 7. Quick Start
 
