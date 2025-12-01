@@ -171,15 +171,23 @@ LLM_Agent_Orchestration_HW4/
   - **Keyless/works offline:** cached mode and stub agents do not require any keys.
 
 ### Installation as a Library (No Git Clone)
-If you have the package file (`.whl` or `.tar.gz`) or if installing from a future PyPI release:
+To install as a library without cloning the repository, you will first need to obtain the package distribution file (`.whl` or `.tar.gz`). This is typically done by:
+1.  **Downloading from a release:** If available on a platform like GitHub Releases.
+2.  **Installing from PyPI:** If the package has been published to the Python Package Index, you can simply use `pip install hw4_tourguide`.
+3.  **Receiving a pre-built file:** If a developer provides you with the `.whl` file directly.
+
+Assuming you have the package file (e.g., `hw4_tourguide-0.1.0-py3-none-any.whl`) or are installing from a future PyPI release:
 
 ```bash
 # Create and activate virtual environment
 python3 -m venv .venv
 source .venv/bin/activate
 
-# Install directly
-pip install hw4_tourguide-0.1.0-py3-none-any.whl
+# If installing a specific file you have downloaded:
+pip install path/to/your/hw4_tourguide-0.1.0-py3-none-any.whl
+
+# If installing from PyPI (after it's published):
+# pip install hw4_tourguide
 
 # Run immediately (uses bundled config/routes by default)
 python -m hw4_tourguide --from "Boston, MA" --to "MIT"
