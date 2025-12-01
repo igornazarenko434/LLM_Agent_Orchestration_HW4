@@ -433,17 +433,153 @@ Live routes are capped to `config.route_provider.max_steps` steps (default: **8*
 
 ### YAML Configuration (`config/settings.yaml`)
 
-Centralized config controls scheduler/orchestrator/agents/judge/logging/output. Key fields (see `docs/api_reference.md` for full schema):
+The `config/settings.yaml` file is the central control panel for the entire Route Enrichment Tour-Guide System. It allows you to fine-tune the behavior of the scheduler, orchestrator, agents, judge, logging, and output. You can override any of these settings via environment variables or CLI flags (see "Configuration Priority" below).
 
-- `scheduler`: `interval`
-- `orchestrator`: `max_workers`, `queue_timeout`, `shutdown_timeout`
-- `agents` (global defaults): `use_llm_for_queries`, `llm_provider`, `llm_query_timeout/retries/backoff`, `llm_max_prompt_chars/tokens`, `llm_fallback`
-- `agents.video/song/knowledge`: `use_live`/`mock_mode`, `search_limit`, `timeout`, `retry_attempts/backoff`, `max_search_calls_per_run`; video geosearch radius; song `use_youtube_secondary`; knowledge `use_secondary_source`
-- `judge`: `scoring_mode` (heuristic/llm/hybrid), `use_llm`, `llm_provider`, `llm_max_prompt_chars/tokens`, `llm_timeout`, `llm_fallback`
-- `logging`: level, files, rotation
-- `output`: `json_file`, `markdown_file`, `csv_file`, `checkpoint_dir`, `checkpoints_enabled`, `checkpoint_retention_days`, `base_dir` (default `output`)
-- `route_provider`: `cache_dir`, `api_retry_attempts`, `api_timeout`, `max_steps`
-- `metrics`: `enabled`, `file`, `update_interval`
+Each parameter includes an inline comment with its type, default value, and valid range.
+
+#### 1. Scheduler Settings (`scheduler`)
+*   **Purpose:** Controls the pace at which route steps are processed.
+*   `interval` (Type: `float`, Default: `2.0`, Range: `0.5-10.0` seconds)
+    *   **What it does:** Defines the delay between emitting each route step to the processing queue. A lower value speeds up the simulation, while a higher value slows it down, mimicking real-world travel time more closely.
+    *   **Why change it:** Adjust for faster demos (`0.5s`) or more realistic simulation (`5.0s`).
+*   `enabled` (Type: `bool`, Default: `true`)
+    *   **What it does:** Toggles the scheduler daemon thread. Setting to `false` is primarily for specific testing scenarios where direct control over task emission is needed.
+    *   **Why change it:** Rarely changed; keep `true` for normal operation.
+
+#### 2. Orchestrator Settings (`orchestrator`)
+*   **Purpose:** Manages the concurrent execution of agents for each route step.
+*   `max_workers` (Type: `int`, Default: `5`, Range: `1-20`)
+    *   **What it does:** Sets the maximum number of parallel worker threads in the `ThreadPoolExecutor`. Each worker processes a single route step, dispatching agents concurrently.
+    *   **Why change it:** Increase for faster processing on systems with more CPU cores or if agents are heavily I/O bound. Decrease to limit resource usage. `5` is a good balance for 3 agents + judge.
+*   `shutdown_timeout` (Type: `float`, Default: `60.0` seconds)
+    *   **What it does:** The maximum time the orchestrator waits for all active workers to complete their tasks during graceful shutdown.
+    *   **Why change it:** Increase if you have very long-running agent tasks or many steps to allow them to finish before forcing termination.
+
+#### 3. Agent Configuration (`agents`)
+*   **Purpose:** Controls the behavior of the Video, Song, and Knowledge Agents, including LLM integration and API usage. These are global defaults that can be overridden per-agent.
+*   **`use_llm_for_queries` (MOST IMPORTANT) (Type: `bool`, Default: `true`)**
+    *   **What it does:** If `true`, agents will use an LLM (selected by `llm_provider`) to generate diverse search queries based on the route context. If `false`, agents fall back to simpler heuristic-based query generation (e.g., string concatenation).
+    *   **Why change it:** Set to `false` for zero LLM cost runs, faster execution (avoids LLM latency), or if you don't have an LLM API key.
+*   **`llm_provider` (MOST IMPORTANT) (Type: `str`, Default: `"auto"`, Valid: `"ollama"`, `"openai"`, `"claude"`, `"gemini"`, `"mock"`)**
+    *   **What it does:** Specifies which LLM service to use for query generation.
+    *   **Why change it:**
+        *   `"auto"` (Recommended Default): Automatically selects the first available LLM from a priority list: Anthropic (Claude) > OpenAI > Gemini > Ollama > Mock. This is ideal for flexibility.
+        *   `"claude"`, `"openai"`, `"gemini"`: Explicitly select a commercial LLM (requires API key in `.env`).
+        *   `"ollama"`: Use a local Ollama instance (requires Ollama server running locally).
+        *   `"mock"`: Force the use of a stub LLM, returning canned responses instantly (useful for testing without any external dependencies).
+*   `llm_fallback` (Type: `bool`, Default: `true`)
+    *   **What it does:** If `true`, and an LLM call fails (timeout, error, budget exceeded), the agent will fall back to heuristic query generation instead of failing the step.
+    *   **Why change it:** Keep `true` for robust operation. Set to `false` if you require strict LLM-only query generation and want the system to fail if the LLM is unavailable.
+*   `llm_max_prompt_chars` (Type: `int`, Default: `5000`)
+    *   **What it does:** Limits the length of the prompt sent to the LLM to control costs and avoid exceeding context windows. Prompts longer than this will be truncated.
+    *   **Why change it:** Adjust if your prompt templates or route contexts become very long.
+*   `llm_max_tokens` (Type: `int`, Default: `4000`)
+    *   **What it does:** The maximum total tokens an agent can use across all LLM calls during a single run. This is a safety budget.
+    *   **Why change it:** Increase for longer routes or if agents generate many queries; decrease to strictly control LLM spend.
+*   **Individual Agent Settings (`agents.video`, `agents.song`, `agents.knowledge`)**
+    *   **Purpose:** Fine-tune the behavior of each specific content agent.
+    *   **`use_live` (MOST IMPORTANT) (Type: `bool`, Default: `true`)**
+        *   **What it does:** If `true`, the agent attempts to use its live external API (YouTube for Video, Spotify for Song, Wikipedia/DuckDuckGo for Knowledge). If `false` or API keys are missing/invalid, it uses its internal stub/mock.
+        *   **Why change it:** Set to `false` to force an agent into fully offline/stub mode, regardless of API key presence (e.g., for development, testing, or demonstrations without external network calls).
+    *   `mock_mode` (Type: `bool`, Default: `false`)
+        *   **What it does:** Forces the agent into a deterministic mock mode. Similar to `use_live: false`, but explicitly for mocking and testing scenarios.
+        *   **Why change it:** For deterministic testing and debugging. If `true`, it overrides `use_live`.
+    *   `search_limit` (Type: `int`, Default: `3`, Range: `1-10`)
+        *   **What it does:** The number of search results (candidates) an agent will retrieve from its primary search API.
+        *   **Why change it:** Increase to give the Judge more options, potentially improving content quality but increasing API calls/cost. Decrease to reduce API calls/cost.
+    *   `max_search_calls_per_run` (Type: `int`, Default: `32`)
+        *   **What it does:** A safety cap on the total number of search calls an individual agent can make during a single system run. This is crucial for managing API quotas.
+        *   **Why change it:** For long routes, you might need to increase this, but be mindful of external API quotas. `32` provides a good buffer for 8-step routes.
+    *   **`agents.song.use_youtube_secondary` (MOST IMPORTANT) (Type: `bool`, Default: `true`)**
+        *   **What it does:** If `true`, and the primary Spotify search fails or returns insufficient results, the Song Agent will attempt to search YouTube for music-related content as a fallback.
+        *   **Why change it:** Keep `true` for maximum content coverage. Set to `false` to only use Spotify (and stub if Spotify fails).
+    *   **`agents.knowledge.use_secondary_source` (MOST IMPORTANT) (Type: `bool`, Default: `true`)**
+        *   **What it does:** If `true`, the Knowledge Agent will use DuckDuckGo as a secondary search source alongside Wikipedia (or if Wikipedia fails).
+        *   **Why change it:** Keep `true` for broader knowledge coverage. Set to `false` to only use Wikipedia (and stub if Wikipedia fails).
+
+#### 4. Judge Settings (`judge`)
+*   **Purpose:** Configures how content from agents is evaluated and selected for each route step.
+*   **`scoring_mode` (MOST IMPORTANT) (Type: `str`, Default: `"llm"`, Valid: `"heuristic"`, `"llm"`, `"hybrid"`)**
+    *   **What it does:** Determines the method the Judge uses to score agent-provided content.
+    *   **Why change it:**
+        *   `"llm"` (Recommended Default): Uses an LLM to evaluate content based on semantic understanding of the route context. Provides high-quality, nuanced scores and rationales (requires LLM API key).
+        *   `"heuristic"`: Uses a rule-based scoring system (e.g., presence of keywords, metadata completeness). Cost-free and deterministic, but less intelligent.
+        *   `"hybrid"`: Combines both LLM and heuristic scoring.
+*   **`use_llm` (MOST IMPORTANT) (Type: `bool`, Default: `true`)**
+    *   **What it does:** If `true`, the Judge will attempt to use an LLM for scoring (depending on `scoring_mode`). If `false`, LLM scoring is disabled entirely.
+    *   **Why change it:** Set to `false` for zero LLM cost runs, faster execution, or if you don't have an LLM API key. Note: if `scoring_mode` is "llm" or "hybrid" and `use_llm` is `false`, it effectively falls back to heuristic.
+*   `llm_provider` (Type: `str`, Default: `"auto"`, Valid: `"ollama"`, `"openai"`, `"claude"`, `"gemini"`, `"mock"`)
+    *   **What it does:** Same as `agents.llm_provider`, but specifically for the Judge's LLM calls.
+    *   **Why change it:** To use a different LLM for judging than for agent query generation, or to explicitly set it.
+*   `llm_fallback` (Type: `bool`, Default: `true`)
+    *   **What it does:** If `true`, and the Judge's LLM call fails, it will fall back to heuristic scoring.
+    *   **Why change it:** Keep `true` for robust operation.
+
+#### 5. Logging Settings (`logging`)
+*   **Purpose:** Controls how system events, errors, and debugging information are recorded.
+*   `level` (Type: `str`, Default: `"INFO"`, Valid: `"DEBUG"`, `"INFO"`, `"WARNING"`, `"ERROR"`)
+    *   **What it does:** Sets the minimum severity level for messages to be logged.
+    *   **Why change it:** Set to `"DEBUG"` for verbose output during development/troubleshooting. Set to `"WARNING"` or `"ERROR"` to see only critical issues.
+*   `file` (Type: `str`, Default: `"logs/system.log"`)
+    *   **What it does:** Path to the main log file. All general system logs go here.
+*   `error_file` (Type: `str`, Default: `"logs/errors.log"`)
+    *   **What it does:** Path to a dedicated log file that only contains messages of `ERROR` severity or higher.
+*   `modules` (Sub-section)
+    *   **Purpose:** Allows fine-grained control over logging for specific parts of the system (e.g., agents, APIs, judge).
+    *   **`modules.<name>.enabled`:** Toggles logging for that module.
+    *   **`modules.<name>.file`:** Sets a separate log file for the module.
+    *   **`modules.<name>.level`:** Sets the specific log level for that module.
+    *   **Why change it:** For deep debugging, you might set `modules.agents.level: "DEBUG"` to see verbose agent activity without cluttering the main `system.log`.
+
+#### 6. Output Settings (`output`)
+*   **Purpose:** Configures where and how the final enriched route data and checkpoints are saved.
+*   `base_dir` (Type: `str`, Default: `"output"`)
+    *   **What it does:** The main directory where all run-specific output folders are created (e.g., `output/2025-12-01_10-30-00_Origin_to_Destination`).
+    *   **Why change it:** To centralize all outputs to a different location.
+*   `json_file`, `markdown_file`, `csv_file` (Type: `str`, Default: `"output/final_route.json"`, etc.)
+    *   **What it does:** Specifies the default filenames for the final JSON, Markdown, and CSV reports. When using the default `--output` CLI flag, only the filename component of these values is used within the run-specific directory.
+    *   **Why change it:** To change the default names of the output files.
+*   `checkpoints_enabled` (Type: `bool`, Default: `true`)
+    *   **What it does:** If `true`, the system writes intermediate checkpoint files (JSON snapshots of pipeline state) at each major stage.
+    *   **Why change it:** Keep `true` for debugging and auditability. Set to `false` to slightly reduce disk I/O, e.g., for performance benchmarking.
+*   `checkpoint_retention_days` (Type: `int`, Default: `7`, Range: `0-30`)
+    *   **What it does:** Automatically deletes checkpoint files older than this many days.
+    *   **Why change it:** Set to `0` to keep checkpoints indefinitely. Adjust based on disk space and debugging needs.
+
+#### 7. Route Provider Settings (`route_provider`)
+*   **Purpose:** Defines how the system obtains the driving route.
+*   **`mode` (MOST IMPORTANT) (Type: `str`, Default: `"live"`, Valid: `"live"`, `"cached"`)**
+    *   **What it does:** Determines if the route is fetched live from Google Maps (`"live"`) or loaded from local JSON files (`"cached"`). This can also be set via the `--mode` CLI flag.
+    *   **Why change it:** Set to `"cached"` for development, testing, and offline use to avoid Google Maps API calls and costs. Set to `"live"` for real-time route generation.
+*   **`max_steps` (MOST IMPORTANT) (Type: `int`, Default: `8`, Range: `1-15`)**
+    *   **What it does:** Limits the number of steps a route can have. This is a crucial control for managing API quotas and LLM costs.
+    *   **Why change it:** Increase for longer trips (warning: directly increases API and LLM costs, and runtime). Decrease for shorter, cheaper runs.
+*   `cache_dir` (Type: `str`, Default: `"data/routes"`)
+    *   **What it does:** Directory where cached route JSON files are stored and looked up.
+    *   **Why change it:** To point to a different local cache.
+
+#### 8. Circuit Breaker Configuration (`circuit_breaker`)
+*   **Purpose:** Implements the Circuit Breaker pattern to protect against cascading failures from unreliable external APIs.
+*   `enabled` (Type: `bool`, Default: `true`)
+    *   **What it does:** Toggles the circuit breaker functionality globally.
+    *   **Why change it:** Keep `true` for production-like resilience. Set to `false` only for specific debugging scenarios where you want API calls to always be attempted.
+*   `failure_threshold` (Type: `int`, Default: `5`, Range: `3-10`)
+    *   **What it does:** The number of consecutive failures before the circuit "opens", preventing further calls to the API.
+    *   **Why change it:** Decrease to make the circuit breaker more sensitive (fail faster). Increase to make it more tolerant of transient errors.
+*   `timeout` (Type: `float`, Default: `60.0` seconds)
+    *   **What it does:** The time the circuit stays "open" before transitioning to "half-open" (allowing a single test call to check for recovery).
+    *   **Why change it:** Adjust based on expected API recovery times.
+
+#### 9. Metrics Configuration (`metrics`)
+*   **Purpose:** Controls the collection and output of performance and usage metrics.
+*   `enabled` (Type: `bool`, Default: `true`)
+    *   **What it does:** Toggles metrics collection.
+    *   **Why change it:** Set to `false` if you do not want any performance metrics collected or written.
+*   `file` (Type: `str`, Default: `"logs/metrics.json"`)
+    *   **What it does:** Path to the JSON file where collected metrics are saved.
+*   `update_interval` (Type: `float`, Default: `5.0` seconds)
+    *   **What it does:** How often the in-memory metrics are flushed and written to the `metrics.json` file.
+    *   **Why change it:** Decrease for more frequent updates (higher overhead). Increase for less frequent updates.
 
 ### Environment Variables (`.env`)
 
