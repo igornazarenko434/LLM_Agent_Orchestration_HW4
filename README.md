@@ -9,6 +9,7 @@
 [![Pytest](https://img.shields.io/badge/pytest-passing-green.svg)](https://docs.pytest.org/)  
 [![Coverage](https://img.shields.io/badge/coverage-87%25-green.svg)](htmlcov/index.html)  
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4)
 
 ---
 
