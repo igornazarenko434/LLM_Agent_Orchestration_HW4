@@ -303,16 +303,17 @@ This section documents key architectural decisions, alternatives considered, tra
 ## 8. Installation & Verification Matrix
 | Step | Action | Command | Expected Result | Recovery |
 |------|--------|---------|-----------------|----------|
-| 1 | Check Python | `python3 --version` | "Python 3.10.19+" | Install Python 3.10.19+ (3.11+ recommended) |
-| 2 | Create venv | `python -m venv .venv && source .venv/bin/activate` | Prompt shows `(.venv)` | Re-run with correct Python |
-| 3 | Install package | `pip install .` | Package metadata printed | Inspect `pyproject.toml` |
-| 4 | Verify config | `ls config/settings.yaml` | File listed | Copy template from repo |
-| 5 | Copy env | `cp .env.example .env` | `.env` created | Edit `.env` manually |
-| 6 | Create dirs | `mkdir -p logs output data/routes` | Dirs exist | Check permissions |
-| 7 | Check Deps | `pip check` | "No broken requirements found" | Install missing deps |
-| 8 | Run tests | `pytest` | All tests pass, coverage summary | Use `pytest -k` to isolate |
-| 9 | Live run | `python -m hw4_tourguide --from "A" --to "B" --mode live` | Logs + output JSON | Switch to cached mode |
-| 10 | Cached run | `python -m hw4_tourguide --from "A" --to "B" --mode cached` | Reuses stored route | Ensure cached file exists |
+| 1 | Clone repo | `git clone https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4.git && cd LLM_Agent_Orchestration_HW4` | Workspace matches GitHub; `src/hw4_tourguide` visible | Check network/URL, retry clone |
+| 2 | Check Python | `python3 --version` | "Python 3.10.19+" | Install Python 3.10.19+ (3.11+ recommended) |
+| 3 | Create venv | `python -m venv .venv && source .venv/bin/activate` | Prompt shows `(.venv)` | Re-run with correct Python |
+| 4 | Install package | `pip install .` | Package metadata printed | Inspect `pyproject.toml` |
+| 5 | Verify config | `ls config/settings.yaml` | File listed | Copy template from repo |
+| 6 | Copy env | `cp .env.example .env` | `.env` created | Edit `.env` manually |
+| 7 | Create dirs | `mkdir -p logs output data/routes` | Dirs exist | Check permissions |
+| 8 | Check Deps | `pip check` | "No broken requirements found" | Install missing deps |
+| 9 | Run tests | `pytest` | All tests pass, coverage summary | Use `pytest -k` to isolate |
+|10 | Live run | `python -m hw4_tourguide --from "A" --to "B" --mode live` | Logs + output JSON | Switch to cached mode |
+|11 | Cached run | `python -m hw4_tourguide --from "A" --to "B" --mode cached` | Reuses stored route | Ensure cached file exists |
 
 **Packaging Notes:**
 - **`pyproject.toml`:** Defines project metadata and runtime assets (config/routes) included in the **Wheel** for end-users.
