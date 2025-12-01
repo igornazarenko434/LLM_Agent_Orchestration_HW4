@@ -281,7 +281,7 @@ Notes:
 
 ## 7. Quick Start
 
-Pick a run mode, set your keys (if needed), and go. Default output is a per-run folder under `output/` named `YYYY-MM-DD_HH-MM-SS_<origin>_to_<destination>` containing `final_route.json`, `summary.md`, `tour_export.csv`, logs, and checkpoints. Use `--output` to place artifacts elsewhere (MD/CSV/logs/checkpoints follow that base).
+Pick a run mode, set your keys (if needed), and go. Default output is a per-run folder under `output/` named `YYYY-MM-DD_HH-MM-SS_<origin>_to_<destination>` containing `final_route.json`, `summary.md`, `tour_export.csv`, logs, and checkpoints. Use `--output` to place artifacts elsewhere (MD/CSV/logs/checkpoints follow that base). For granular control over LLM providers, agent behavior, and resilience settings, refer to **Section 7.1 Configuration Scenarios & Tuning** below.
 
 > **Route length reminder:** The route retriever defaults to a maximum of **8 steps** per run (`config.route_provider.max_steps`). This keeps API usage and LLM calls bounded for demos. If you need a longer journey, bump that value in `config/settings.yaml` and rerun; the scheduler/orchestrator automatically adapts, but longer routes increase cost and runtime.
 
@@ -343,9 +343,63 @@ output/
 ```
 If you pass a custom `--output`, JSON/MD/CSV go next to that file and checkpoints under that directory; logs stay in the configured log directory (`logs/` by default).
 
+### 7.1 Configuration Scenarios & Tuning
+
+For advanced control, edit `config/settings.yaml`. Here are common tuning scenarios and exactly what to change:
+
+**A. Using a Different LLM (e.g., OpenAI instead of Claude)**
+By default, the system uses Anthropic (Claude). To switch to OpenAI:
+1.  Ensure `OPENAI_API_KEY` is set in `.env`.
+2.  Edit `config/settings.yaml`:
+    ```yaml
+    agents:
+      llm_provider: "openai"
+    judge:
+      llm_provider: "openai"
+    ```
+
+**B. Running Fully Offline (Zero Cost / No LLM)**
+To disable all LLM calls (using heuristics only) and force offline stubs even if keys exist:
+1.  Edit `config/settings.yaml`:
+    ```yaml
+    agents:
+      use_llm_for_queries: false
+      video:
+        use_live: false  # Forces stub
+      song:
+        use_live: false  # Forces stub
+      knowledge:
+        use_live: false  # Forces stub
+    judge:
+      use_llm: false
+      scoring_mode: "heuristic"
+    ```
+
+**C. Disabling Secondary Sources (Strict Search)**
+By default, the Song Agent falls back to YouTube if Spotify fails/misses, and Knowledge Agent uses DuckDuckGo. To restrict agents to their primary source only:
+1.  Edit `config/settings.yaml`:
+    ```yaml
+    agents:
+      song:
+        use_youtube_secondary: false
+      knowledge:
+        use_secondary_source: false
+    ```
+
+**D. Long Routes (>8 steps)**
+The system defaults to 8 steps to prevent accidental high costs. For longer trips:
+1.  Edit `config/settings.yaml`:
+    ```yaml
+    route_provider:
+      max_steps: 20  # Increase as needed
+    ```
+    *Note: This linearly increases API usage and runtime.*
+
 ---
 
 ## 8. Usage
+
+The core behavior of the system is controlled via CLI flags. For detailed control over agents, LLMs, API fallbacks, and performance tuning, refer to **Section 7.1 Configuration Scenarios & Tuning** for common adjustments, or **Section 9 Configuration** for the full schema.
 
 ### CLI (flags and what they do)
 ```
