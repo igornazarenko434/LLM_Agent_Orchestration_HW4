@@ -865,7 +865,7 @@ This document contains **47 missions** organized into **8 phases** with **6 qual
   3. Optional LLM summarization of candidate content (short rationale) for judge/report; fall back to heuristic-only paths on error/off state
  4. Preserve checkpoints for candidates/scores; tests cover multi-source fan-out, rerank/summary paths (mocked), and graceful degradation when secondary sources/timeouts occur
  5. Off by default to control cost/complexity; enabled via config; disabled path must remain functional
-- **Status**: [ ] Not Started
+- **Status**: [ ] Skipped (Optional)
 - **Dependencies**: M7.7b (LLM client), M7.7c (search/fetch), M7.7f (metrics)
 
 ### **M7.19 (Optional) – Claude CLI LLM Provider Support**
@@ -892,7 +892,7 @@ This document contains **47 missions** organized into **8 phases** with **6 qual
 - **Self-Verify Command**: `pytest tests/test_llm_cli_client.py -v && pytest tests/test_llm.py -k claude_cli -v`
 - **Expected Evidence**: Tests pass; llm_factory returns `ClaudeCliClient` when configured; logs show `provider=ClaudeCliClient`; agent smoke test shows queries parsed from CLI text.
 - **Time Estimate**: M (2-4h)
-- **Status**: [ ] Not Started
+- **Status**: [ ] Skipped (Optional)
 - **Dependencies**: M7.7b (LLM abstraction), M7.14 (prompt infrastructure), M7.15 (agent LLM queries)
 - **Blocks**: None
 
@@ -900,6 +900,7 @@ This document contains **47 missions** organized into **8 phases** with **6 qual
 - **Criteria**: M7.0-M7.12 complete; all unit + integration tests pass; coverage ≥85%; CLI functional; concurrency proven
 - **Verification**: `pytest --cov=hw4_tourguide --cov-report=term && python -m hw4_tourguide --from "Boston" --to "MIT" --mode cached`
 - **Blocker Recovery**: If tests fail or coverage <85%, fix before Phase 6
+- **Status**: [✓] Completed
 
 ---
 
@@ -918,7 +919,7 @@ This document contains **47 missions** organized into **8 phases** with **6 qual
 - **Self-Verify Command**: `jupyter nbconvert --to html docs/analysis/results.ipynb && open docs/analysis/results.html`
 - **Expected Evidence**: Notebook renders with ≥4 plots, LaTeX formulas, analysis text
 - **Time Estimate**: XL (8-12h)
-- **Status**: [ ] Not Started
+- **Status**: [→] In Progress
 - **Dependencies**: M5, M7.10, GATE 4
 - **Blocks**: M8.2
 
@@ -935,7 +936,7 @@ This document contains **47 missions** organized into **8 phases** with **6 qual
 - **Self-Verify Command**: `grep -c "^|" docs/cost_analysis.md | head -2`
 - **Expected Evidence**: ≥2 tables (API call counts, token usage) with ≥5 rows each
 - **Time Estimate**: M (2-3h)
-- **Status**: [ ] Not Started
+- **Status**: [→] In Progress
 - **Dependencies**: M8.1
 - **Blocks**: M8.3
 
@@ -952,7 +953,7 @@ This document contains **47 missions** organized into **8 phases** with **6 qual
 - **Self-Verify Command**: `python scripts/check_readme.py && wc -l README.md`
 - **Expected Evidence**: Script reports ≥15 sections, README ≥300 lines
 - **Time Estimate**: M (3-4h)
-- **Status**: [ ] Not Started
+- **Status**: [✓] Completed
 - **Dependencies**: M8.2
 - **Blocks**: M9.1
 
@@ -970,7 +971,7 @@ This document contains **47 missions** organized into **8 phases** with **6 qual
 - **Self-Verify Command**: `ls docs/{architecture,contracts,ux,analysis,prompt_log,screenshots,quality} && grep -c "docs/" README.md && grep -c "ISO/IEC 25010" docs/quality/iso_25010_assessment.md`
 - **Expected Evidence**: All directories exist, README references docs/ ≥15 times, ISO assessment has ≥8 characteristics documented
 - **Time Estimate**: S (1-2h)
-- **Status**: [ ] Not Started
+- **Status**: [✓] Completed
 - **Dependencies**: M8.3
 - **Blocks**: M8.5
 

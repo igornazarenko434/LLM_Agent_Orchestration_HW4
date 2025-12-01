@@ -3,7 +3,7 @@
 **Version:** 0.1.0  
 **Package Name:** `hw4_tourguide`  
 **Target Grade:** 95 (Outstanding Excellence)  
-**Status:** Phase 5 - Core Features Complete (resilience tests/docs polish pending)
+**Status:** Phase 6 - Analysis & Documentation (Research pending)
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)  
 [![Pytest](https://img.shields.io/badge/pytest-passing-green.svg)](https://docs.pytest.org/)  
@@ -732,19 +732,19 @@ The system offers a superior Developer Experience (DX) and operational clarity.
 
 ## 16. Project Status & Roadmap
 
-### Current Status: Phase 5 In Progress
+### Current Status: Phase 6 - Analysis & Documentation
 
 **Completed (highlights):**
 - ✅ M0-6: PRD, architecture (C4/ADRs), config/logging, schemas, UX heuristics
-- ✅ M7.0-7.11: Walking skeleton; route provider; scheduler; orchestrator; video/song/knowledge agents; judge; output writer; CLI; integration + concurrency tests; cached demo route (hash `10dac2036c05`)
-- ✅ Metrics, circuit breaker, validation (warn/drop malformed), deterministic outputs
+- ✅ M7.0-7.11: Core pipeline (Route Provider -> Scheduler -> Orchestrator -> Agents -> Judge -> Output)
+- ✅ M7.12-7.19: Resilience tests, LLM query generation (ADR-013), Song Agent fallback, Circuit Breakers
+- ✅ Gate 4: Passed (Core Implementation Complete)
+- ✅ M8.4-8.5: Documentation cross-check, LLM Agent Architecture docs
 
 **In Progress:**
-- 🟡 M7.12: Resilience/retry tests (backoff, CB open/half-open, checkpoint recovery)
-- 🟡 Gate 4: Coverage run with `--cov` after M7.12
+- 🟡 Phase 6: Research Analysis (M8.1) & Cost Analysis (M8.2)
 
 **Upcoming:**
-- Phase 6: Research/cost analysis and README/docs polish
 - Phase 7: Preflight + live/cached demo archive + submission
 
 See `PROGRESS_TRACKER.md` and `Missions_Route_Enrichment_Tour_Guide_System.md` for detailed roadmap.
