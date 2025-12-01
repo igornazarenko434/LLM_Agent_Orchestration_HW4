@@ -322,7 +322,41 @@ Notes:
 |11 | Cached run check | `python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached` | Outputs under `output/` | Ensure cached JSON exists (`data/routes/demo_boston_mit.json`) |
 |12 | Live run smoke (optional) | `python -m hw4_tourguide --from "A" --to "B" --mode live` | Logs + outputs | Set API keys in `.env` |
 
----
+### 6.1 Package Distribution Strategy
+
+While `pip install .` and installing directly from a built `.whl` file work, for broader accessibility and ease of use, a proper package distribution strategy is essential. We recommend a two-pronged approach for this project:
+
+1.  **PyPI Publication (Primary Distribution Channel)**
+    *   **Description:** Uploading your package to the Python Package Index (PyPI) is the standard and most frictionless way for users to install your library.
+    *   **How it works:** Once published, users can simply run `pip install hw4_tourguide`. `pip` automatically fetches the correct version and handles dependencies.
+    *   **Benefits:**
+        *   **Ease of Use:** Simplest installation for end-users.
+        *   **Discoverability:** Your package becomes discoverable on `pypi.org`.
+        *   **Dependency Management:** `pip` handles resolution of other required packages.
+    *   **Action Required (by you):**
+        1.  Ensure `pyproject.toml` is finalized (already done).
+        2.  Build distribution files (`.whl` and `.tar.gz`) using `python -m build`.
+        3.  Register on PyPI and obtain an API token.
+        4.  Upload using `twine upload dist/*`. (This is a manual step for the developer).
+
+2.  **GitHub Releases (Complementary Distribution - Recommended for this project's artifacts)**
+    *   **Description:** Attaching your built package files (`.whl`, `.tar.gz`) to a GitHub Release allows direct downloads associated with a specific version in your Git history. This is the recommended place for the generated `v0.1.0` artifacts from this project.
+    *   **How it works:** For each version (e.g., `v0.1.0`), you create a Git tag, and then draft a new Release on GitHub. You then upload the built `dist/*.whl` and `dist/*.tar.gz` files as "release assets".
+    *   **Benefits:**
+        *   **Version Control Integration:** Directly ties binaries to specific Git tags.
+        *   **Showcasing:** Clearly displays released versions and their assets on your GitHub repository.
+        *   **Direct Download:** Provides an alternative for users who prefer to download files directly.
+    *   **Action Required (by you, for this project's `v0.1.0` release):**
+        1.  Create a Git tag for the current version: `git tag v0.1.0`
+        2.  Push the tag to your remote repository: `git push origin v0.1.0`
+        3.  Build distribution files locally: `python -m build`
+        4.  Go to GitHub -> your repo -> Releases -> Draft a new release.
+        5.  Select the `v0.1.0` tag.
+        6.  Provide a title and release notes.
+        7.  **Upload the generated `.whl` and `.tar.gz` files from your local `dist/` folder** as release assets.
+        8.  Publish the release.
+
+**Current Status:** All necessary local packaging configurations (`pyproject.toml`, `MANIFEST.in`, `LICENSE`) are correctly set up and verified. The next logical step for distribution is for you to manually perform the PyPI upload and/or GitHub Release creation.
 
 ## 7. Quick Start
 
