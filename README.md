@@ -171,27 +171,64 @@ LLM_Agent_Orchestration_HW4/
   - **Keyless/works offline:** cached mode and stub agents do not require any keys.
 
 ### Installation as a Library (No Git Clone)
-To install as a library without cloning the repository, you will first need to obtain the package distribution file (`.whl` or `.tar.gz`). This is typically done by:
-1.  **Downloading from a release:** If available on a platform like GitHub Releases.
-2.  **Installing from PyPI:** If the package has been published to the Python Package Index, you can simply use `pip install hw4_tourguide`.
-3.  **Receiving a pre-built file:** If a developer provides you with the `.whl` file directly.
 
-Assuming you have the package file (e.g., `hw4_tourguide-0.1.0-py3-none-any.whl`) or are installing from a future PyPI release:
+This section guides you on installing the `hw4_tourguide` package using pre-built distribution files (`.whl` or `.tar.gz`), simulating installation from PyPI or a manual release. This is how end-users would typically install the package once it's officially distributed.
 
-```bash
-# Create and activate virtual environment
-python3 -m venv .venv
-source .venv/bin/activate
+**How packaging works (`pyproject.toml` & `MANIFEST.in`):**
+The packaging process is configured by two crucial files in the project root:
+*   **`pyproject.toml`**: This modern standard defines the build system (`setuptools`), project metadata (name, version, dependencies, Python compatibility), and importantly, specifies which non-Python files (like `config/*.yaml`, `prompts/agents/*.md`, `data/routes/*.json`) should be included *inside the installed Python package* via its `[tool.setuptools.package-data]` section.
+*   **`MANIFEST.in`**: This file instructs the build tools on what additional files and directories (like documentation, tests, scripts, and configuration files in the root) should be included when creating a **source distribution (`.tar.gz`)**. This ensures a complete source archive for developers.
 
-# If installing a specific file you have downloaded:
-pip install path/to/your/hw4_tourguide-0.1.0-py3-none-any.whl
+These files ensure that when you build the package, all necessary components are correctly bundled.
 
-# If installing from PyPI (after it's published):
-# pip install hw4_tourguide
+**Steps to Install from Distribution Files:**
 
-# Run immediately (uses bundled config/routes by default)
-python -m hw4_tourguide --from "Boston, MA" --to "MIT"
-```
+1.  **Create and activate a virtual environment:**
+    ```bash
+    python3 -m venv .venv
+    source .venv/bin/activate # For macOS/Linux
+    # .venv\Scripts\Activate.ps1 # For Windows PowerShell
+    ```
+
+2.  **Obtain the package distribution file:**
+    You will need a `.whl` (wheel) or `.tar.gz` (source distribution) file for `hw4_tourguide`.
+
+    *   **Option A: Install from PyPI (Recommended for end-users)**
+        Once the `hw4_tourguide` package is published on PyPI, simply run:
+        ```bash
+        pip install hw4_tourguide
+        ```
+        This is the easiest method as `pip` handles finding and downloading the latest version.
+
+    *   **Option B: Download a pre-built file (e.g., from GitHub Releases)**
+        If you have downloaded a specific `hw4_tourguide-0.1.0-py3-none-any.whl` file (or a `.tar.gz`) to a known location, install it using its path:
+        ```bash
+        pip install path/to/your/hw4_tourguide-0.1.0-py3-none-any.whl
+        ```
+
+    *   **Option C: Build it yourself (for developers or testing packaging)**
+        If you have cloned the repository and want to test the packaging process by building the files locally:
+        *   **Install the build tool:**
+            ```bash
+            pip install build
+            ```
+        *   **Build the distribution files:**
+            ```bash
+            python -m build
+            ```
+            This will create `hw4_tourguide-0.1.0.tar.gz` (source distribution) and `hw4_tourguide-0.1.0-py3-none-any.whl` (binary distribution) in the `dist/` directory of your cloned repository.
+        *   **Install from your locally built `.whl` file:**
+            ```bash
+            pip uninstall hw4_tourguide # Optional: uninstall if you previously ran pip install .
+            pip install dist/hw4_tourguide-0.1.0-py3-none-any.whl
+            ```
+            This command simulates installing your package as if it came from PyPI.
+
+3.  **Run your application:**
+    ```bash
+    python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached
+    ```
+    This will execute the main application, confirming your package is installed and functional.
 
 ### Step-by-Step Installation (macOS/Linux)
 ```bash
