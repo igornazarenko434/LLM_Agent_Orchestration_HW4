@@ -210,7 +210,7 @@ The packaging process is configured by two crucial files in the project root:
     ```
     This will execute the main application, confirming your package is installed and functional.
 
-### Step-by-Step Installation (macOS/Linux)
+### Step-by-Step Installation (macOS/Linux) (with Repository Clone Option)
 ```bash
 # 1) Clone repository
 git clone https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4.git
@@ -244,7 +244,7 @@ pip check
 python -m hw4_tourguide --help
 ```
 
-### Step-by-Step Installation (Windows PowerShell)
+### Step-by-Step Installation (Windows PowerShell) (with Repository Clone Option)
 ```powershell
 # 1) Clone repository
 git clone https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4.git
@@ -290,7 +290,7 @@ Notes:
 | Step | Action | Command | Expected Result | Recovery |
 |------|--------|---------|-----------------|----------|
 | 1 | Check Python version | `python3 --version` | Python 3.10.19+ (3.11+ recommended) | Install/activate Python 3.10.19+ |
-| 2 | Clone repo | `git clone … && cd …` | Repo present | Check Git/URL |
+| 2 | Clone repo | `git clone https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4.git && cd LLM_Agent_Orchestration_HW4` | Repo present | Check Git/URL |
 | 3 | Create venv | `python3 -m venv .venv` | `.venv` directory created | Ensure python3 on PATH |
 | 4 | Activate venv | `source .venv/bin/activate` or `.venv\Scripts\Activate.ps1` | Prompt shows `(.venv)` | Use correct shell script |
 | 5 | Install package | `pip install .` | Install succeeds | Inspect `pyproject.toml`, upgrade pip |
