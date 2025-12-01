@@ -188,7 +188,7 @@ python -m hw4_tourguide --from "Boston, MA" --to "MIT"
 ### Step-by-Step Installation (macOS/Linux)
 ```bash
 # 1) Clone repository
-git clone https://github.com/yourusername/LLM_Agent_Orchestration_HW4.git
+git clone https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4.git
 cd LLM_Agent_Orchestration_HW4
 
 # 2) Create virtual environment
@@ -222,7 +222,7 @@ python -m hw4_tourguide --help
 ### Step-by-Step Installation (Windows PowerShell)
 ```powershell
 # 1) Clone repository
-git clone https://github.com/yourusername/LLM_Agent_Orchestration_HW4.git
+git clone https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4.git
 cd LLM_Agent_Orchestration_HW4
 
 # 2) Create virtual environment (Python 3.10.19+; 3.11+ recommended)
@@ -313,17 +313,7 @@ python -m hw4_tourguide --from "Boston" --to "MIT" --config config/settings.yaml
 ```
 
 ### Stub/offline runs (force all agents to stub)
-Set in `config/settings.yaml`:
-```yaml
-agents:
-  video:
-    use_live: false
-  song:
-    use_live: false
-  knowledge:
-    use_live: false
-```
-Then run cached mode as above.
+For full offline mode, refer to **Section 7.1 Configuration Scenarios & Tuning, Scenario B**.
 
 ### Output structure (default)
 ```
@@ -331,7 +321,7 @@ output/
   2025-01-01_12-00-00_Boston_MA_to_MIT/
     final_route.json
     summary.md
-    tour_export.csv
+    final_route.csv
     checkpoints/
       <tid>/01_scheduler_queue.json
       <tid>/02_agent_search_*.json
