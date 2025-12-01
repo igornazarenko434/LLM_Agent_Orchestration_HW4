@@ -335,7 +335,9 @@ While `pip install .` and installing directly from a built `.whl` file work, for
         *   **Dependency Management:** `pip` handles resolution of other required packages.
     *   **Action Required (by you):**
         1.  Ensure `pyproject.toml` is finalized (already done).
-        2.  Build distribution files (`.whl` and `.tar.gz`) using `python -m build`.
+        2.  Build distribution files using `python -m build`.
+            *   **`hw4_tourguide-X.Y.Z.tar.gz` (Source Distribution - sdist):** This archive contains your project's *source code*, `pyproject.toml`, `MANIFEST.in`, `LICENSE`, `README.md`, all `.claude/` files, `config/` files, `docs/` (documentation), `tests/` (test suite), and `scripts/` (utility scripts). It's a complete snapshot of your repository, used primarily for archiving or when a wheel isn't available for a specific environment.
+            *   **`hw4_tourguide-X.Y.Z-py3-none-any.whl` (Wheel Distribution - wheel):** This is a pre-built, optimized package format. It contains the compiled Python code (if any, though yours is pure Python), the `hw4_tourguide` Python package (`src/hw4_tourguide` directory), along with its bundled `config` and `data` files (as specified by `tool.setuptools.package-data` in `pyproject.toml`). Crucially, it **does NOT** include `docs/`, `tests/`, `scripts/`, or the top-level `config/` and `.claude/` folders; it only contains what's necessary for runtime. This is the recommended format for installation.
         3.  Register on PyPI and obtain an API token.
         4.  Upload using `twine upload dist/*`. (This is a manual step for the developer).
 
