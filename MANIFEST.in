@@ -22,4 +22,8 @@ recursive-include tests *
 recursive-include scripts *
 
 # Research Data (Source distribution only)
-recursive-include output *.log *.json
+recursive-include output/study_baseline *.log *.json
+recursive-include output/study_fast *.log *.json
+recursive-include output/study_live *.log *.json
+recursive-include output/study_sequential *.log *.json
+recursive-include output/study_llm_judge *.log *.json
