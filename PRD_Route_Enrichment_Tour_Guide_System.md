@@ -37,7 +37,7 @@
 | 11 | KPI-11 | Retry/backoff logic | Resilience test log | `pytest tests/test_resilience.py -k retry -v` | `Tests pass, log shows 3 retry attempts with backoff` | M7.12, logs/ |
 | 12 | KPI-12 | README completeness | README validation script | `python scripts/check_readme.py README.md` | `Script reports "README.md check completed successfully"` | M8.3, README.md |
 | 13 | KPI-13 | Cost transparency | Cost analysis doc | `ls docs/cost_analysis.md && grep -c "^|" docs/cost_analysis.md` | `Doc exists with ≥2 tables (API calls, token usage)` | M8.2 |
-| 14 | KPI-14 | Git history quality | Preflight script output | `python scripts/preflight.py` | `Preflight check for 'Git History Valid' is ✅, reporting >=15 commits, conventional messages (or warning), no apparent secrets.` | M9.1 |
+| 14 | KPI-14 | System Readiness (Preflight) | Preflight script output | `python scripts/preflight.py` | `Preflight checklist passes all stages: Build, Config, Tests (>85% cov), Git Health, and Runtime Verification (Scheduler/API Checks). Final Verdict: ✅ READY FOR FLIGHT!` | M9.1 |
 
 ## 4. Requirements
 ### Functional Requirements
@@ -311,7 +311,7 @@ This section documents key architectural decisions, alternatives considered, tra
 | 4 | Install package | `pip install .` | Package metadata printed | Inspect `pyproject.toml` |
 | 5 | Verify config | `ls config/settings.yaml` | File listed | Copy template from repo |
 | 6 | Copy env | `cp .env.example .env` | `.env` created | Edit `.env` manually |
-| 7 | Create dirs | `mkdir -p logs output data/routes` | Dirs exist | Check permissions |
+| 7 | Create dirs | `mkdir -p output data/routes` | Dirs exist | Check permissions |
 | 8 | Check Deps | `pip check` | "No broken requirements found" | Install missing deps |
 | 9 | Run tests | `pytest` | All tests pass, coverage summary | Use `pytest -k` to isolate |
 |10 | Live run | `python -m hw4_tourguide --from "A" --to "B" --mode live` | Logs + output JSON | Switch to cached mode |
@@ -393,6 +393,10 @@ The testing strategy explicitly targets key reliability characteristics, matchin
 - **Fixtures:** `tests/conftest.py` provides shared mocks, configuration, and sample route data.
 
 ### Verification Scripts
+- `scripts/preflight.py` - Comprehensive system readiness check (Build, Tests, Git, Runtime).
+- `scripts/check_readme.py` - Validates README structure.
+- `scripts/check_scheduler_interval.py` - Verifies scheduler timing accuracy.
+- `scripts/check_api_usage.py` - Verifies API call counts and cost limits.
 - `scripts/diagnose_llm_query_generation.py` - Validates LLM query generation logic.
 - Manual verification via `grep` (logs), `jq` (metrics/output), and `pytest` as defined in Goals & KPIs.
 
@@ -666,7 +670,7 @@ This matrix maps every KPI, Functional Requirement, Non-Functional Requirement, 
 | 11 | KPI-11 | Retry/backoff logic | Resilience test log | `pytest tests/test_resilience.py -k retry -v` | `Tests pass, log shows 3 retry attempts with backoff` | M7.12, logs/ |
 | 12 | KPI-12 | README completeness | README validation script | `python scripts/check_readme.py README.md` | `Script reports "README.md check completed successfully"` | M8.3, README.md |
 | 13 | KPI-13 | Cost transparency | Cost analysis doc | `ls docs/cost_analysis.md && grep -c "^|" docs/cost_analysis.md` | `Doc exists with ≥2 tables (API calls, token usage)` | M8.2 |
-| 14 | KPI-14 | Git history quality | Preflight script output | `python scripts/preflight.py` | `Preflight check for 'Git History Valid' is ✅, reporting >=15 commits, conventional messages (or warning), no apparent secrets.` | M9.1 |
+| 14 | KPI-14 | System Readiness (Preflight) | Preflight script output | `python scripts/preflight.py` | `Preflight checklist passes all stages: Build, Config, Tests (>85% cov), Git Health, and Runtime Verification (Scheduler/API Checks). Final Verdict: ✅ READY FOR FLIGHT!` | M9.1 |
 | 15 | FR-001 | Route retrieval (live+cached) | Route provider tests, JSON output | `python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode live --output output/live_run_fr1.json && python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached --output output/cached_run_fr1.json && ls output/live_run_fr1.json output/cached_run_fr1.json && jq '.[0].metadata.transaction_id' output/live_run_fr1.json` | Both commands exit 0; output/live_run_fr1.json and output/cached_run_fr1.json exist; a transaction ID is present in the live run's JSON. | M7.1 |
 | 16 | FR-002 | Scheduler thread + queue | Scheduler tests, log entries | `pytest tests/test_scheduler.py -v` | Tests pass, confirming scheduler emits tasks at configured intervals. | M7.2 |
 | 17 | FR-003 | Orchestrator worker threads | Orchestrator tests, worker logs | `pytest tests/test_orchestrator.py -v` | Tests pass, confirming orchestrator uses ThreadPoolExecutor for worker dispatch. | M7.3 |

@@ -12,7 +12,7 @@ This package implements:
 - Output Writer: JSON/Markdown/CSV exports for different personas
 """
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 # Export key components for easy import
 __all__ = [

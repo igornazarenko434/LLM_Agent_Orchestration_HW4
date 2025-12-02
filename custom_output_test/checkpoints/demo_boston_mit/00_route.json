@@ -1,0 +1,69 @@
+{
+  "tasks": [
+    {
+      "transaction_id": "demo_boston_mit",
+      "step_number": 1,
+      "location_name": "Boston Common",
+      "coordinates": {
+        "lat": 42.355,
+        "lng": -71.0656
+      },
+      "instructions": "Head northwest on Charles St toward Beacon St",
+      "timestamp": 1736442000,
+      "address": "139 Tremont St, Boston, MA 02111",
+      "search_hint": "Boston Common history Swan Boats",
+      "route_context": "Tour from Boston Common to MIT"
+    },
+    {
+      "transaction_id": "demo_boston_mit",
+      "step_number": 2,
+      "location_name": "Charles River Esplanade",
+      "coordinates": {
+        "lat": 42.3549,
+        "lng": -71.0738
+      },
+      "instructions": "Continue along the Charles River paths",
+      "timestamp": 1736442060,
+      "address": "Storrow Dr, Boston, MA 02116",
+      "search_hint": "Charles River esplanade scenic views kayaking",
+      "route_context": "Tour from Boston Common to MIT"
+    },
+    {
+      "transaction_id": "demo_boston_mit",
+      "step_number": 3,
+      "location_name": "Harvard Bridge",
+      "coordinates": {
+        "lat": 42.3543,
+        "lng": -71.088
+      },
+      "instructions": "Cross the Harvard Bridge toward Cambridge",
+      "timestamp": 1736442120,
+      "address": "Massachusetts Ave Bridge, Boston, MA",
+      "search_hint": "Harvard Bridge smoots MIT lore",
+      "route_context": "Tour from Boston Common to MIT"
+    },
+    {
+      "transaction_id": "demo_boston_mit",
+      "step_number": 4,
+      "location_name": "MIT Stata Center",
+      "coordinates": {
+        "lat": 42.3617,
+        "lng": -71.0905
+      },
+      "instructions": "Arrive at MIT Stata Center",
+      "timestamp": 1736442180,
+      "address": "32 Vassar St, Cambridge, MA 02139",
+      "search_hint": "MIT Stata Center architecture Frank Gehry",
+      "route_context": "Tour from Boston Common to MIT"
+    }
+  ],
+  "metadata": {
+    "origin": "Boston, MA",
+    "destination": "MIT",
+    "distance": "3.0 mi",
+    "duration": "15 mins",
+    "transaction_id": "demo_boston_mit",
+    "route_context": "MIT",
+    "timestamp": 1736442000
+  }
+}

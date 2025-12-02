@@ -111,13 +111,18 @@ LLM_Agent_Orchestration_HW4/
 │   ├── architecture/                   # C4 diagrams & ADR register
 │   ├── contracts/                      # JSON data schemas (Task, AgentResult, Judge, Route)
 │   ├── quality/                        # ISO 25010 assessment
+│   ├── screenshots/                    # project work demonstrations and example outputs
 │   ├── ux/                             # CLI usability heuristics
 │   ├── api_reference.md                # Public API & CLI reference
+│   ├── research_plan.md                # research plan and methodology
 │   └── cost_analysis.md                # API token/cost modeling
 ├── output/                             # Generated Artifacts (Runtime)
-│   └── [run_id]/                       # Per-run outputs (JSON, MD, CSV, Checkpoints)
+│   └── [run_id]/                       # Per-run outputs (JSON, MD, CSV, Checkpoints, logs)
 ├── scripts/                            # Developer Tools
 │   ├── check_readme.py                 # Documentation validator
+│   ├── check_api_usage.py              # Verifies API call counts and cost limits
+│   ├── check_scheduler_interval.py     # Verifies scheduler timing accuracy
+│   ├── diagnose_llm_query_generation.py     # alidates LLM query generation logic
 │   └── preflight.py                    # Pre-submission verification suite
 ├── src/
 │   └── hw4_tourguide/                  # Main Package Source
@@ -155,86 +160,86 @@ LLM_Agent_Orchestration_HW4/
 
 ## 6. Installation
 
-### Prerequisites
-- Python **3.10.19 or higher** (validated on 3.14; 3.11+ recommended)
-- Git (to clone repo)
-- Virtual environment (recommended)
-- API keys (see `.env.example`):
-  - **GOOGLE_MAPS_API_KEY** (required for `--mode live` routing). Get from Google Cloud Console → APIs & Services → Credentials → API key; enable Directions & Geocoding APIs.
-  - **YOUTUBE_API_KEY** (enables live VideoAgent; without it, VideoAgent uses the stub and only cached/heuristic content). Get from Google Cloud Console → YouTube Data API v3 → Credentials → API key.
-  - **SPOTIFY_CLIENT_ID / SPOTIFY_CLIENT_SECRET** (enables live SongAgent via Spotify; without them, SongAgent falls back to stub unless a YouTube key is present, in which case it can use YouTube as a secondary source). Create an app at https://developer.spotify.com/dashboard to obtain client ID/secret.
-  - **LLM keys (optional, preferred order: Anthropic → OpenAI → Gemini → Ollama → Mock):**
-    - `ANTHROPIC_API_KEY` (preferred for judge/agent LLM scoring/querying)
-    - `OPENAI_API_KEY` (fallback if Anthropic missing)
-    - `GEMINI_API_KEY` (fallback if Anthropic/OpenAI missing)
-    - Ollama requires a local model, no key (`llm_provider=ollama`); Mock requires no key.
-  - **Keyless/works offline:** cached mode and stub agents do not require any keys.
+### 6.1 Prerequisites
+- **Python 3.10.19+** (3.11+ recommended).
+- **Git** (for cloning the repository).
+- **API Keys** (Optional for cached mode, required for live mode):
+  - `GOOGLE_MAPS_API_KEY`: Directions & Geocoding.
+  - `YOUTUBE_API_KEY`: Video content.
+  - `SPOTIFY_CLIENT_ID` / `SPOTIFY_CLIENT_SECRET`: Music content.
+  - `ANTHROPIC_API_KEY` or `OPENAI_API_KEY`: LLM Intelligence.
 
-### Installation as a Library (No Git Clone)
+### 6.2 Understanding the Package Files
+To make installation easy, we provide different formats:
+*   **`hw4_tourguide-X.Y.Z.tar.gz` (Source Distribution):** The full source code (docs, tests, scripts). Best for developers.
+*   **`hw4_tourguide-X.Y.Z-py3-none-any.whl` (Wheel):** The compiled, optimized package with bundled assets. Best for users installing as a library.
+*   **`pyproject.toml` & `MANIFEST.in`:** Build configuration files that ensure the Wheel includes all necessary data (config, prompts, routes) so the system works out-of-the-box.
 
-This section guides you on how to obtain and install the `hw4_tourguide` package using distribution files (`.whl` or `.tar.gz`) directly downloaded from this repository's GitHub Releases. This is suitable for users who do not wish to clone the entire repository or build the package from source.
+---
 
-**How packaging works (`pyproject.toml` & `MANIFEST.in`):**
-The packaging process is configured by two crucial files in the project root:
-*   **`pyproject.toml`**: This modern standard defines the build system (`setuptools`), project metadata (name, version, dependencies, Python compatibility), and importantly, specifies which non-Python files (like `config/*.yaml`, `prompts/agents/*.md`, `data/routes/*.json`) should be included *inside the installed Python package* via its `[tool.setuptools.package-data]` section.
-*   **`MANIFEST.in`**: This file instructs the build tools on what additional files and directories (like documentation, tests, scripts, and configuration files in the root) should be included when creating a **source distribution (`.tar.gz`)**. This ensures a complete snapshot of your repository, including non-code assets, is bundled for distribution.
+### 6.3 Option 1: Install as Library (Recommended / No Git Clone)
+Use this method to run the system as a standalone tool. You do not need to clone the repository.
 
-**Content of Package Files:**
-*   **`hw4_tourguide-X.Y.Z.tar.gz` (Source Distribution - sdist):** This archive contains your project's *source code*, `pyproject.toml`, `MANIFEST.in`, `LICENSE`, `README.md`, all `.claude/` files, `config/` files (including `config/settings.yaml`), `docs/` (documentation), `tests/` (test suite), and `scripts/` (utility scripts). It's a complete snapshot of your repository, used primarily for archiving or when a wheel isn't available for a specific environment.
-*   **`hw4_tourguide-X.Y.Z-py3-none-any.whl` (Wheel Distribution - wheel):** This is a pre-built, optimized package format. It contains the compiled Python code (if any, though yours is pure Python), the `hw4_tourguide` Python package (`src/hw4_tourguide` directory), along with its bundled `config` and `data` files (as specified by `tool.setuptools.package-data` in `pyproject.toml`). Crucially, it **does NOT** include `docs/`, `tests/`, `scripts/`, or the top-level `config/` and `.claude/` folders; it only contains what's necessary for runtime. This is the recommended format for installation, as `pip` prefers wheels.
+1.  **Download the Wheel**:
+    Go to [GitHub Releases](https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4/releases) and download the latest `.whl` file.
 
-**Steps to Install from Distribution Files (downloaded from GitHub Releases):**
-
-1.  **Create and activate a virtual environment:**
+2.  **Create & Activate Virtual Environment**:
     ```bash
+    # macOS/Linux
     python3 -m venv .venv
-    source .venv/bin/activate # For macOS/Linux
-    # .venv\Scripts\Activate.ps1 # For Windows PowerShell
+    source .venv/bin/activate
+
+    # Windows PowerShell
+    py -3 -m venv .venv
+    .venv\Scripts\Activate.ps1
     ```
 
-2.  **Download the package distribution file:**
-    Navigate to the [Releases section](https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4/releases) of this repository. Download the desired `hw4_tourguide-X.Y.Z-py3-none-any.whl` file (recommended) or a `.tar.gz` to a known location on your system.
-    *(Replace `X.Y.Z` with the actual version number, e.g., `0.1.0`)*
-
-3.  **Install the package:**
-    *   Navigate to the directory where you downloaded the file.
-    *   Install using `pip`:
-        ```bash
-        pip install hw4_tourguide-X.Y.Z-py3-none-any.whl
-        ```
-        *(Replace `X.Y.Z` with the actual version number)*
-
-4.  **Run your application:**
+3.  **Upgrade Pip & Install**:
     ```bash
+    pip install --upgrade pip
+    pip install hw4_tourguide-0.1.0-py3-none-any.whl  # Adjust filename as needed
+    ```
+
+4.  **Verify & Run**:
+    ```bash
+    # Check installation
+    python -m hw4_tourguide --help
+
+    # Run cached demo (works offline)
     python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached
     ```
-    This will execute the main application, confirming your package is installed and functional.
 
-### Step-by-Step Installation (macOS/Linux) (with Repository Clone Option)
+---
+
+### 6.4 Option 2: Install from Source (Clone Repository)
+Use this method for development, grading, or running the test suite.
+
+#### **macOS / Linux**
 ```bash
 # 1) Clone repository
 git clone https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4.git
 cd LLM_Agent_Orchestration_HW4
 
 # 2) Create virtual environment
-python3 -m venv .venv   # python3.11 if available
+python3 -m venv .venv
 
 # 3) Activate venv
 source .venv/bin/activate
 
-# 4) Upgrade pip (recommended)
+# 4) Upgrade pip (Crucial for dependencies)
 pip install --upgrade pip
 
-# 5) Install package
-pip install .
+# 5) Install package in editable mode
+pip install -e .
 
-# 6) (Optional) Install dev/test extras
-pip install ".[dev]"
+# 6) Install development dependencies (for testing)
+pip install -e ".[dev]"
 
-# 7) Copy env file and fill secrets
-cp .env.example .env    # edit with your keys
+# 7) Setup environment variables
+cp .env.example .env
+# (Edit .env with your API keys if running live mode)
 
-# 8) Verify config file is present
+# 8) Verify configuration file is present
 ls config/settings.yaml
 
 # 9) Sanity check dependencies
@@ -242,33 +247,37 @@ pip check
 
 # 10) Run help to confirm CLI wiring
 python -m hw4_tourguide --help
+
+# 11) Run Test Suite
+pytest
 ```
 
-### Step-by-Step Installation (Windows PowerShell) (with Repository Clone Option)
+#### **Windows PowerShell**
 ```powershell
 # 1) Clone repository
 git clone https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4.git
 cd LLM_Agent_Orchestration_HW4
 
-# 2) Create virtual environment (Python 3.10.19+; 3.11+ recommended)
-py -3 -m venv .venv    # or py -3.11 -m venv .venv
+# 2) Create virtual environment
+py -3 -m venv .venv
 
 # 3) Activate venv
 .venv\Scripts\Activate.ps1
 
-# 4) Upgrade pip (recommended)
+# 4) Upgrade pip
 python -m pip install --upgrade pip
 
-# 5) Install package
-python -m pip install .
+# 5) Install package in editable mode
+python -m pip install -e .
 
-# 6) (Optional) Dev/test extras
-python -m pip install ".[dev]"
+# 6) Install development dependencies
+python -m pip install -e ".[dev]"
 
-# 7) Copy env file and fill secrets
+# 7) Setup environment variables
 copy .env.example .env
+# (Edit .env with your API keys)
 
-# 8) Verify config file is present
+# 8) Verify configuration file is present
 dir config\settings.yaml
 
 # 9) Sanity check dependencies
@@ -276,47 +285,25 @@ python -m pip check
 
 # 10) Run help to confirm CLI wiring
 python -m hw4_tourguide --help
+
+# 11) Run Test Suite
+pytest
 ```
 
-Notes:
-- Project metadata/deps live in `pyproject.toml`.
-- Packaging inclusion rules are defined in `MANIFEST.in` (ensures config, data, and docs are included).
-- Runtime config is in `config/settings.yaml`; secrets in `.env` (template: `.env.example`).
-- Cached routes ship in `data/routes/`.
-- Outputs/logs/checkpoints default to a per-run directory under `output/` (named `YYYY-MM-DD_HH-MM-SS_<origin>_to_<destination>`, containing JSON/MD/CSV, logs, and checkpoints). If you pass `--output custom.json`, artifacts go alongside that custom path; logs/checkpoints follow the same base.
+### 6.5 Installation Verification Matrix
 
-### Installation Verification Matrix (matches PRD)
+Use this checklist to ensure the system is correctly installed and operational.
 
-| Step | Action | Command | Expected Result | Recovery |
-|------|--------|---------|-----------------|----------|
-| 1 | Check Python version | `python3 --version` | Python 3.10.19+ (3.11+ recommended) | Install/activate Python 3.10.19+ |
-| 2 | Clone repo | `git clone https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4.git && cd LLM_Agent_Orchestration_HW4` | Repo present | Check Git/URL |
-| 3 | Create venv | `python3 -m venv .venv` | `.venv` directory created | Ensure python3 on PATH |
-| 4 | Activate venv | `source .venv/bin/activate` or `.venv\Scripts\Activate.ps1` | Prompt shows `(.venv)` | Use correct shell script |
-| 5 | Install package | `pip install .` | Install succeeds | Inspect `pyproject.toml`, upgrade pip |
-| 6 | Install dev deps (optional) | `pip install ".[dev]"` | Dev deps installed | Upgrade pip/retry |
-| 7 | Copy env template | `cp .env.example .env` (or `copy` on Windows) | `.env` exists | Re-run copy; edit keys |
-| 8 | Verify config present | `ls config/settings.yaml` | File listed | Restore from repo |
-| 9 | Dependency health | `pip check` | No broken requirements | Reinstall deps |
-|10 | Run tests | `pytest -q` | Tests pass | Run selective tests/inspect failures |
-|11 | Cached run check | `python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached` | Outputs under `output/` | Ensure cached JSON exists (`data/routes/demo_boston_mit.json`) |
-|12 | Live run smoke (optional) | `python -m hw4_tourguide --from "A" --to "B" --mode live` | Logs + outputs | Set API keys in `.env` |
-
-### 6.1 Package Distribution Strategy Overview
-
-For broader accessibility and ease of use, a proper package distribution strategy is crucial. For this project, a two-pronged approach is recommended and implemented:
-
-1.  **PyPI Publication (Primary Distribution Channel)**
-    *   **Purpose:** To enable standard, frictionless installation via `pip install hw4_tourguide` for any Python user.
-    *   **Why it's a best practice:** PyPI is the official third-party package repository for Python. It simplifies dependency management and makes packages easily discoverable and installable.
-    *   **Status for this project:** All local packaging configurations (`pyproject.toml`, `MANIFEST.in`, `LICENSE`) are correctly set up and verified, making the project ready for PyPI upload. *Publication to PyPI is a manual step for the developer (e.g., using `twine upload dist/*`) and is outside the scope of automated project setup.*
-
-2.  **GitHub Releases (Complementary Distribution)**
-    *   **Purpose:** To associate built package files (`.whl`, `.tar.gz`) directly with specific Git versions/tags, offering a version-controlled download source.
-    *   **Why it's a best practice:** Provides a direct link between source code versions and their binary distributions, useful for showcasing releases and offering alternative download options.
-    *   **Status for this project:** The `v0.1.0` tag has been created and pushed. The built `hw4_tourguide-0.1.0.tar.gz` and `hw4_tourguide-0.1.0-py3-none-any.whl` files are available locally in `dist/` and are ready to be uploaded to a new GitHub Release for the `v0.1.0` tag. *This is a manual step for the developer.*
-
-This strategy ensures the project can be installed conventionally via `pip` (once on PyPI) or by downloading specific versioned assets directly from GitHub.
+| Step | Description | Verification Command | Expected Result |
+|------|-------------|----------------------|-----------------|
+| 1 | **Python Version** | `python3 --version` | Output shows `Python 3.10.19` or higher. |
+| 2 | **Install Success** | `pip show hw4_tourguide` | Package details (Name, Version, Location) displayed. |
+| 3 | **Config Presence** | `ls config/settings.yaml` (Source only) | File exists. (Library users rely on bundled config). |
+| 4 | **Dependency Health** | `pip check` | `No broken requirements found.` |
+| 5 | **CLI Wiring** | `python -m hw4_tourguide --help` | Help text with `--from`, `--to`, `--mode` flags displayed. |
+| 6 | **Run Tests** | `pytest` (Source only) | All tests pass (green). Coverage > 85%. |
+| 7 | **Cached Run** | `python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached` | Pipeline executes, logs `Orchestrator_Task_Complete`, and saves output. |
+| 8 | **Artifact Check** | `ls output/` (or check run folder) | JSON, Markdown, and CSV files are generated. |
 
 ## 7. Quick Start
 

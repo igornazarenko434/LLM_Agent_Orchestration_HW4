@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "hw4_tourguide"
-version = "0.1.0"
+version = "0.1.1"
 description = "Multi-agent orchestration platform for enriching driving routes with curated content"
 readme = "README.md"
 requires-python = ">=3.10"
