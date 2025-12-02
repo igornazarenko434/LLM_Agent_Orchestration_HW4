@@ -1,0 +1,2 @@
+2025-12-02 12:59:56,543 | INFO     | hw4_tourguide.route_provider.cached | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/00_route.json
+2025-12-02 13:38:26,566 | INFO     | hw4_tourguide.route_provider.cached | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/00_route.json

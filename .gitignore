@@ -23,6 +23,10 @@ logs/
 
 # Output files
 output/
+!output/study_*/
+!output/study_*/logs/
+!output/study_*/logs/*.log
+!output/study_*/logs/*.json
 *.json.tmp
 *.partial
 

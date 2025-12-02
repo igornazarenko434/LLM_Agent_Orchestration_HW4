@@ -1,0 +1,149 @@
+2025-12-02 13:00:06,445 | INFO     | hw4_tourguide.judge | Judge | JudgeAgent initialized. LLM scoring: Enabled
+2025-12-02 13:00:11,457 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 1 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 13:00:11,457 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 13:00:11,457 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 68.0 | Time: 0ms
+2025-12-02 13:00:11,457 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 13:00:13,744 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 1 | location=Boston Common | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 13:00:13,744 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2287ms
+2025-12-02 13:00:13,744 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (68.0) | Margin: +8.0 over second | All Scores: video:0.0, song:60.0, knowledge:68.0
+2025-12-02 13:00:13,744 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 1 | Total Time: 2287ms | Mode: llm | Chosen: knowledge
+2025-12-02 13:00:15,549 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 3 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 13:00:15,549 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 13:00:15,549 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 70.0 | Time: 0ms
+2025-12-02 13:00:15,549 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 13:00:17,086 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 4 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 13:00:17,086 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 13:00:17,086 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 71.4 | Time: 0ms
+2025-12-02 13:00:17,086 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 13:00:17,639 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 3 | location=Harvard Bridge | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 13:00:17,639 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2090ms
+2025-12-02 13:00:17,639 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (70.0) | Margin: +10.0 over second | All Scores: video:0.0, song:60.0, knowledge:70.0
+2025-12-02 13:00:17,639 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 3 | Total Time: 2090ms | Mode: llm | Chosen: knowledge
+2025-12-02 13:00:18,670 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 2 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 13:00:18,670 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 13:00:18,670 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 73.3 | Time: 0ms
+2025-12-02 13:00:18,670 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 13:00:21,092 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 2 | location=Charles River Esplanade | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 13:00:21,092 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2423ms
+2025-12-02 13:00:21,093 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (73.3) | Margin: +13.3 over second | All Scores: video:0.0, song:60.0, knowledge:73.3
+2025-12-02 13:00:21,093 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 2 | Total Time: 2423ms | Mode: llm | Chosen: knowledge
+2025-12-02 13:00:22,525 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 4 | location=MIT Stata Center | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 13:00:22,525 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 5438ms
+2025-12-02 13:00:22,525 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (71.4) | Margin: +11.4 over second | All Scores: video:0.0, song:60.0, knowledge:71.4
+2025-12-02 13:00:22,525 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 4 | Total Time: 5439ms | Mode: llm | Chosen: knowledge
+2025-12-02 14:10:09,606 | INFO     | hw4_tourguide.judge | Judge | JudgeAgent initialized. LLM scoring: Enabled
+2025-12-02 14:10:14,260 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 1 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 14:10:14,261 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 14:10:14,261 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 68.0 | Time: 0ms
+2025-12-02 14:10:14,261 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 14:10:15,912 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 2 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 14:10:15,912 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 14:10:15,912 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 68.9 | Time: 0ms
+2025-12-02 14:10:15,912 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 14:10:16,418 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 1 | location=Boston Common | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 14:10:16,418 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2157ms
+2025-12-02 14:10:16,418 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (68.0) | Margin: +8.0 over second | All Scores: video:0.0, song:60.0, knowledge:68.0
+2025-12-02 14:10:16,418 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 1 | Total Time: 2158ms | Mode: llm | Chosen: knowledge
+2025-12-02 14:10:17,422 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 3 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 14:10:17,422 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 14:10:17,422 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 65.0, knowledge: 70.0 | Time: 0ms
+2025-12-02 14:10:17,422 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 14:10:18,326 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 2 | location=Charles River Esplanade | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 14:10:18,326 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2413ms
+2025-12-02 14:10:18,326 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (68.9) | Margin: +8.9 over second | All Scores: video:0.0, song:60.0, knowledge:68.9
+2025-12-02 14:10:18,326 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 2 | Total Time: 2414ms | Mode: llm | Chosen: knowledge
+2025-12-02 14:10:19,898 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 3 | location=Harvard Bridge | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 14:10:19,898 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2476ms
+2025-12-02 14:10:19,898 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (70.0) | Margin: +5.0 over second | All Scores: video:0.0, song:65.0, knowledge:70.0
+2025-12-02 14:10:19,898 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 3 | Total Time: 2476ms | Mode: llm | Chosen: knowledge
+2025-12-02 14:10:19,989 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 4 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 14:10:19,989 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 14:10:19,989 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 71.4 | Time: 0ms
+2025-12-02 14:10:19,989 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 14:10:22,366 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 4 | location=MIT Stata Center | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 14:10:22,366 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2377ms
+2025-12-02 14:10:22,366 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (71.4) | Margin: +11.4 over second | All Scores: video:0.0, song:60.0, knowledge:71.4
+2025-12-02 14:10:22,366 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 4 | Total Time: 2377ms | Mode: llm | Chosen: knowledge
+2025-12-02 14:11:23,850 | INFO     | hw4_tourguide.judge | Judge | JudgeAgent initialized. LLM scoring: Enabled
+2025-12-02 14:11:28,028 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 1 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 14:11:28,028 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 14:11:28,028 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 68.0 | Time: 0ms
+2025-12-02 14:11:28,028 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 14:11:29,315 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 2 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 14:11:29,316 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 14:11:29,316 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 73.3 | Time: 0ms
+2025-12-02 14:11:29,316 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 14:11:30,213 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 1 | location=Boston Common | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 14:11:30,213 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2185ms
+2025-12-02 14:11:30,213 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (68.0) | Margin: +8.0 over second | All Scores: video:0.0, song:60.0, knowledge:68.0
+2025-12-02 14:11:30,213 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 1 | Total Time: 2185ms | Mode: llm | Chosen: knowledge
+2025-12-02 14:11:31,602 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 2 | location=Charles River Esplanade | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 14:11:31,602 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2286ms
+2025-12-02 14:11:31,602 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (73.3) | Margin: +13.3 over second | All Scores: video:0.0, song:60.0, knowledge:73.3
+2025-12-02 14:11:31,602 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 2 | Total Time: 2287ms | Mode: llm | Chosen: knowledge
+2025-12-02 14:11:31,970 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 3 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 14:11:31,971 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 14:11:31,971 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 70.0 | Time: 0ms
+2025-12-02 14:11:31,971 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 14:11:33,392 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 4 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 14:11:33,392 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 14:11:33,392 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 71.4 | Time: 0ms
+2025-12-02 14:11:33,392 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 14:11:34,198 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 3 | location=Harvard Bridge | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 14:11:34,198 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2227ms
+2025-12-02 14:11:34,198 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (70.0) | Margin: +10.0 over second | All Scores: video:0.0, song:60.0, knowledge:70.0
+2025-12-02 14:11:34,198 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 3 | Total Time: 2228ms | Mode: llm | Chosen: knowledge
+2025-12-02 14:11:36,246 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 4 | location=MIT Stata Center | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 14:11:36,246 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2853ms
+2025-12-02 14:11:36,246 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (71.4) | Margin: +11.4 over second | All Scores: video:0.0, song:60.0, knowledge:71.4
+2025-12-02 14:11:36,246 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 4 | Total Time: 2854ms | Mode: llm | Chosen: knowledge
+2025-12-02 14:23:57,723 | INFO     | hw4_tourguide.judge | Judge | JudgeAgent initialized. LLM scoring: Enabled
+2025-12-02 14:24:02,009 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 1 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 14:24:02,009 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 14:24:02,009 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 68.0 | Time: 0ms
+2025-12-02 14:24:02,009 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 14:24:04,033 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 2 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 14:24:04,034 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 14:24:04,034 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 60.0 | Time: 0ms
+2025-12-02 14:24:04,034 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 14:24:04,167 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 1 | location=Boston Common | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 14:24:04,167 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2158ms
+2025-12-02 14:24:04,168 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (68.0) | Margin: +8.0 over second | All Scores: video:0.0, song:60.0, knowledge:68.0
+2025-12-02 14:24:04,168 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 1 | Total Time: 2158ms | Mode: llm | Chosen: knowledge
+2025-12-02 14:24:05,591 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 3 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 14:24:05,591 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 14:24:05,591 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 70.0 | Time: 0ms
+2025-12-02 14:24:05,591 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 14:24:06,378 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 2 | location=Charles River Esplanade | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 14:24:06,378 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2344ms
+2025-12-02 14:24:06,378 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: song (60.0) | Margin: +0.0 over second | All Scores: video:0.0, song:60.0, knowledge:60.0
+2025-12-02 14:24:06,378 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 2 | Total Time: 2345ms | Mode: llm | Chosen: song
+2025-12-02 14:24:07,929 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 4 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 14:24:07,929 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 14:24:07,929 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 71.4 | Time: 0ms
+2025-12-02 14:24:07,929 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 14:24:10,370 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 4 | location=MIT Stata Center | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 14:24:10,370 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2441ms
+2025-12-02 14:24:10,370 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (71.4) | Margin: +11.4 over second | All Scores: video:0.0, song:60.0, knowledge:71.4
+2025-12-02 14:24:10,370 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 4 | Total Time: 2441ms | Mode: llm | Chosen: knowledge
+2025-12-02 14:24:10,625 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 3 | location=Harvard Bridge | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 14:24:10,625 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 5034ms
+2025-12-02 14:24:10,625 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (70.0) | Margin: +10.0 over second | All Scores: video:0.0, song:60.0, knowledge:70.0
+2025-12-02 14:24:10,625 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 3 | Total Time: 5034ms | Mode: llm | Chosen: knowledge
+2025-12-02 14:26:01,569 | INFO     | hw4_tourguide.judge | Judge | JudgeAgent initialized. LLM scoring: Enabled
+2025-12-02 14:26:06,676 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: 1764678360_d738b619 | Step 1 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 14:26:06,676 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: 1764678360_d738b619 | Scoring: llm | LLM: enabled
+2025-12-02 14:26:06,677 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: 1764678360_d738b619 | Scores: video: 0.0, song: 60.0, knowledge: 64.0 | Time: 0ms
+2025-12-02 14:26:06,677 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: 1764678360_d738b619 | Attempting LLM scoring
+2025-12-02 14:26:07,653 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: 1764678360_d738b619 | Step 2 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 14:26:07,653 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: 1764678360_d738b619 | Scoring: llm | LLM: enabled
+2025-12-02 14:26:07,653 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: 1764678360_d738b619 | Scores: video: 0.0, song: 60.0, knowledge: 60.0 | Time: 0ms
+2025-12-02 14:26:07,653 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: 1764678360_d738b619 | Attempting LLM scoring
+2025-12-02 14:26:09,102 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: 1764678360_d738b619 | Step 1 | location=Broadway | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 14:26:09,102 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: 1764678360_d738b619 | Status: SUCCESS | Time: 2425ms
+2025-12-02 14:26:09,102 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: 1764678360_d738b619 | CHOSEN: knowledge (64.0) | Margin: +4.0 over second | All Scores: video:0.0, song:60.0, knowledge:64.0
+2025-12-02 14:26:09,102 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: 1764678360_d738b619 | Step 1 | Total Time: 2426ms | Mode: llm | Chosen: knowledge
+2025-12-02 14:26:10,483 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: 1764678360_d738b619 | Step 2 | location=Kendall/MIT | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 14:26:10,483 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: 1764678360_d738b619 | Status: SUCCESS | Time: 2830ms
+2025-12-02 14:26:10,483 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: 1764678360_d738b619 | CHOSEN: song (60.0) | Margin: +0.0 over second | All Scores: video:0.0, song:60.0, knowledge:60.0
+2025-12-02 14:26:10,483 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: 1764678360_d738b619 | Step 2 | Total Time: 2831ms | Mode: llm | Chosen: song

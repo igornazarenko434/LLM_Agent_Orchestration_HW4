@@ -1,0 +1,71 @@
+2025-12-02 12:59:29,044 | INFO     | hw4_tourguide.main | Setup | Using custom output path | Main output: output/study_baseline/final_route.json | Logs/Metrics root: output/study_baseline
+2025-12-02 12:59:29,045 | INFO     | hw4_tourguide.route_provider.cached | Config | Wrote checkpoint output/study_baseline/checkpoints/demo_boston_mit/00_route.json
+2025-12-02 12:59:29,046 | WARNING  | hw4_tourguide.agent.video | Setup | Video running in STUB mode (no live API)
+2025-12-02 12:59:29,046 | WARNING  | hw4_tourguide.agent.song | Setup | Song running in STUB mode (no live API)
+2025-12-02 12:59:29,046 | WARNING  | hw4_tourguide.agent.knowledge | Setup | Knowledge running in STUB mode (no live API)
+2025-12-02 12:59:29,046 | INFO     | hw4_tourguide.judge | Judge | JudgeAgent initialized. LLM scoring: Disabled
+2025-12-02 12:59:29,047 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Init | Orchestrator_Init | ThreadPool: 5 workers | Agents: 3 (video, song, knowledge)
+2025-12-02 12:59:29,047 | INFO     | hw4_tourguide.scheduler | Scheduler_Emit | Scheduler_Emit | Step 1/4: Boston Common | TID: demo_boston_mit | Queue Depth: 1 | Time: 0.000s | Delay: +0.000s | thread=Thread-2
+2025-12-02 12:59:29,047 | INFO     | hw4_tourguide.main | Scheduler | Scheduler started, pipeline running...
+2025-12-02 12:59:29,047 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Start | Orchestrator_Task_Start | TID: demo_boston_mit | Step 1 | Queue Depth: 0 | thread=MainThread
+2025-12-02 12:59:29,047 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Dispatch | Orchestrator_Agents_Dispatch | TID: demo_boston_mit | Dispatching 3 agents in parallel
+2025-12-02 12:59:29,047 | INFO     | hw4_tourguide.agent.video | Agent | RETURN | Boston Common
+2025-12-02 12:59:29,047 | INFO     | hw4_tourguide.agent.song | Agent | RETURN | Boston Common
+2025-12-02 12:59:29,047 | INFO     | hw4_tourguide.agent.knowledge | Agent | RETURN | Boston Common
+2025-12-02 12:59:29,048 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Complete | Orchestrator_Agents_Complete | TID: demo_boston_mit | All agents finished | Success: 3/3 | Time: 1ms
+2025-12-02 12:59:29,048 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 1 | Agents: video(ok), song(ok), knowledge(ok)
+2025-12-02 12:59:29,048 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: heuristic | LLM: disabled
+2025-12-02 12:59:29,048 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 62.0, song: 50.0, knowledge: 47.0 | Time: 0ms
+2025-12-02 12:59:29,048 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: video (62.0) | Margin: +12.0 over second | All Scores: video:62.0, song:50.0, knowledge:47.0
+2025-12-02 12:59:29,048 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 1 | Total Time: 0ms | Mode: heuristic | Chosen: video
+2025-12-02 12:59:29,049 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_baseline/checkpoints/demo_boston_mit/04_judge_decision_step_1.json
+2025-12-02 12:59:29,049 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Complete | Orchestrator_Task_Complete | TID: demo_boston_mit | Step 1 | Total Time: 2ms | Queue Depth: 0
+2025-12-02 12:59:31,052 | INFO     | hw4_tourguide.scheduler | Scheduler_Emit | Scheduler_Emit | Step 2/4: Charles River Esplanade | TID: demo_boston_mit | Queue Depth: 1 | Time: 2.005s | Delay: +0.005s | thread=Thread-2
+2025-12-02 12:59:31,052 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Start | Orchestrator_Task_Start | TID: demo_boston_mit | Step 2 | Queue Depth: 0 | thread=MainThread
+2025-12-02 12:59:31,052 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Dispatch | Orchestrator_Agents_Dispatch | TID: demo_boston_mit | Dispatching 3 agents in parallel
+2025-12-02 12:59:31,052 | INFO     | hw4_tourguide.agent.video | Agent | RETURN | Charles River Esplanade
+2025-12-02 12:59:31,053 | INFO     | hw4_tourguide.agent.knowledge | Agent | RETURN | Charles River Esplanade
+2025-12-02 12:59:31,052 | INFO     | hw4_tourguide.agent.song | Agent | RETURN | Charles River Esplanade
+2025-12-02 12:59:31,053 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Complete | Orchestrator_Agents_Complete | TID: demo_boston_mit | All agents finished | Success: 3/3 | Time: 1ms
+2025-12-02 12:59:31,053 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 2 | Agents: video(ok), song(ok), knowledge(ok)
+2025-12-02 12:59:31,053 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: heuristic | LLM: disabled
+2025-12-02 12:59:31,053 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 67.3, song: 55.3, knowledge: 52.3 | Time: 0ms
+2025-12-02 12:59:31,053 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: video (67.3) | Margin: +12.0 over second | All Scores: video:67.3, song:55.3, knowledge:52.3
+2025-12-02 12:59:31,053 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 2 | Total Time: 0ms | Mode: heuristic | Chosen: video
+2025-12-02 12:59:31,054 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_baseline/checkpoints/demo_boston_mit/04_judge_decision_step_2.json
+2025-12-02 12:59:31,054 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Complete | Orchestrator_Task_Complete | TID: demo_boston_mit | Step 2 | Total Time: 1ms | Queue Depth: 0
+2025-12-02 12:59:33,057 | INFO     | hw4_tourguide.scheduler | Scheduler_Emit | Scheduler_Emit | Step 3/4: Harvard Bridge | TID: demo_boston_mit | Queue Depth: 1 | Time: 4.010s | Delay: +0.010s | thread=Thread-2
+2025-12-02 12:59:33,057 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Start | Orchestrator_Task_Start | TID: demo_boston_mit | Step 3 | Queue Depth: 0 | thread=MainThread
+2025-12-02 12:59:33,057 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Dispatch | Orchestrator_Agents_Dispatch | TID: demo_boston_mit | Dispatching 3 agents in parallel
+2025-12-02 12:59:33,058 | INFO     | hw4_tourguide.agent.video | Agent | RETURN | Harvard Bridge
+2025-12-02 12:59:33,058 | INFO     | hw4_tourguide.agent.song | Agent | RETURN | Harvard Bridge
+2025-12-02 12:59:33,058 | INFO     | hw4_tourguide.agent.knowledge | Agent | RETURN | Harvard Bridge
+2025-12-02 12:59:33,058 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Complete | Orchestrator_Agents_Complete | TID: demo_boston_mit | All agents finished | Success: 3/3 | Time: 1ms
+2025-12-02 12:59:33,058 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 3 | Agents: video(ok), song(ok), knowledge(ok)
+2025-12-02 12:59:33,058 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: heuristic | LLM: disabled
+2025-12-02 12:59:33,058 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 64.0, song: 52.0, knowledge: 49.0 | Time: 0ms
+2025-12-02 12:59:33,058 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: video (64.0) | Margin: +12.0 over second | All Scores: video:64.0, song:52.0, knowledge:49.0
+2025-12-02 12:59:33,058 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 3 | Total Time: 0ms | Mode: heuristic | Chosen: video
+2025-12-02 12:59:33,059 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_baseline/checkpoints/demo_boston_mit/04_judge_decision_step_3.json
+2025-12-02 12:59:33,059 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Complete | Orchestrator_Task_Complete | TID: demo_boston_mit | Step 3 | Total Time: 1ms | Queue Depth: 0
+2025-12-02 12:59:35,062 | INFO     | hw4_tourguide.scheduler | Scheduler_Emit | Scheduler_Emit | Step 4/4: MIT Stata Center | TID: demo_boston_mit | Queue Depth: 1 | Time: 6.016s | Delay: +0.016s | thread=Thread-2
+2025-12-02 12:59:35,062 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Start | Orchestrator_Task_Start | TID: demo_boston_mit | Step 4 | Queue Depth: 0 | thread=MainThread
+2025-12-02 12:59:35,063 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Dispatch | Orchestrator_Agents_Dispatch | TID: demo_boston_mit | Dispatching 3 agents in parallel
+2025-12-02 12:59:35,063 | INFO     | hw4_tourguide.agent.video | Agent | RETURN | MIT Stata Center
+2025-12-02 12:59:35,063 | INFO     | hw4_tourguide.agent.song | Agent | RETURN | MIT Stata Center
+2025-12-02 12:59:35,063 | INFO     | hw4_tourguide.agent.knowledge | Agent | RETURN | MIT Stata Center
+2025-12-02 12:59:35,063 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Complete | Orchestrator_Agents_Complete | TID: demo_boston_mit | All agents finished | Success: 3/3 | Time: 1ms
+2025-12-02 12:59:35,063 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 4 | Agents: video(ok), song(ok), knowledge(ok)
+2025-12-02 12:59:35,064 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: heuristic | LLM: disabled
+2025-12-02 12:59:35,064 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 71.1, song: 59.1, knowledge: 56.1 | Time: 0ms
+2025-12-02 12:59:35,064 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: video (71.1) | Margin: +12.0 over second | All Scores: video:71.1, song:59.1, knowledge:56.1
+2025-12-02 12:59:35,064 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 4 | Total Time: 0ms | Mode: heuristic | Chosen: video
+2025-12-02 12:59:35,064 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_baseline/checkpoints/demo_boston_mit/04_judge_decision_step_4.json
+2025-12-02 12:59:35,064 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Complete | Orchestrator_Task_Complete | TID: demo_boston_mit | Step 4 | Total Time: 1ms | Queue Depth: 0
+2025-12-02 12:59:37,065 | INFO     | hw4_tourguide.scheduler | Scheduler | Wrote checkpoint output/study_baseline/checkpoints/demo_boston_mit/01_scheduler_queue.json
+2025-12-02 12:59:37,065 | INFO     | hw4_tourguide.output | Output | WROTE JSON | output/study_baseline/final_route.json
+2025-12-02 12:59:37,065 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_baseline/checkpoints/demo_boston_mit/05_final_output.json
+2025-12-02 12:59:37,065 | INFO     | hw4_tourguide.output | Output | WROTE CHECKPOINT | demo_boston_mit/05_final_output.json
+2025-12-02 12:59:37,065 | INFO     | hw4_tourguide.output | Output | WROTE Markdown Report | output/study_baseline/final_route.md
+2025-12-02 12:59:37,065 | INFO     | hw4_tourguide.output | Output | WROTE CSV Report | output/study_baseline/final_route.csv
+2025-12-02 12:59:38,070 | INFO     | hw4_tourguide.main | Orchestrator | Pipeline complete | Outputs: JSON=output/study_baseline/final_route.json, MD=output/study_baseline/final_route.md, CSV=output/study_baseline/final_route.csv

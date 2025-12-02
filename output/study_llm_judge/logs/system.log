@@ -1,0 +1,474 @@
+2025-12-02 12:59:56,542 | INFO     | hw4_tourguide.main | Setup | Using custom output path | Main output: output/study_llm_judge/final_route.json | Logs/Metrics root: output/study_llm_judge
+2025-12-02 12:59:56,543 | INFO     | hw4_tourguide.route_provider.cached | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/00_route.json
+2025-12-02 12:59:56,543 | WARNING  | hw4_tourguide.agent.video | Setup | Video running in STUB mode (no live API)
+2025-12-02 12:59:56,543 | WARNING  | hw4_tourguide.agent.song | Setup | Song running in STUB mode (no live API)
+2025-12-02 12:59:56,543 | WARNING  | hw4_tourguide.agent.knowledge | Setup | Knowledge running in STUB mode (no live API)
+2025-12-02 12:59:56,543 | INFO     | hw4_tourguide.judge | Judge | JudgeAgent initialized. LLM scoring: Enabled
+2025-12-02 12:59:56,543 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Init | Orchestrator_Init | ThreadPool: 5 workers | Agents: 3 (video, song, knowledge)
+2025-12-02 12:59:56,543 | INFO     | hw4_tourguide.scheduler | Scheduler_Emit | Scheduler_Emit | Step 1/4: Boston Common | TID: demo_boston_mit | Queue Depth: 1 | Time: 0.000s | Delay: +0.000s | thread=Thread-2
+2025-12-02 12:59:56,543 | INFO     | hw4_tourguide.main | Scheduler | Scheduler started, pipeline running...
+2025-12-02 12:59:56,543 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Start | Orchestrator_Task_Start | TID: demo_boston_mit | Step 1 | Queue Depth: 0 | thread=MainThread
+2025-12-02 12:59:56,543 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Dispatch | Orchestrator_Agents_Dispatch | TID: demo_boston_mit | Dispatching 3 agents in parallel
+2025-12-02 12:59:56,544 | INFO     | hw4_tourguide.agent.video | Agent | RETURN | Boston Common
+2025-12-02 12:59:56,544 | INFO     | hw4_tourguide.agent.song | Agent | RETURN | Boston Common
+2025-12-02 12:59:56,544 | INFO     | hw4_tourguide.agent.knowledge | Agent | RETURN | Boston Common
+2025-12-02 12:59:56,544 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Complete | Orchestrator_Agents_Complete | TID: demo_boston_mit | All agents finished | Success: 3/3 | Time: 1ms
+2025-12-02 12:59:56,544 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 1 | Agents: video(ok), song(ok), knowledge(ok)
+2025-12-02 12:59:56,544 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 12:59:56,544 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 62.0, song: 50.0, knowledge: 47.0 | Time: 0ms
+2025-12-02 12:59:56,544 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 12:59:58,548 | INFO     | hw4_tourguide.scheduler | Scheduler_Emit | Scheduler_Emit | Step 2/4: Charles River Esplanade | TID: demo_boston_mit | Queue Depth: 1 | Time: 2.005s | Delay: +0.005s | thread=Thread-2
+2025-12-02 12:59:58,549 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Start | Orchestrator_Task_Start | TID: demo_boston_mit | Step 2 | Queue Depth: 0 | thread=MainThread
+2025-12-02 12:59:58,549 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Dispatch | Orchestrator_Agents_Dispatch | TID: demo_boston_mit | Dispatching 3 agents in parallel
+2025-12-02 12:59:58,549 | INFO     | hw4_tourguide.agent.video | Agent | RETURN | Charles River Esplanade
+2025-12-02 12:59:58,549 | INFO     | hw4_tourguide.agent.song | Agent | RETURN | Charles River Esplanade
+2025-12-02 12:59:58,549 | INFO     | hw4_tourguide.agent.knowledge | Agent | RETURN | Charles River Esplanade
+2025-12-02 12:59:58,550 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Complete | Orchestrator_Agents_Complete | TID: demo_boston_mit | All agents finished | Success: 3/3 | Time: 1ms
+2025-12-02 12:59:58,550 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 2 | Agents: video(ok), song(ok), knowledge(ok)
+2025-12-02 12:59:58,550 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 12:59:58,550 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 67.3, song: 55.3, knowledge: 52.3 | Time: 0ms
+2025-12-02 12:59:58,550 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 12:59:59,023 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=2477.5 | prompt_len=4000 | tokens_used=0
+2025-12-02 12:59:59,024 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 1 | location=Boston Common | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 12:59:59,024 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2479ms
+2025-12-02 12:59:59,024 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: video (62.0) | Margin: +12.0 over second | All Scores: video:62.0, song:50.0, knowledge:47.0
+2025-12-02 12:59:59,024 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 1 | Total Time: 2480ms | Mode: llm | Chosen: video
+2025-12-02 12:59:59,024 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/04_judge_decision_step_1.json
+2025-12-02 12:59:59,024 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Complete | Orchestrator_Task_Complete | TID: demo_boston_mit | Step 1 | Total Time: 2481ms | Queue Depth: 0
+2025-12-02 13:00:00,550 | INFO     | hw4_tourguide.scheduler | Scheduler_Emit | Scheduler_Emit | Step 3/4: Harvard Bridge | TID: demo_boston_mit | Queue Depth: 1 | Time: 4.006s | Delay: +0.006s | thread=Thread-2
+2025-12-02 13:00:00,550 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Start | Orchestrator_Task_Start | TID: demo_boston_mit | Step 3 | Queue Depth: 0 | thread=MainThread
+2025-12-02 13:00:00,550 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Dispatch | Orchestrator_Agents_Dispatch | TID: demo_boston_mit | Dispatching 3 agents in parallel
+2025-12-02 13:00:00,550 | INFO     | hw4_tourguide.agent.video | Agent | RETURN | Harvard Bridge
+2025-12-02 13:00:00,550 | INFO     | hw4_tourguide.agent.song | Agent | RETURN | Harvard Bridge
+2025-12-02 13:00:00,550 | INFO     | hw4_tourguide.agent.knowledge | Agent | RETURN | Harvard Bridge
+2025-12-02 13:00:00,551 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Complete | Orchestrator_Agents_Complete | TID: demo_boston_mit | All agents finished | Success: 3/3 | Time: 1ms
+2025-12-02 13:00:00,551 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 3 | Agents: video(ok), song(ok), knowledge(ok)
+2025-12-02 13:00:00,551 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 13:00:00,551 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 64.0, song: 52.0, knowledge: 49.0 | Time: 0ms
+2025-12-02 13:00:00,551 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 13:00:01,692 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=3141.9 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:00:01,693 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 3143ms
+2025-12-02 13:00:01,693 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: video (67.3) | Margin: +12.0 over second | All Scores: video:67.3, song:55.3, knowledge:52.3
+2025-12-02 13:00:01,693 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 2 | Total Time: 3143ms | Mode: llm | Chosen: video
+2025-12-02 13:00:01,693 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/04_judge_decision_step_2.json
+2025-12-02 13:00:01,693 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Complete | Orchestrator_Task_Complete | TID: demo_boston_mit | Step 2 | Total Time: 3144ms | Queue Depth: 0
+2025-12-02 13:00:02,555 | INFO     | hw4_tourguide.scheduler | Scheduler_Emit | Scheduler_Emit | Step 4/4: MIT Stata Center | TID: demo_boston_mit | Queue Depth: 1 | Time: 6.012s | Delay: +0.012s | thread=Thread-2
+2025-12-02 13:00:02,555 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Start | Orchestrator_Task_Start | TID: demo_boston_mit | Step 4 | Queue Depth: 0 | thread=MainThread
+2025-12-02 13:00:02,555 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Dispatch | Orchestrator_Agents_Dispatch | TID: demo_boston_mit | Dispatching 3 agents in parallel
+2025-12-02 13:00:02,555 | INFO     | hw4_tourguide.agent.video | Agent | RETURN | MIT Stata Center
+2025-12-02 13:00:02,555 | INFO     | hw4_tourguide.agent.song | Agent | RETURN | MIT Stata Center
+2025-12-02 13:00:02,556 | INFO     | hw4_tourguide.agent.knowledge | Agent | RETURN | MIT Stata Center
+2025-12-02 13:00:02,556 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Complete | Orchestrator_Agents_Complete | TID: demo_boston_mit | All agents finished | Success: 3/3 | Time: 1ms
+2025-12-02 13:00:02,556 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 4 | Agents: video(ok), song(ok), knowledge(ok)
+2025-12-02 13:00:02,556 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 13:00:02,556 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 71.1, song: 59.1, knowledge: 56.1 | Time: 0ms
+2025-12-02 13:00:02,556 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 13:00:03,121 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=2569.1 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:00:03,121 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 3 | location=Harvard Bridge | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 13:00:03,121 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2570ms
+2025-12-02 13:00:03,121 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: video (64.0) | Margin: +12.0 over second | All Scores: video:64.0, song:52.0, knowledge:49.0
+2025-12-02 13:00:03,121 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 3 | Total Time: 2570ms | Mode: llm | Chosen: video
+2025-12-02 13:00:03,121 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/04_judge_decision_step_3.json
+2025-12-02 13:00:03,121 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Complete | Orchestrator_Task_Complete | TID: demo_boston_mit | Step 3 | Total Time: 2571ms | Queue Depth: 0
+2025-12-02 13:00:04,558 | INFO     | hw4_tourguide.scheduler | Scheduler | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/01_scheduler_queue.json
+2025-12-02 13:00:05,321 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=2764.1 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:00:05,321 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 4 | location=MIT Stata Center | source=LLM | chosen_agent=video | scores=[]
+2025-12-02 13:00:05,321 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 2765ms
+2025-12-02 13:00:05,321 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: video (71.1) | Margin: +12.0 over second | All Scores: video:71.1, song:59.1, knowledge:56.1
+2025-12-02 13:00:05,321 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 4 | Total Time: 2765ms | Mode: llm | Chosen: video
+2025-12-02 13:00:05,322 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/04_judge_decision_step_4.json
+2025-12-02 13:00:05,322 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Complete | Orchestrator_Task_Complete | TID: demo_boston_mit | Step 4 | Total Time: 2766ms | Queue Depth: 0
+2025-12-02 13:00:05,322 | INFO     | hw4_tourguide.output | Output | WROTE JSON | output/study_llm_judge/final_route.json
+2025-12-02 13:00:05,322 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/05_final_output.json
+2025-12-02 13:00:05,322 | INFO     | hw4_tourguide.output | Output | WROTE CHECKPOINT | demo_boston_mit/05_final_output.json
+2025-12-02 13:00:05,322 | INFO     | hw4_tourguide.output | Output | WROTE Markdown Report | output/study_llm_judge/final_route.md
+2025-12-02 13:00:05,322 | INFO     | hw4_tourguide.output | Output | WROTE CSV Report | output/study_llm_judge/final_route.csv
+2025-12-02 13:00:06,328 | INFO     | hw4_tourguide.main | Orchestrator | Pipeline complete | Outputs: JSON=output/study_llm_judge/final_route.json, MD=output/study_llm_judge/final_route.md, CSV=output/study_llm_judge/final_route.csv
+2025-12-02 13:38:26,565 | INFO     | hw4_tourguide.main | Setup | Using custom output path | Main output: output/study_llm_judge/final_route.json | Logs/Metrics root: output/study_llm_judge
+2025-12-02 13:38:26,566 | INFO     | hw4_tourguide.route_provider.cached | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/00_route.json
+2025-12-02 13:38:26,567 | INFO     | hw4_tourguide.judge | Judge | JudgeAgent initialized. LLM scoring: Enabled
+2025-12-02 13:38:26,568 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Init | Orchestrator_Init | ThreadPool: 5 workers | Agents: 3 (video, song, knowledge)
+2025-12-02 13:38:26,568 | INFO     | hw4_tourguide.scheduler | Scheduler_Emit | Scheduler_Emit | Step 1/4: Boston Common | TID: demo_boston_mit | Queue Depth: 1 | Time: 0.000s | Delay: +0.000s | thread=Thread-2
+2025-12-02 13:38:26,568 | INFO     | hw4_tourguide.main | Scheduler | Scheduler started, pipeline running...
+2025-12-02 13:38:26,568 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Start | Orchestrator_Task_Start | TID: demo_boston_mit | Step 1 | Queue Depth: 0 | thread=MainThread
+2025-12-02 13:38:26,568 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Dispatch | Orchestrator_Agents_Dispatch | TID: demo_boston_mit | Dispatching 3 agents in parallel
+2025-12-02 13:38:26,568 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 13:38:26,568 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 13:38:26,568 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 13:38:27,459 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=889.6 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:38:27,460 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Boston Common | tid=demo_boston_mit | queries=3 | ms=891.3
+2025-12-02 13:38:27,460 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 1 | location=Boston Common | source=LLM | queries=["boston common history swan boats" | "boston common walking tour" | "boston common park overview"]
+2025-12-02 13:38:27,460 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['boston common history swan boats', 'boston common walking tour', 'boston common park overview']
+2025-12-02 13:38:27,460 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "boston common history swan boats" | Max Results: 3
+2025-12-02 13:38:27,706 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:27,707 | WARNING  | hw4_tourguide.search | Agent | SEARCH ERROR | provider=video | query="boston common history swan boats" | error=403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:27,707 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:28,051 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=1481.9 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:38:28,052 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for Boston Common | tid=demo_boston_mit | queries=3 | ms=1483.3
+2025-12-02 13:38:28,052 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 1 | location=Boston Common | source=LLM | queries=["Boston Common" | "history of Boston Common" | "Boston Common Swan Boats"]
+2025-12-02 13:38:28,052 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Boston Common', 'history of Boston Common', 'Boston Common Swan Boats']
+2025-12-02 13:38:28,052 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "Boston Common" | Max Results: 3
+2025-12-02 13:38:28,206 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=1636.1 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:38:28,206 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for Boston Common | tid=demo_boston_mit | queries=3 | ms=1638.0
+2025-12-02 13:38:28,206 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 1 | location=Boston Common | source=LLM | queries=["boston common swan boats history" | "boston indie folk artists" | "boston common park anthems"]
+2025-12-02 13:38:28,206 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['boston common swan boats history', 'boston indie folk artists', 'boston common park anthems']
+2025-12-02 13:38:28,207 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "boston common swan boats history" | Max Results: 3
+2025-12-02 13:38:28,213 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "boston common history swan boats" | Max Results: 3
+2025-12-02 13:38:28,448 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:28,448 | WARNING  | hw4_tourguide.search | Agent | SEARCH ERROR | provider=video | query="boston common history swan boats" | error=403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:28,448 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 2/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:28,564 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 512ms
+2025-12-02 13:38:28,565 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=knowledge | query="Boston Common" | results=3 | ms=513.0
+2025-12-02 13:38:28,565 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Boston Common" | Results: 3
+2025-12-02 13:38:28,565 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Boston Common" | Found: 3 candidates | Time: 513ms
+2025-12-02 13:38:28,565 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "history of Boston Common" | Max Results: 3
+2025-12-02 13:38:28,573 | INFO     | hw4_tourguide.scheduler | Scheduler_Emit | Scheduler_Emit | Step 2/4: Charles River Esplanade | TID: demo_boston_mit | Queue Depth: 1 | Time: 2.005s | Delay: +0.005s | thread=Thread-2
+2025-12-02 13:38:28,573 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Start | Orchestrator_Task_Start | TID: demo_boston_mit | Step 2 | Queue Depth: 0 | thread=MainThread
+2025-12-02 13:38:28,574 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Dispatch | Orchestrator_Agents_Dispatch | TID: demo_boston_mit | Dispatching 3 agents in parallel
+2025-12-02 13:38:28,574 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 13:38:28,574 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 13:38:28,574 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 13:38:28,739 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 532ms
+2025-12-02 13:38:28,740 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=song | query="boston common swan boats history" | results=3 | ms=533.2
+2025-12-02 13:38:28,740 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "boston common swan boats history" | Results: 3
+2025-12-02 13:38:28,740 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "boston common swan boats history" | Found: 3 candidates | Time: 533ms
+2025-12-02 13:38:28,740 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "boston indie folk artists" | Max Results: 3
+2025-12-02 13:38:29,149 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 409ms
+2025-12-02 13:38:29,150 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=song | query="boston indie folk artists" | results=3 | ms=410.4
+2025-12-02 13:38:29,150 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "boston indie folk artists" | Results: 3
+2025-12-02 13:38:29,150 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "boston indie folk artists" | Found: 3 candidates | Time: 411ms
+2025-12-02 13:38:29,151 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "boston common park anthems" | Max Results: 3
+2025-12-02 13:38:29,267 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 702ms
+2025-12-02 13:38:29,268 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=knowledge | query="history of Boston Common" | results=3 | ms=703.1
+2025-12-02 13:38:29,268 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "history of Boston Common" | Results: 3
+2025-12-02 13:38:29,268 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "history of Boston Common" | Found: 3 candidates | Time: 703ms
+2025-12-02 13:38:29,268 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "Boston Common Swan Boats" | Max Results: 3
+2025-12-02 13:38:29,454 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "boston common history swan boats" | Max Results: 3
+2025-12-02 13:38:29,594 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 444ms
+2025-12-02 13:38:29,595 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=song | query="boston common park anthems" | results=3 | ms=444.5
+2025-12-02 13:38:29,595 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "boston common park anthems" | Results: 3
+2025-12-02 13:38:29,595 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "boston common park anthems" | Found: 3 candidates | Time: 445ms
+2025-12-02 13:38:29,595 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/02_agent_search_song_step_1.json
+2025-12-02 13:38:29,595 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "ריבים קטנים" from 9 candidates
+2025-12-02 13:38:29,596 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Fetch | Track ID: 2Z3iUDPhfriu9ngLLpZZYv
+2025-12-02 13:38:29,608 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:29,608 | WARNING  | hw4_tourguide.search | Agent | SEARCH ERROR | provider=video | query="boston common history swan boats" | error=403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:29,608 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 3/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:29,608 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "boston common history swan boats" | Found: 0 candidates | Time: 2148ms
+2025-12-02 13:38:29,608 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "boston common walking tour" | Max Results: 3
+2025-12-02 13:38:29,832 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "ריבים קטנים" | Time: 236ms
+2025-12-02 13:38:29,832 | INFO     | hw4_tourguide.fetch | Agent | FETCH | provider=song | id=2Z3iUDPhfriu9ngLLpZZYv | ms=236.9
+2025-12-02 13:38:29,832 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 2Z3iUDPhfriu9ngLLpZZYv | Reason: ranked top
+2025-12-02 13:38:29,833 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "ריבים קטנים" | Time: 237ms
+2025-12-02 13:38:29,834 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/03_agent_fetch_song_step_1.json
+2025-12-02 13:38:29,834 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3266ms | Queries: 3 | Candidates: 9 | Selected: "ריבים קטנים"
+2025-12-02 13:38:29,846 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+walking+tour&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:29,846 | WARNING  | hw4_tourguide.search | Agent | SEARCH ERROR | provider=video | query="boston common walking tour" | error=403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+walking+tour&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:29,846 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+walking+tour&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:29,871 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 602ms
+2025-12-02 13:38:29,871 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=knowledge | query="Boston Common Swan Boats" | results=3 | ms=602.9
+2025-12-02 13:38:29,871 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Boston Common Swan Boats" | Results: 3
+2025-12-02 13:38:29,871 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Boston Common Swan Boats" | Found: 3 candidates | Time: 603ms
+2025-12-02 13:38:29,872 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/02_agent_search_knowledge_step_1.json
+2025-12-02 13:38:29,872 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Boston Common" from 8 candidates
+2025-12-02 13:38:29,872 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Fetch | Article ID: 400334
+2025-12-02 13:38:30,219 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Boston Common" | Time: 348ms
+2025-12-02 13:38:30,220 | INFO     | hw4_tourguide.fetch | Agent | FETCH | provider=knowledge | id=400334 | ms=348.3
+2025-12-02 13:38:30,220 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 400334 | Reason: ranked top
+2025-12-02 13:38:30,220 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Boston Common" | Time: 348ms
+2025-12-02 13:38:30,220 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/03_agent_fetch_knowledge_step_1.json
+2025-12-02 13:38:30,221 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3653ms | Queries: 3 | Candidates: 8 | Selected: "Boston Common"
+2025-12-02 13:38:30,351 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "boston common walking tour" | Max Results: 3
+2025-12-02 13:38:30,389 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=1814.3 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:38:30,389 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for Charles River Esplanade | tid=demo_boston_mit | queries=3 | ms=1815.1
+2025-12-02 13:38:30,389 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 2 | location=Charles River Esplanade | source=LLM | queries=["Charles River Esplanade boston" | "Boston indie artists charles river" | "kayaking music charles river boston"]
+2025-12-02 13:38:30,389 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Charles River Esplanade boston', 'Boston indie artists charles river', 'kayaking music charles river boston']
+2025-12-02 13:38:30,389 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "Charles River Esplanade boston" | Max Results: 3
+2025-12-02 13:38:30,429 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=1854.3 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:38:30,430 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Charles River Esplanade | tid=demo_boston_mit | queries=3 | ms=1855.7
+2025-12-02 13:38:30,430 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 2 | location=Charles River Esplanade | source=LLM | queries=["charles river esplanade drone footage boston" | "charles river esplanade walking tour boston" | "charles river esplanade kayaking boston"]
+2025-12-02 13:38:30,430 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['charles river esplanade drone footage boston', 'charles river esplanade walking tour boston', 'charles river esplanade kayaking boston']
+2025-12-02 13:38:30,430 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: YouTube Search | Query: "charles river esplanade drone footage boston" | Max Results: 3
+2025-12-02 13:38:30,500 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+walking+tour&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:30,500 | WARNING  | hw4_tourguide.search | Agent | SEARCH ERROR | provider=video | query="boston common walking tour" | error=403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+walking+tour&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:30,500 | WARNING  | hw4_tourguide.cb.youtube | CircuitBreaker | OPEN | API: youtube | Reason: 5 consecutive failures (403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+walking+tour&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none)
+2025-12-02 13:38:30,501 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 2/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=boston+common+walking+tour&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:30,578 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=charles+river+esplanade+drone+footage+boston&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:30,578 | WARNING  | hw4_tourguide.search | Agent | SEARCH ERROR | provider=video | query="charles river esplanade drone footage boston" | error=403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=charles+river+esplanade+drone+footage+boston&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:30,578 | INFO     | hw4_tourguide.scheduler | Scheduler_Emit | Scheduler_Emit | Step 3/4: Harvard Bridge | TID: demo_boston_mit | Queue Depth: 1 | Time: 4.010s | Delay: +0.010s | thread=Thread-2
+2025-12-02 13:38:30,578 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Start | Orchestrator_Task_Start | TID: demo_boston_mit | Step 3 | Queue Depth: 0 | thread=MainThread
+2025-12-02 13:38:30,578 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Dispatch | Orchestrator_Agents_Dispatch | TID: demo_boston_mit | Dispatching 3 agents in parallel
+2025-12-02 13:38:30,578 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=charles+river+esplanade+drone+footage+boston&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:38:30,578 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 13:38:30,578 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 13:38:30,578 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 13:38:30,786 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 396ms
+2025-12-02 13:38:30,786 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=song | query="Charles River Esplanade boston" | results=3 | ms=396.8
+2025-12-02 13:38:30,786 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Charles River Esplanade boston" | Results: 3
+2025-12-02 13:38:30,786 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Charles River Esplanade boston" | Found: 3 candidates | Time: 397ms
+2025-12-02 13:38:30,786 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "Boston indie artists charles river" | Max Results: 3
+2025-12-02 13:38:30,963 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=2387.2 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:38:30,963 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for Charles River Esplanade | tid=demo_boston_mit | queries=3 | ms=2389.1
+2025-12-02 13:38:30,964 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 2 | location=Charles River Esplanade | source=LLM | queries=["Charles River Esplanade Wikipedia" | "Charles River Boston recreational activities" | "Charles River Esplanade architecture and design"]
+2025-12-02 13:38:30,964 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Charles River Esplanade Wikipedia', 'Charles River Boston recreational activities', 'Charles River Esplanade architecture and design']
+2025-12-02 13:38:30,964 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "Charles River Esplanade Wikipedia" | Max Results: 3
+2025-12-02 13:38:31,085 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:38:31,086 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "charles river esplanade drone footage boston" | Found: 0 candidates | Time: 656ms
+2025-12-02 13:38:31,086 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:38:31,086 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "charles river esplanade walking tour boston" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:38:31,086 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:38:31,086 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "charles river esplanade kayaking boston" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:38:31,087 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/02_agent_search_video_step_2.json
+2025-12-02 13:38:31,087 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 2 | No candidates found after 3 queries
+2025-12-02 13:38:31,235 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 448ms
+2025-12-02 13:38:31,235 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=song | query="Boston indie artists charles river" | results=3 | ms=449.1
+2025-12-02 13:38:31,236 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Boston indie artists charles river" | Results: 3
+2025-12-02 13:38:31,236 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Boston indie artists charles river" | Found: 3 candidates | Time: 449ms
+2025-12-02 13:38:31,236 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "kayaking music charles river boston" | Max Results: 3
+2025-12-02 13:38:31,461 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 497ms
+2025-12-02 13:38:31,461 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=knowledge | query="Charles River Esplanade Wikipedia" | results=3 | ms=497.8
+2025-12-02 13:38:31,462 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Charles River Esplanade Wikipedia" | Results: 3
+2025-12-02 13:38:31,462 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Charles River Esplanade Wikipedia" | Found: 3 candidates | Time: 498ms
+2025-12-02 13:38:31,462 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "Charles River Boston recreational activities" | Max Results: 3
+2025-12-02 13:38:31,506 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:38:31,506 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "boston common walking tour" | Found: 0 candidates | Time: 1898ms
+2025-12-02 13:38:31,513 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:38:31,513 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "boston common park overview" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:38:31,514 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/02_agent_search_video_step_1.json
+2025-12-02 13:38:31,514 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 1 | No candidates found after 3 queries
+2025-12-02 13:38:31,514 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Complete | Orchestrator_Agents_Complete | TID: demo_boston_mit | All agents finished | Success: 2/3 | Time: 4946ms
+2025-12-02 13:38:31,518 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 1 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 13:38:31,518 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 13:38:31,518 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 68.0 | Time: 0ms
+2025-12-02 13:38:31,518 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 13:38:31,519 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=MockLLMClient | ms=0.2 | prompt_len=4000 | tokens_used=1010
+2025-12-02 13:38:31,519 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 1 | location=Boston Common | source=LLM | chosen_agent=None | scores=[]
+2025-12-02 13:38:31,519 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 1ms
+2025-12-02 13:38:31,519 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (68.0) | Margin: +8.0 over second | All Scores: video:0.0, song:60.0, knowledge:68.0
+2025-12-02 13:38:31,520 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 1 | Total Time: 2ms | Mode: llm | Chosen: knowledge
+2025-12-02 13:38:31,520 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/04_judge_decision_step_1.json
+2025-12-02 13:38:31,520 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Complete | Orchestrator_Task_Complete | TID: demo_boston_mit | Step 1 | Total Time: 4953ms | Queue Depth: 0
+2025-12-02 13:38:31,558 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 322ms
+2025-12-02 13:38:31,558 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=song | query="kayaking music charles river boston" | results=3 | ms=322.5
+2025-12-02 13:38:31,558 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "kayaking music charles river boston" | Results: 3
+2025-12-02 13:38:31,558 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "kayaking music charles river boston" | Found: 3 candidates | Time: 323ms
+2025-12-02 13:38:31,559 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/02_agent_search_song_step_2.json
+2025-12-02 13:38:31,559 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Tough Love" from 5 candidates
+2025-12-02 13:38:31,559 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Fetch | Track ID: 6WEXy56jM0Nl3bZHY9l7aH
+2025-12-02 13:38:31,750 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "Tough Love" | Time: 191ms
+2025-12-02 13:38:31,751 | INFO     | hw4_tourguide.fetch | Agent | FETCH | provider=song | id=6WEXy56jM0Nl3bZHY9l7aH | ms=192.2
+2025-12-02 13:38:31,751 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 6WEXy56jM0Nl3bZHY9l7aH | Reason: ranked top
+2025-12-02 13:38:31,751 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Tough Love" | Time: 192ms
+2025-12-02 13:38:31,751 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/03_agent_fetch_song_step_2.json
+2025-12-02 13:38:31,751 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3178ms | Queries: 3 | Candidates: 5 | Selected: "Tough Love"
+2025-12-02 13:38:32,067 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 605ms
+2025-12-02 13:38:32,068 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=knowledge | query="Charles River Boston recreational activities" | results=3 | ms=606.8
+2025-12-02 13:38:32,069 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Charles River Boston recreational activities" | Results: 3
+2025-12-02 13:38:32,069 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Charles River Boston recreational activities" | Found: 3 candidates | Time: 607ms
+2025-12-02 13:38:32,069 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "Charles River Esplanade architecture and design" | Max Results: 3
+2025-12-02 13:38:32,377 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=1795.6 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:38:32,378 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for Harvard Bridge | tid=demo_boston_mit | queries=3 | ms=1797.2
+2025-12-02 13:38:32,378 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 3 | location=Harvard Bridge | source=LLM | queries=["Harvard Bridge" | "Harvard Bridge MIT lore" | "Harvard Bridge measurements smoots"]
+2025-12-02 13:38:32,378 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Harvard Bridge', 'Harvard Bridge MIT lore', 'Harvard Bridge measurements smoots']
+2025-12-02 13:38:32,378 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "Harvard Bridge" | Max Results: 3
+2025-12-02 13:38:32,583 | INFO     | hw4_tourguide.scheduler | Scheduler_Emit | Scheduler_Emit | Step 4/4: MIT Stata Center | TID: demo_boston_mit | Queue Depth: 1 | Time: 6.016s | Delay: +0.016s | thread=Thread-2
+2025-12-02 13:38:32,584 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Start | Orchestrator_Task_Start | TID: demo_boston_mit | Step 4 | Queue Depth: 0 | thread=MainThread
+2025-12-02 13:38:32,584 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Dispatch | Orchestrator_Agents_Dispatch | TID: demo_boston_mit | Dispatching 3 agents in parallel
+2025-12-02 13:38:32,584 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 13:38:32,585 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 13:38:32,585 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 13:38:32,648 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 579ms
+2025-12-02 13:38:32,650 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=knowledge | query="Charles River Esplanade architecture and design" | results=3 | ms=581.0
+2025-12-02 13:38:32,650 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Charles River Esplanade architecture and design" | Results: 3
+2025-12-02 13:38:32,650 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Charles River Esplanade architecture and design" | Found: 3 candidates | Time: 581ms
+2025-12-02 13:38:32,651 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/02_agent_search_knowledge_step_2.json
+2025-12-02 13:38:32,651 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Charles River" from 7 candidates
+2025-12-02 13:38:32,651 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Fetch | Article ID: 146280
+2025-12-02 13:38:32,856 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=2274.5 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:38:32,856 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for Harvard Bridge | tid=demo_boston_mit | queries=3 | ms=2275.5
+2025-12-02 13:38:32,856 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 3 | location=Harvard Bridge | source=LLM | queries=["music that captures the MIT lore and legacy associated with the Harvard Bridge" | "songs that celebrate the history and culture of the Boston area and its college scene" | "tracks that evoke a sense of crossing over to a new chapter, from Boston to Cambridge"]
+2025-12-02 13:38:32,856 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['music that captures the MIT lore and legacy associated with the Harvard Bridge', 'songs that celebrate the history and culture of the Boston area and its college scene', 'tracks that evoke a sense of crossing over to a new chapter, from Boston to Cambridge']
+2025-12-02 13:38:32,857 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "music that captures the MIT lore and legacy associated with " | Max Results: 3
+2025-12-02 13:38:32,908 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 529ms
+2025-12-02 13:38:32,914 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=knowledge | query="Harvard Bridge" | results=3 | ms=535.4
+2025-12-02 13:38:32,914 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Harvard Bridge" | Results: 3
+2025-12-02 13:38:32,914 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Harvard Bridge" | Found: 3 candidates | Time: 536ms
+2025-12-02 13:38:32,915 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "Harvard Bridge MIT lore" | Max Results: 3
+2025-12-02 13:38:32,999 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Charles River" | Time: 347ms
+2025-12-02 13:38:33,001 | INFO     | hw4_tourguide.fetch | Agent | FETCH | provider=knowledge | id=146280 | ms=349.4
+2025-12-02 13:38:33,001 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 146280 | Reason: ranked top
+2025-12-02 13:38:33,001 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Charles River" | Time: 350ms
+2025-12-02 13:38:33,002 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/03_agent_fetch_knowledge_step_2.json
+2025-12-02 13:38:33,002 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 4428ms | Queries: 3 | Candidates: 7 | Selected: "Charles River"
+2025-12-02 13:38:33,002 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Complete | Orchestrator_Agents_Complete | TID: demo_boston_mit | All agents finished | Success: 2/3 | Time: 4429ms
+2025-12-02 13:38:33,007 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 2 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 13:38:33,007 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 13:38:33,007 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 68.9 | Time: 0ms
+2025-12-02 13:38:33,007 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 13:38:33,008 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=MockLLMClient | ms=0.4 | prompt_len=4000 | tokens_used=2020
+2025-12-02 13:38:33,008 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 2 | location=Charles River Esplanade | source=LLM | chosen_agent=None | scores=[]
+2025-12-02 13:38:33,008 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 1ms
+2025-12-02 13:38:33,009 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (68.9) | Margin: +8.9 over second | All Scores: video:0.0, song:60.0, knowledge:68.9
+2025-12-02 13:38:33,009 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 2 | Total Time: 2ms | Mode: llm | Chosen: knowledge
+2025-12-02 13:38:33,010 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/04_judge_decision_step_2.json
+2025-12-02 13:38:33,010 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Complete | Orchestrator_Task_Complete | TID: demo_boston_mit | Step 2 | Total Time: 4436ms | Queue Depth: 0
+2025-12-02 13:38:33,164 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 307ms
+2025-12-02 13:38:33,166 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=song | query="music that captures the MIT lore and legacy associated with the Harvard Bridge" | results=3 | ms=309.0
+2025-12-02 13:38:33,166 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "music that captures the MIT lore and legacy associated with the Harvard Bridge" | Results: 3
+2025-12-02 13:38:33,166 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "music that captures the MIT lore and legacy associated with " | Found: 3 candidates | Time: 309ms
+2025-12-02 13:38:33,166 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "songs that celebrate the history and culture of the Boston a" | Max Results: 3
+2025-12-02 13:38:33,447 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 533ms
+2025-12-02 13:38:33,448 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=knowledge | query="Harvard Bridge MIT lore" | results=3 | ms=534.1
+2025-12-02 13:38:33,448 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Harvard Bridge MIT lore" | Results: 3
+2025-12-02 13:38:33,448 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Harvard Bridge MIT lore" | Found: 3 candidates | Time: 534ms
+2025-12-02 13:38:33,449 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "Harvard Bridge measurements smoots" | Max Results: 3
+2025-12-02 13:38:33,583 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 416ms
+2025-12-02 13:38:33,583 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=song | query="songs that celebrate the history and culture of the Boston area and its college scene" | results=3 | ms=417.4
+2025-12-02 13:38:33,583 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "songs that celebrate the history and culture of the Boston area and its college scene" | Results: 3
+2025-12-02 13:38:33,583 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "songs that celebrate the history and culture of the Boston a" | Found: 3 candidates | Time: 417ms
+2025-12-02 13:38:33,584 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "tracks that evoke a sense of crossing over to a new chapter," | Max Results: 3
+2025-12-02 13:38:33,923 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 339ms
+2025-12-02 13:38:33,924 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=song | query="tracks that evoke a sense of crossing over to a new chapter, from Boston to Cambridge" | results=3 | ms=340.0
+2025-12-02 13:38:33,924 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "tracks that evoke a sense of crossing over to a new chapter, from Boston to Cambridge" | Results: 3
+2025-12-02 13:38:33,924 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "tracks that evoke a sense of crossing over to a new chapter," | Found: 3 candidates | Time: 340ms
+2025-12-02 13:38:33,924 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/02_agent_search_song_step_3.json
+2025-12-02 13:38:33,924 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "יומן מסע" from 9 candidates
+2025-12-02 13:38:33,924 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Fetch | Track ID: 6MPZCW6Pgs2zipdBVabVAO
+2025-12-02 13:38:33,948 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 500ms
+2025-12-02 13:38:33,949 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=knowledge | query="Harvard Bridge measurements smoots" | results=3 | ms=500.4
+2025-12-02 13:38:33,949 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Harvard Bridge measurements smoots" | Results: 3
+2025-12-02 13:38:33,949 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Harvard Bridge measurements smoots" | Found: 3 candidates | Time: 501ms
+2025-12-02 13:38:33,949 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/02_agent_search_knowledge_step_3.json
+2025-12-02 13:38:33,950 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Harvard Bridge" from 7 candidates
+2025-12-02 13:38:33,950 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Fetch | Article ID: 102602
+2025-12-02 13:38:34,069 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "יומן מסע" | Time: 145ms
+2025-12-02 13:38:34,070 | INFO     | hw4_tourguide.fetch | Agent | FETCH | provider=song | id=6MPZCW6Pgs2zipdBVabVAO | ms=145.4
+2025-12-02 13:38:34,070 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 6MPZCW6Pgs2zipdBVabVAO | Reason: ranked top
+2025-12-02 13:38:34,070 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "יומן מסע" | Time: 145ms
+2025-12-02 13:38:34,070 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/03_agent_fetch_song_step_3.json
+2025-12-02 13:38:34,070 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3492ms | Queries: 3 | Candidates: 9 | Selected: "יומן מסע"
+2025-12-02 13:38:34,186 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=1592.0 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:38:34,186 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=1601.0
+2025-12-02 13:38:34,186 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 4 | location=MIT Stata Center | source=LLM | queries=["mit stata center architecture frank gehry music" | "electronic instrumental music inspired by modern architecture" | "songs celebrating innovation and technology in cambridge ma"]
+2025-12-02 13:38:34,186 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['mit stata center architecture frank gehry music', 'electronic instrumental music inspired by modern architecture', 'songs celebrating innovation and technology in cambridge ma']
+2025-12-02 13:38:34,187 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "mit stata center architecture frank gehry music" | Max Results: 3
+2025-12-02 13:38:34,296 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Harvard Bridge" | Time: 346ms
+2025-12-02 13:38:34,297 | INFO     | hw4_tourguide.fetch | Agent | FETCH | provider=knowledge | id=102602 | ms=346.9
+2025-12-02 13:38:34,297 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 102602 | Reason: ranked top
+2025-12-02 13:38:34,297 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Harvard Bridge" | Time: 347ms
+2025-12-02 13:38:34,297 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/03_agent_fetch_knowledge_step_3.json
+2025-12-02 13:38:34,297 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3719ms | Queries: 3 | Candidates: 7 | Selected: "Harvard Bridge"
+2025-12-02 13:38:34,568 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 381ms
+2025-12-02 13:38:34,569 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=song | query="mit stata center architecture frank gehry music" | results=3 | ms=382.0
+2025-12-02 13:38:34,569 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "mit stata center architecture frank gehry music" | Results: 3
+2025-12-02 13:38:34,569 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "mit stata center architecture frank gehry music" | Found: 3 candidates | Time: 382ms
+2025-12-02 13:38:34,569 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "electronic instrumental music inspired by modern architectur" | Max Results: 3
+2025-12-02 13:38:34,588 | INFO     | hw4_tourguide.scheduler | Scheduler | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/01_scheduler_queue.json
+2025-12-02 13:38:34,742 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=2146.7 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:38:34,742 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=2156.3
+2025-12-02 13:38:34,742 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 4 | location=MIT Stata Center | source=LLM | queries=["MIT Stata Center" | "Frank Gehry MIT Stata Center" | "MIT Stata Center history"]
+2025-12-02 13:38:34,742 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['MIT Stata Center', 'Frank Gehry MIT Stata Center', 'MIT Stata Center history']
+2025-12-02 13:38:34,742 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "MIT Stata Center" | Max Results: 3
+2025-12-02 13:38:34,905 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 336ms
+2025-12-02 13:38:34,906 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=song | query="electronic instrumental music inspired by modern architecture" | results=3 | ms=337.0
+2025-12-02 13:38:34,906 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "electronic instrumental music inspired by modern architecture" | Results: 3
+2025-12-02 13:38:34,906 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "electronic instrumental music inspired by modern architectur" | Found: 3 candidates | Time: 337ms
+2025-12-02 13:38:34,906 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "songs celebrating innovation and technology in cambridge ma" | Max Results: 3
+2025-12-02 13:38:35,291 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 548ms
+2025-12-02 13:38:35,291 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=knowledge | query="MIT Stata Center" | results=3 | ms=549.2
+2025-12-02 13:38:35,291 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "MIT Stata Center" | Results: 3
+2025-12-02 13:38:35,291 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "MIT Stata Center" | Found: 3 candidates | Time: 549ms
+2025-12-02 13:38:35,291 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "Frank Gehry MIT Stata Center" | Max Results: 3
+2025-12-02 13:38:35,377 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 471ms
+2025-12-02 13:38:35,378 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=song | query="songs celebrating innovation and technology in cambridge ma" | results=3 | ms=471.9
+2025-12-02 13:38:35,378 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "songs celebrating innovation and technology in cambridge ma" | Results: 3
+2025-12-02 13:38:35,378 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "songs celebrating innovation and technology in cambridge ma" | Found: 3 candidates | Time: 472ms
+2025-12-02 13:38:35,378 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/02_agent_search_song_step_4.json
+2025-12-02 13:38:35,378 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Things You Can Do" from 9 candidates
+2025-12-02 13:38:35,379 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Fetch | Track ID: 3LRUR23xkDdMSOPhTnLv2d
+2025-12-02 13:38:35,459 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=4876.3 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:38:35,459 | ERROR    | hw4_tourguide.agent.video | Agent_LLM_Validation_Error | LLM response missing valid queries list for Harvard Bridge | parsed_type=dict | parsed_keys=['query', 'search_quality_reflection'] | queries_type=None | raw_response=```json
+[
+  {
+    "query": "Harvard Bridge MIT lore smoots",
+    "search_quality_reflection": "This query captures the key landmark (Harvard Bridge), the associated educational institution (MIT), and the unique 'smoots' measurement tradition that is part of the bridge's history and culture. It should return engaging videos that provide an overview of the bridge's significance and its connection to MIT."
+  },
+  {
+    "query": "Crossing Harvard Bridge toward Cambridge",
+    "search_quality_reflect
+2025-12-02 13:38:35,460 | WARNING  | hw4_tourguide.agent.video | Agent | Video LLM query gen failed | Step 3 | Error: LLM response missing 'queries' or 'search_queries' list | Falling back to heuristic
+2025-12-02 13:38:35,463 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Harvard Bridge, MIT', 'Harvard Bridge walking tour', 'MIT walking tour']
+2025-12-02 13:38:35,463 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:38:35,463 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Harvard Bridge, MIT" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:38:35,463 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:38:35,463 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Harvard Bridge walking tour" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:38:35,464 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:38:35,464 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "MIT walking tour" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:38:35,464 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/02_agent_search_video_step_3.json
+2025-12-02 13:38:35,464 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 3 | No candidates found after 3 queries
+2025-12-02 13:38:35,464 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Complete | Orchestrator_Agents_Complete | TID: demo_boston_mit | All agents finished | Success: 2/3 | Time: 4886ms
+2025-12-02 13:38:35,464 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 3 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 13:38:35,464 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 13:38:35,464 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 70.0 | Time: 0ms
+2025-12-02 13:38:35,464 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 13:38:35,465 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=MockLLMClient | ms=0.1 | prompt_len=4000 | tokens_used=3030
+2025-12-02 13:38:35,465 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 3 | location=Harvard Bridge | source=LLM | chosen_agent=None | scores=[]
+2025-12-02 13:38:35,465 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 1ms
+2025-12-02 13:38:35,465 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (70.0) | Margin: +10.0 over second | All Scores: video:0.0, song:60.0, knowledge:70.0
+2025-12-02 13:38:35,465 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 3 | Total Time: 1ms | Mode: llm | Chosen: knowledge
+2025-12-02 13:38:35,466 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/04_judge_decision_step_3.json
+2025-12-02 13:38:35,466 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Complete | Orchestrator_Task_Complete | TID: demo_boston_mit | Step 3 | Total Time: 4888ms | Queue Depth: 0
+2025-12-02 13:38:35,517 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "Things You Can Do" | Time: 138ms
+2025-12-02 13:38:35,518 | INFO     | hw4_tourguide.fetch | Agent | FETCH | provider=song | id=3LRUR23xkDdMSOPhTnLv2d | ms=139.0
+2025-12-02 13:38:35,518 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 3LRUR23xkDdMSOPhTnLv2d | Reason: ranked top
+2025-12-02 13:38:35,518 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Things You Can Do" | Time: 139ms
+2025-12-02 13:38:35,518 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/03_agent_fetch_song_step_4.json
+2025-12-02 13:38:35,518 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 2933ms | Queries: 3 | Candidates: 9 | Selected: "Things You Can Do"
+2025-12-02 13:38:35,659 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=ClaudeClient | ms=3073.4 | prompt_len=4000 | tokens_used=0
+2025-12-02 13:38:35,659 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=3075.2
+2025-12-02 13:38:35,660 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 4 | location=MIT Stata Center | source=LLM | queries=["MIT Stata Center architecture Frank Gehry" | "MIT campus tour" | "Cambridge MA points of interest"]
+2025-12-02 13:38:35,660 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['MIT Stata Center architecture Frank Gehry', 'MIT campus tour', 'Cambridge MA points of interest']
+2025-12-02 13:38:35,660 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:38:35,660 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "MIT Stata Center architecture Frank Gehry" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:38:35,660 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:38:35,660 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "MIT campus tour" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:38:35,660 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:38:35,660 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Cambridge MA points of interest" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:38:35,660 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/02_agent_search_video_step_4.json
+2025-12-02 13:38:35,660 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 4 | No candidates found after 3 queries
+2025-12-02 13:38:35,793 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 501ms
+2025-12-02 13:38:35,794 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=knowledge | query="Frank Gehry MIT Stata Center" | results=3 | ms=502.3
+2025-12-02 13:38:35,794 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Frank Gehry MIT Stata Center" | Results: 3
+2025-12-02 13:38:35,794 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Frank Gehry MIT Stata Center" | Found: 3 candidates | Time: 502ms
+2025-12-02 13:38:35,794 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "MIT Stata Center history" | Max Results: 3
+2025-12-02 13:38:36,418 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 624ms
+2025-12-02 13:38:36,418 | INFO     | hw4_tourguide.search | Agent | SEARCH | provider=knowledge | query="MIT Stata Center history" | results=3 | ms=624.6
+2025-12-02 13:38:36,418 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "MIT Stata Center history" | Results: 3
+2025-12-02 13:38:36,419 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "MIT Stata Center history" | Found: 3 candidates | Time: 625ms
+2025-12-02 13:38:36,419 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/02_agent_search_knowledge_step_4.json
+2025-12-02 13:38:36,419 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Stata Center" from 6 candidates
+2025-12-02 13:38:36,419 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Fetch | Article ID: 145664
+2025-12-02 13:38:36,770 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Stata Center" | Time: 351ms
+2025-12-02 13:38:36,771 | INFO     | hw4_tourguide.fetch | Agent | FETCH | provider=knowledge | id=145664 | ms=351.6
+2025-12-02 13:38:36,771 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 145664 | Reason: ranked top
+2025-12-02 13:38:36,771 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Stata Center" | Time: 352ms
+2025-12-02 13:38:36,772 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/03_agent_fetch_knowledge_step_4.json
+2025-12-02 13:38:36,772 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 4187ms | Queries: 3 | Candidates: 6 | Selected: "Stata Center"
+2025-12-02 13:38:36,772 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Agents_Complete | Orchestrator_Agents_Complete | TID: demo_boston_mit | All agents finished | Success: 2/3 | Time: 4188ms
+2025-12-02 13:38:36,772 | INFO     | hw4_tourguide.judge | Judge_Input | Judge_Input | TID: demo_boston_mit | Step 4 | Agents: video(unavailable), song(ok), knowledge(ok)
+2025-12-02 13:38:36,772 | INFO     | hw4_tourguide.judge | Judge_Mode | Judge_Mode | TID: demo_boston_mit | Scoring: llm | LLM: enabled
+2025-12-02 13:38:36,772 | INFO     | hw4_tourguide.judge | Judge_Heuristic | Judge_Heuristic | TID: demo_boston_mit | Scores: video: 0.0, song: 60.0, knowledge: 71.4 | Time: 0ms
+2025-12-02 13:38:36,772 | INFO     | hw4_tourguide.judge | Judge_LLM_Call | Judge_LLM_Call | TID: demo_boston_mit | Attempting LLM scoring
+2025-12-02 13:38:36,773 | INFO     | hw4_tourguide.llm | LLM | LLM | provider=MockLLMClient | ms=0.1 | prompt_len=4000 | tokens_used=4040
+2025-12-02 13:38:36,773 | INFO     | hw4_tourguide.judge | Judge_LLM_ParsedScores | Judge_LLM_ParsedScores | TID: demo_boston_mit | Step 4 | location=MIT Stata Center | source=LLM | chosen_agent=None | scores=[]
+2025-12-02 13:38:36,773 | INFO     | hw4_tourguide.judge | Judge_LLM_Response | Judge_LLM_Response | TID: demo_boston_mit | Status: SUCCESS | Time: 1ms
+2025-12-02 13:38:36,773 | INFO     | hw4_tourguide.judge | Judge_Decision | Judge_Decision | TID: demo_boston_mit | CHOSEN: knowledge (71.4) | Margin: +11.4 over second | All Scores: video:0.0, song:60.0, knowledge:71.4
+2025-12-02 13:38:36,773 | INFO     | hw4_tourguide.judge | Judge_Complete | Judge_Complete | TID: demo_boston_mit | Step 4 | Total Time: 1ms | Mode: llm | Chosen: knowledge
+2025-12-02 13:38:36,774 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/04_judge_decision_step_4.json
+2025-12-02 13:38:36,774 | INFO     | hw4_tourguide.orchestrator | Orchestrator_Task_Complete | Orchestrator_Task_Complete | TID: demo_boston_mit | Step 4 | Total Time: 4190ms | Queue Depth: 0
+2025-12-02 13:38:36,774 | INFO     | hw4_tourguide.output | Output | WROTE JSON | output/study_llm_judge/final_route.json
+2025-12-02 13:38:36,775 | INFO     | hw4_tourguide.checkpoint | Config | Wrote checkpoint output/study_llm_judge/checkpoints/demo_boston_mit/05_final_output.json
+2025-12-02 13:38:36,775 | INFO     | hw4_tourguide.output | Output | WROTE CHECKPOINT | demo_boston_mit/05_final_output.json
+2025-12-02 13:38:36,775 | INFO     | hw4_tourguide.output | Output | WROTE Markdown Report | output/study_llm_judge/final_route.md
+2025-12-02 13:38:36,775 | INFO     | hw4_tourguide.output | Output | WROTE CSV Report | output/study_llm_judge/final_route.csv
+2025-12-02 13:38:37,782 | INFO     | hw4_tourguide.main | Orchestrator | Pipeline complete | Outputs: JSON=output/study_llm_judge/final_route.json, MD=output/study_llm_judge/final_route.md, CSV=output/study_llm_judge/final_route.csv

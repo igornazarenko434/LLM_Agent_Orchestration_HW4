@@ -1,0 +1,16 @@
+2025-12-02 13:00:06,444 | INFO     | hw4_tourguide.route_provider.cached | Config | Wrote checkpoint output/study_live/checkpoints/demo_boston_mit/00_route.json
+2025-12-02 14:10:09,606 | INFO     | hw4_tourguide.route_provider.cached | Config | Wrote checkpoint output/study_live/checkpoints/demo_boston_mit/00_route.json
+2025-12-02 14:11:23,849 | INFO     | hw4_tourguide.route_provider.cached | Config | Wrote checkpoint output/study_live/checkpoints/demo_boston_mit/00_route.json
+2025-12-02 14:23:57,722 | INFO     | hw4_tourguide.route_provider.cached | Config | Wrote checkpoint output/study_live/checkpoints/demo_boston_mit/00_route.json
+2025-12-02 14:25:35,866 | INFO     | hw4_tourguide.route_provider.live | RouteProvider_Init | RouteProvider_Init | Provider: GoogleMaps | Max Steps: 8 | Checkpoints: enabled
+2025-12-02 14:25:35,866 | INFO     | hw4_tourguide.route_provider.live | RouteProvider_Request | RouteProvider_Request | TID: 1764678335_b8846f05 | Origin: "Boston, MA" | Destination: "MIT"
+2025-12-02 14:25:35,866 | INFO     | hw4_tourguide.route_provider.live | RouteProvider_API_Directions | RouteProvider_API_Directions | TID: 1764678335_b8846f05 | Calling Google Maps Directions API
+2025-12-02 14:25:36,138 | INFO     | hw4_tourguide.route_provider.live | RouteProvider_API_Response | RouteProvider_API_Response | TID: 1764678335_b8846f05 | Status: OK | Time: 272ms
+2025-12-02 14:25:36,138 | ERROR    | hw4_tourguide.route_provider.live | Route_Validation | Route has 14 steps, exceeds maximum of 8
+2025-12-02 14:26:00,719 | INFO     | hw4_tourguide.route_provider.live | RouteProvider_Init | RouteProvider_Init | Provider: GoogleMaps | Max Steps: 8 | Checkpoints: enabled
+2025-12-02 14:26:00,720 | INFO     | hw4_tourguide.route_provider.live | RouteProvider_Request | RouteProvider_Request | TID: 1764678360_d738b619 | Origin: "Kendall Square, Cambridge, MA" | Destination: "MIT Museum, Cambridge, MA"
+2025-12-02 14:26:00,720 | INFO     | hw4_tourguide.route_provider.live | RouteProvider_API_Directions | RouteProvider_API_Directions | TID: 1764678360_d738b619 | Calling Google Maps Directions API
+2025-12-02 14:26:00,997 | INFO     | hw4_tourguide.route_provider.live | RouteProvider_API_Response | RouteProvider_API_Response | TID: 1764678360_d738b619 | Status: OK | Time: 277ms
+2025-12-02 14:26:00,997 | INFO     | hw4_tourguide.route_provider.live | Route_Processing | Converting route with 2 steps, using reverse geocoding
+2025-12-02 14:26:01,568 | INFO     | hw4_tourguide.route_provider.live | RouteProvider_Success | RouteProvider_Success | TID: 1764678360_d738b619 | Steps: 2 | Distance: 0.4 mi | Duration: 3 mins | Total Time: 848ms
+2025-12-02 14:26:01,568 | INFO     | hw4_tourguide.route_provider.live | Checkpoint | Wrote checkpoint output/study_live/checkpoints/1764678360_d738b619/00_route.json

@@ -1,0 +1,795 @@
+2025-12-02 13:00:06,445 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 13:00:06,445 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 13:00:06,445 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 13:00:07,577 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Boston Common | tid=demo_boston_mit | queries=3 | ms=1131.1
+2025-12-02 13:00:07,577 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 1 | location=Boston Common | source=LLM | queries=["Boston Common history Swan Boats" | "Boston Common top attractions" | "Things to do Boston Common"]
+2025-12-02 13:00:07,577 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Boston Common history Swan Boats', 'Boston Common top attractions', 'Things to do Boston Common']
+2025-12-02 13:00:07,608 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for Boston Common | tid=demo_boston_mit | queries=3 | ms=1161.9
+2025-12-02 13:00:07,608 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 1 | location=Boston Common | source=LLM | queries=["Boston Common" | "History of Boston Common" | "Swan Boats Boston Common"]
+2025-12-02 13:00:07,608 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Boston Common', 'History of Boston Common', 'Swan Boats Boston Common']
+2025-12-02 13:00:07,740 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:00:08,403 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 2/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:00:08,451 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 13:00:08,451 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 13:00:08,451 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 13:00:08,718 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Boston Common" | Results: 6
+2025-12-02 13:00:08,718 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Boston Common" | Found: 6 candidates | Time: 1110ms
+2025-12-02 13:00:09,557 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 3/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:00:09,557 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Boston Common history Swan Boats" | Found: 0 candidates | Time: 1980ms
+2025-12-02 13:00:09,661 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for Boston Common | tid=demo_boston_mit | queries=3 | ms=3215.5
+2025-12-02 13:00:09,661 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 1 | location=Boston Common | source=LLM | queries=["Boston music history" | "Boston Common swan boat songs" | "Indie folk songs for MIT campus"]
+2025-12-02 13:00:09,661 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Boston music history', 'Boston Common swan boat songs', 'Indie folk songs for MIT campus']
+2025-12-02 13:00:09,682 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "History of Boston Common" | Results: 3
+2025-12-02 13:00:09,682 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "History of Boston Common" | Found: 3 candidates | Time: 964ms
+2025-12-02 13:00:09,711 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+top+attractions&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:00:10,186 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for Charles River Esplanade | tid=demo_boston_mit | queries=3 | ms=1734.4
+2025-12-02 13:00:10,186 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 2 | location=Charles River Esplanade | source=LLM | queries=["charles river esplanade boston music" | "relaxing music for scenic views boston" | "songs about massachusetts nature and outdoors"]
+2025-12-02 13:00:10,186 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['charles river esplanade boston music', 'relaxing music for scenic views boston', 'songs about massachusetts nature and outdoors']
+2025-12-02 13:00:10,213 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Boston music history" | Results: 3
+2025-12-02 13:00:10,213 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Boston music history" | Found: 3 candidates | Time: 552ms
+2025-12-02 13:00:10,434 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "charles river esplanade boston music" | Results: 3
+2025-12-02 13:00:10,434 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "charles river esplanade boston music" | Found: 3 candidates | Time: 247ms
+2025-12-02 13:00:10,451 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 2/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+top+attractions&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:00:10,455 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 13:00:10,455 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 13:00:10,456 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 13:00:10,461 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Swan Boats Boston Common" | Results: 3
+2025-12-02 13:00:10,461 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Swan Boats Boston Common" | Found: 3 candidates | Time: 779ms
+2025-12-02 13:00:10,462 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Boston Common" from 11 candidates
+2025-12-02 13:00:10,536 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Charles River Esplanade | tid=demo_boston_mit | queries=3 | ms=2085.1
+2025-12-02 13:00:10,536 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 2 | location=Charles River Esplanade | source=LLM | queries=["charles river esplanade scenic views kayaking" | "boston charles river kayaking" | "charles river boston"]
+2025-12-02 13:00:10,536 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['charles river esplanade scenic views kayaking', 'boston charles river kayaking', 'charles river boston']
+2025-12-02 13:00:10,537 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:00:10,537 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "charles river esplanade scenic views kayaking" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:00:10,537 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:00:10,537 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "boston charles river kayaking" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:00:10,537 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:00:10,537 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "charles river boston" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:00:10,537 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 2 | No candidates found after 3 queries
+2025-12-02 13:00:10,553 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Boston Common swan boat songs" | Results: 3
+2025-12-02 13:00:10,553 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Boston Common swan boat songs" | Found: 3 candidates | Time: 339ms
+2025-12-02 13:00:10,803 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 400334 | Reason: ranked top
+2025-12-02 13:00:10,803 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Boston Common" | Time: 341ms
+2025-12-02 13:00:10,803 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 4358ms | Queries: 3 | Candidates: 11 | Selected: "Boston Common"
+2025-12-02 13:00:10,928 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "relaxing music for scenic views boston" | Results: 3
+2025-12-02 13:00:10,929 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "relaxing music for scenic views boston" | Found: 3 candidates | Time: 495ms
+2025-12-02 13:00:10,982 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Indie folk songs for MIT campus" | Results: 3
+2025-12-02 13:00:10,982 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Indie folk songs for MIT campus" | Found: 3 candidates | Time: 430ms
+2025-12-02 13:00:10,983 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "בחוף של טראפטוני" from 9 candidates
+2025-12-02 13:00:11,141 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 4MrW3lMdMpKUZ2Cn2mMvBX | Reason: ranked top
+2025-12-02 13:00:11,141 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "בחוף של טראפטוני" | Time: 158ms
+2025-12-02 13:00:11,141 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 4696ms | Queries: 3 | Candidates: 9 | Selected: "בחוף של טראפטוני"
+2025-12-02 13:00:11,260 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "songs about massachusetts nature and outdoors" | Results: 3
+2025-12-02 13:00:11,260 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "songs about massachusetts nature and outdoors" | Found: 3 candidates | Time: 332ms
+2025-12-02 13:00:11,261 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Montauk Sunsets" from 9 candidates
+2025-12-02 13:00:11,269 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Harvard Bridge | tid=demo_boston_mit | queries=3 | ms=813.5
+2025-12-02 13:00:11,269 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 3 | location=Harvard Bridge | source=LLM | queries=["Harvard Bridge MIT smoots" | "Boston bridges MIT" | "Harvard Bridge Massachusetts"]
+2025-12-02 13:00:11,269 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Harvard Bridge MIT smoots', 'Boston bridges MIT', 'Harvard Bridge Massachusetts']
+2025-12-02 13:00:11,269 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:00:11,269 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Harvard Bridge MIT smoots" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:00:11,269 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:00:11,269 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Boston bridges MIT" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:00:11,269 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:00:11,269 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Harvard Bridge Massachusetts" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:00:11,270 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 3 | No candidates found after 3 queries
+2025-12-02 13:00:11,456 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:00:11,456 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Boston Common top attractions" | Found: 0 candidates | Time: 1899ms
+2025-12-02 13:00:11,456 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:00:11,456 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Things to do Boston Common" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:00:11,456 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 1 | No candidates found after 3 queries
+2025-12-02 13:00:11,467 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 0bejS6MPPwoi6pYKwzM6DF | Reason: ranked top
+2025-12-02 13:00:11,467 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Montauk Sunsets" | Time: 207ms
+2025-12-02 13:00:11,468 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3017ms | Queries: 3 | Candidates: 9 | Selected: "Montauk Sunsets"
+2025-12-02 13:00:12,131 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for Harvard Bridge | tid=demo_boston_mit | queries=3 | ms=1675.6
+2025-12-02 13:00:12,131 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 3 | location=Harvard Bridge | source=LLM | queries=["songs about Harvard Bridge Boston" | "Cambridge MA indie folk music" | "upbeat electronic dance music MIT area"]
+2025-12-02 13:00:12,131 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['songs about Harvard Bridge Boston', 'Cambridge MA indie folk music', 'upbeat electronic dance music MIT area']
+2025-12-02 13:00:12,461 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 13:00:12,461 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 13:00:12,461 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 13:00:12,478 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "songs about Harvard Bridge Boston" | Results: 3
+2025-12-02 13:00:12,478 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "songs about Harvard Bridge Boston" | Found: 3 candidates | Time: 346ms
+2025-12-02 13:00:12,797 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for Harvard Bridge | tid=demo_boston_mit | queries=3 | ms=2338.2
+2025-12-02 13:00:12,797 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 3 | location=Harvard Bridge | source=LLM | queries=["Harvard Bridge" | "MIT smoots" | "Harvard Bridge history"]
+2025-12-02 13:00:12,797 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Harvard Bridge', 'MIT smoots', 'Harvard Bridge history']
+2025-12-02 13:00:12,820 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Cambridge MA indie folk music" | Results: 3
+2025-12-02 13:00:12,820 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Cambridge MA indie folk music" | Found: 3 candidates | Time: 342ms
+2025-12-02 13:00:12,961 | ERROR    | hw4_tourguide.agent.knowledge | Agent_LLM_Validation_Error | LLM response missing valid queries list for Charles River Esplanade | parsed_type=dict | parsed_keys=['query', 'source', 'quality_reflection'] | queries_type=None | raw_response=```json
+[
+  {
+    "query": "Charles River Esplanade",
+    "source": "wikipedia",
+    "quality_reflection": "This query provides a general overview of the Charles River Esplanade, covering its location, history, and recreational uses. It establishes the location as a scenic public park along the Charles River in Boston."
+  },
+  {
+    "query": "kayaking Charles River Boston",
+    "source": "wikipedia",
+    "quality_reflection": "This query focuses on the recreational activities and amenities avail
+2025-12-02 13:00:12,961 | WARNING  | hw4_tourguide.agent.knowledge | Agent | Knowledge LLM query gen failed | Step 2 | Error: LLM response missing 'queries' or 'search_queries' list | Falling back to heuristic
+2025-12-02 13:00:12,965 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Charles River Esplanade, MIT', 'Charles River Esplanade history', 'MIT history']
+2025-12-02 13:00:13,340 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "upbeat electronic dance music MIT area" | Results: 3
+2025-12-02 13:00:13,340 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "upbeat electronic dance music MIT area" | Found: 3 candidates | Time: 519ms
+2025-12-02 13:00:13,340 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Just Dance" from 9 candidates
+2025-12-02 13:00:13,406 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=945.5
+2025-12-02 13:00:13,406 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 4 | location=MIT Stata Center | source=LLM | queries=["MIT Stata Center architecture Frank Gehry" | "MIT campus tour 2024" | "things to do at MIT"]
+2025-12-02 13:00:13,406 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['MIT Stata Center architecture Frank Gehry', 'MIT campus tour 2024', 'things to do at MIT']
+2025-12-02 13:00:13,407 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:00:13,407 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "MIT Stata Center architecture Frank Gehry" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:00:13,407 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:00:13,407 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "MIT campus tour 2024" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:00:13,407 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 13:00:13,407 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "things to do at MIT" | Found: 0 candidates | Time: 0ms
+2025-12-02 13:00:13,407 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 4 | No candidates found after 3 queries
+2025-12-02 13:00:13,492 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 1dzQoRqT5ucxXVaAhTcT0J | Reason: ranked top
+2025-12-02 13:00:13,492 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Just Dance" | Time: 152ms
+2025-12-02 13:00:13,493 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3037ms | Queries: 3 | Candidates: 9 | Selected: "Just Dance"
+2025-12-02 13:00:13,543 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Harvard Bridge" | Results: 6
+2025-12-02 13:00:13,543 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Harvard Bridge" | Found: 6 candidates | Time: 746ms
+2025-12-02 13:00:13,702 | WARNING  | hw4_tourguide.agent.knowledge | Agent | Knowledge search failed (attempt 1/3): Expecting value: line 1 column 1 (char 0)
+2025-12-02 13:00:14,243 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "MIT smoots" | Results: 3
+2025-12-02 13:00:14,243 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "MIT smoots" | Found: 3 candidates | Time: 700ms
+2025-12-02 13:00:14,332 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=1870.6
+2025-12-02 13:00:14,332 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 4 | location=MIT Stata Center | source=LLM | queries=["MIT Stata Center" | "architecture of MIT Stata Center" | "history of MIT Stata Center"]
+2025-12-02 13:00:14,332 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['MIT Stata Center', 'architecture of MIT Stata Center', 'history of MIT Stata Center']
+2025-12-02 13:00:14,386 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=1925.2
+2025-12-02 13:00:14,386 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 4 | location=MIT Stata Center | source=LLM | queries=["songs inspired by MIT Stata Center architecture" | "cambridge massachusetts indie music" | "frank gehry buildings music"]
+2025-12-02 13:00:14,386 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['songs inspired by MIT Stata Center architecture', 'cambridge massachusetts indie music', 'frank gehry buildings music']
+2025-12-02 13:00:14,745 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "songs inspired by MIT Stata Center architecture" | Results: 3
+2025-12-02 13:00:14,745 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "songs inspired by MIT Stata Center architecture" | Found: 3 candidates | Time: 359ms
+2025-12-02 13:00:14,951 | WARNING  | hw4_tourguide.agent.knowledge | Agent | Knowledge search failed (attempt 2/3): Expecting value: line 1 column 1 (char 0)
+2025-12-02 13:00:15,107 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "MIT Stata Center" | Results: 3
+2025-12-02 13:00:15,107 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "MIT Stata Center" | Found: 3 candidates | Time: 775ms
+2025-12-02 13:00:15,193 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Harvard Bridge history" | Results: 3
+2025-12-02 13:00:15,193 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Harvard Bridge history" | Found: 3 candidates | Time: 950ms
+2025-12-02 13:00:15,193 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Harvard Bridge" from 9 candidates
+2025-12-02 13:00:15,233 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "cambridge massachusetts indie music" | Results: 3
+2025-12-02 13:00:15,233 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "cambridge massachusetts indie music" | Found: 3 candidates | Time: 488ms
+2025-12-02 13:00:15,548 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 102602 | Reason: ranked top
+2025-12-02 13:00:15,548 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Harvard Bridge" | Time: 355ms
+2025-12-02 13:00:15,549 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 5093ms | Queries: 3 | Candidates: 9 | Selected: "Harvard Bridge"
+2025-12-02 13:00:15,607 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "frank gehry buildings music" | Results: 3
+2025-12-02 13:00:15,607 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "frank gehry buildings music" | Found: 3 candidates | Time: 374ms
+2025-12-02 13:00:15,608 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "I Bet You Think About Me (feat. Chris Stapleton) (Taylor’s V" from 8 candidates
+2025-12-02 13:00:15,742 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 4CkgMiMqZ5JzW9iYXSTMTL | Reason: ranked top
+2025-12-02 13:00:15,742 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "I Bet You Think About Me (feat. Chris Stapleton) (Taylor’s V" | Time: 134ms
+2025-12-02 13:00:15,742 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3282ms | Queries: 3 | Candidates: 8 | Selected: "I Bet You Think About Me (feat. Chris St"
+2025-12-02 13:00:15,938 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "architecture of MIT Stata Center" | Results: 3
+2025-12-02 13:00:15,938 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "architecture of MIT Stata Center" | Found: 3 candidates | Time: 831ms
+2025-12-02 13:00:16,741 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "history of MIT Stata Center" | Results: 3
+2025-12-02 13:00:16,741 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "history of MIT Stata Center" | Found: 3 candidates | Time: 802ms
+2025-12-02 13:00:16,741 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Stata Center" from 6 candidates
+2025-12-02 13:00:16,760 | WARNING  | hw4_tourguide.agent.knowledge | Agent | Knowledge search failed (attempt 3/3): Expecting value: line 1 column 1 (char 0)
+2025-12-02 13:00:16,760 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Charles River Esplanade, MIT" | Found: 0 candidates | Time: 3795ms
+2025-12-02 13:00:17,086 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 145664 | Reason: ranked top
+2025-12-02 13:00:17,086 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Stata Center" | Time: 345ms
+2025-12-02 13:00:17,086 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 4625ms | Queries: 3 | Candidates: 6 | Selected: "Stata Center"
+2025-12-02 13:00:17,548 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Charles River Esplanade history" | Results: 3
+2025-12-02 13:00:17,548 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Charles River Esplanade history" | Found: 3 candidates | Time: 788ms
+2025-12-02 13:00:18,328 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "MIT history" | Results: 6
+2025-12-02 13:00:18,329 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "MIT history" | Found: 6 candidates | Time: 781ms
+2025-12-02 13:00:18,329 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Charles River Esplanade" from 9 candidates
+2025-12-02 13:00:18,669 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 3432111 | Reason: ranked top
+2025-12-02 13:00:18,669 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Charles River Esplanade" | Time: 340ms
+2025-12-02 13:00:18,669 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 10218ms | Queries: 3 | Candidates: 9 | Selected: "Charles River Esplanade"
+2025-12-02 14:10:09,607 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 14:10:09,607 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 14:10:09,607 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 14:10:10,536 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Boston Common | tid=demo_boston_mit | queries=3 | ms=927.9
+2025-12-02 14:10:10,536 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 1 | location=Boston Common | source=LLM | queries=["Boston Common history Swan Boats" | "things to do Boston Common" | "Boston Common"]
+2025-12-02 14:10:10,537 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Boston Common history Swan Boats', 'things to do Boston Common', 'Boston Common']
+2025-12-02 14:10:10,693 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:10:10,996 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for Boston Common | tid=demo_boston_mit | queries=3 | ms=1387.3
+2025-12-02 14:10:10,996 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 1 | location=Boston Common | source=LLM | queries=["Boston Common history" | "Boston Common Swan Boats" | "Boston Common architecture"]
+2025-12-02 14:10:10,996 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Boston Common history', 'Boston Common Swan Boats', 'Boston Common architecture']
+2025-12-02 14:10:11,356 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 2/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:10:11,612 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 14:10:11,613 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 14:10:11,613 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 14:10:11,918 | ERROR    | hw4_tourguide.agent.song | Agent_LLM_Validation_Error | LLM response missing valid queries list for Boston Common | parsed_type=dict | parsed_keys=['query', 'quality_reflection', 'mood_reflection'] | queries_type=None | raw_response=```json
+[
+  {
+    "query": "songs about boston common",
+    "quality_reflection": "This query aims to surface music tracks that are directly tied to the location of Boston Common and its history, such as local artists or songs referencing the landmark. It should yield location-specific results that capture the cultural identity of the place.",
+    "mood_reflection": "The neutral tone of this location-focused query does not directly address the emotional context, so additional queries will be nee
+2025-12-02 14:10:11,918 | WARNING  | hw4_tourguide.agent.song | Agent | Song LLM query gen failed | Step 1 | Error: LLM response missing 'queries' or 'search_queries' list | Falling back to heuristic
+2025-12-02 14:10:11,918 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Boston Common, MIT', 'Boston Common music', 'MIT music']
+2025-12-02 14:10:12,300 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Boston Common, MIT" | Results: 3
+2025-12-02 14:10:12,300 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Boston Common, MIT" | Found: 3 candidates | Time: 382ms
+2025-12-02 14:10:12,508 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 3/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:10:12,509 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Boston Common history Swan Boats" | Found: 0 candidates | Time: 1972ms
+2025-12-02 14:10:12,551 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Boston Common music" | Results: 3
+2025-12-02 14:10:12,551 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Boston Common music" | Found: 3 candidates | Time: 251ms
+2025-12-02 14:10:12,657 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=things+to+do+Boston+Common&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:10:12,828 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Boston Common history" | Results: 3
+2025-12-02 14:10:12,828 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Boston Common history" | Found: 3 candidates | Time: 1832ms
+2025-12-02 14:10:12,851 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "MIT music" | Results: 3
+2025-12-02 14:10:12,851 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "MIT music" | Found: 3 candidates | Time: 300ms
+2025-12-02 14:10:12,852 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Hartwell" from 8 candidates
+2025-12-02 14:10:12,861 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Charles River Esplanade | tid=demo_boston_mit | queries=3 | ms=1248.6
+2025-12-02 14:10:12,861 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 2 | location=Charles River Esplanade | source=LLM | queries=["charles river esplanade scenic views kayaking" | "boston charles river esplanade" | "things to do charles river esplanade"]
+2025-12-02 14:10:12,861 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['charles river esplanade scenic views kayaking', 'boston charles river esplanade', 'things to do charles river esplanade']
+2025-12-02 14:10:12,971 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 4TLXwgCmciX8sYIVj1b7Xg | Reason: ranked top
+2025-12-02 14:10:12,971 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Hartwell" | Time: 119ms
+2025-12-02 14:10:12,972 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3365ms | Queries: 3 | Candidates: 8 | Selected: "Hartwell"
+2025-12-02 14:10:13,002 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=charles+river+esplanade+scenic+views+kayaking&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:10:13,163 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:10:13,163 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "things to do Boston Common" | Found: 0 candidates | Time: 654ms
+2025-12-02 14:10:13,163 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:10:13,163 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Boston Common" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:10:13,163 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 1 | No candidates found after 3 queries
+2025-12-02 14:10:13,405 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Boston Common Swan Boats" | Results: 3
+2025-12-02 14:10:13,405 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Boston Common Swan Boats" | Found: 3 candidates | Time: 577ms
+2025-12-02 14:10:13,507 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:10:13,507 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "charles river esplanade scenic views kayaking" | Found: 0 candidates | Time: 646ms
+2025-12-02 14:10:13,507 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:10:13,507 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "boston charles river esplanade" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:10:13,507 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:10:13,507 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "things to do charles river esplanade" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:10:13,508 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 2 | No candidates found after 3 queries
+2025-12-02 14:10:13,613 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 14:10:13,613 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 14:10:13,613 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 14:10:13,813 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for Charles River Esplanade | tid=demo_boston_mit | queries=3 | ms=2199.1
+2025-12-02 14:10:13,813 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 2 | location=Charles River Esplanade | source=LLM | queries=["charles river esplanade music" | "boston indie folk playlist" | "songs about the charles river boston"]
+2025-12-02 14:10:13,813 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['charles river esplanade music', 'boston indie folk playlist', 'songs about the charles river boston']
+2025-12-02 14:10:13,909 | ERROR    | hw4_tourguide.agent.knowledge | Agent_LLM_Validation_Error | LLM response missing valid queries list for Charles River Esplanade | parsed_type=dict | parsed_keys=['query', 'source', 'quality_reflection'] | queries_type=None | raw_response=```json
+[
+  {
+    "query": "Charles River Esplanade",
+    "source": "Wikipedia",
+    "quality_reflection": "This query provides a broad overview of the Charles River Esplanade, including its location, history, and key features. It covers the essential information a user would need to understand this landmark."
+  },
+  {
+    "query": "kayaking on the Charles River",
+    "source": "Wikipedia",
+    "quality_reflection": "This query focuses on the recreational activities and attractions of the Charle
+2025-12-02 14:10:13,909 | WARNING  | hw4_tourguide.agent.knowledge | Agent | Knowledge LLM query gen failed | Step 2 | Error: LLM response missing 'queries' or 'search_queries' list | Falling back to heuristic
+2025-12-02 14:10:13,909 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Charles River Esplanade, MIT', 'Charles River Esplanade history', 'MIT history']
+2025-12-02 14:10:13,920 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Boston Common architecture" | Results: 3
+2025-12-02 14:10:13,920 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Boston Common architecture" | Found: 3 candidates | Time: 515ms
+2025-12-02 14:10:13,920 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Boston Common" from 9 candidates
+2025-12-02 14:10:14,051 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "charles river esplanade music" | Results: 3
+2025-12-02 14:10:14,052 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "charles river esplanade music" | Found: 3 candidates | Time: 239ms
+2025-12-02 14:10:14,259 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 400334 | Reason: ranked top
+2025-12-02 14:10:14,259 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Boston Common" | Time: 339ms
+2025-12-02 14:10:14,260 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 4652ms | Queries: 3 | Candidates: 9 | Selected: "Boston Common"
+2025-12-02 14:10:14,299 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "boston indie folk playlist" | Results: 3
+2025-12-02 14:10:14,299 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "boston indie folk playlist" | Found: 3 candidates | Time: 248ms
+2025-12-02 14:10:14,454 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Charles River Esplanade, MIT" | Results: 3
+2025-12-02 14:10:14,454 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Charles River Esplanade, MIT" | Found: 3 candidates | Time: 545ms
+2025-12-02 14:10:14,591 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Harvard Bridge | tid=demo_boston_mit | queries=3 | ms=977.6
+2025-12-02 14:10:14,591 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 3 | location=Harvard Bridge | source=LLM | queries=["Harvard Bridge MIT smoots lore" | "Cambridge MIT landmarks" | "Harvard Bridge"]
+2025-12-02 14:10:14,591 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Harvard Bridge MIT smoots lore', 'Cambridge MIT landmarks', 'Harvard Bridge']
+2025-12-02 14:10:14,591 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:10:14,591 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Harvard Bridge MIT smoots lore" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:10:14,591 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:10:14,591 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Cambridge MIT landmarks" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:10:14,591 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:10:14,592 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Harvard Bridge" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:10:14,592 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 3 | No candidates found after 3 queries
+2025-12-02 14:10:14,639 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "songs about the charles river boston" | Results: 3
+2025-12-02 14:10:14,639 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "songs about the charles river boston" | Found: 3 candidates | Time: 340ms
+2025-12-02 14:10:14,640 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Dirty Water" from 9 candidates
+2025-12-02 14:10:14,788 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 3NINDFPIYnyT26cWWRomOQ | Reason: ranked top
+2025-12-02 14:10:14,788 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Dirty Water" | Time: 148ms
+2025-12-02 14:10:14,788 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3175ms | Queries: 3 | Candidates: 9 | Selected: "Dirty Water"
+2025-12-02 14:10:15,015 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for Harvard Bridge | tid=demo_boston_mit | queries=3 | ms=1401.5
+2025-12-02 14:10:15,015 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Charles River Esplanade history" | Results: 3
+2025-12-02 14:10:15,015 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 3 | location=Harvard Bridge | source=LLM | queries=["Harvard Bridge MIT lore songs" | "Cambridge Massachusetts indie rock" | "songs about crossing the Charles River"]
+2025-12-02 14:10:15,016 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Charles River Esplanade history" | Found: 3 candidates | Time: 561ms
+2025-12-02 14:10:15,016 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Harvard Bridge MIT lore songs', 'Cambridge Massachusetts indie rock', 'songs about crossing the Charles River']
+2025-12-02 14:10:15,308 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Harvard Bridge MIT lore songs" | Results: 3
+2025-12-02 14:10:15,309 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Harvard Bridge MIT lore songs" | Found: 3 candidates | Time: 291ms
+2025-12-02 14:10:15,527 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for Harvard Bridge | tid=demo_boston_mit | queries=3 | ms=1913.0
+2025-12-02 14:10:15,527 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 3 | location=Harvard Bridge | source=LLM | queries=["Harvard Bridge" | "Smoots MIT lore" | "Harvard Bridge history"]
+2025-12-02 14:10:15,527 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Harvard Bridge', 'Smoots MIT lore', 'Harvard Bridge history']
+2025-12-02 14:10:15,546 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "MIT history" | Results: 3
+2025-12-02 14:10:15,546 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "MIT history" | Found: 3 candidates | Time: 528ms
+2025-12-02 14:10:15,547 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Charles River" from 8 candidates
+2025-12-02 14:10:15,619 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 14:10:15,619 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 14:10:15,619 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 14:10:15,665 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Cambridge Massachusetts indie rock" | Results: 3
+2025-12-02 14:10:15,665 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Cambridge Massachusetts indie rock" | Found: 3 candidates | Time: 356ms
+2025-12-02 14:10:15,910 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 146280 | Reason: ranked top
+2025-12-02 14:10:15,910 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Charles River" | Time: 363ms
+2025-12-02 14:10:15,911 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 4298ms | Queries: 3 | Candidates: 8 | Selected: "Charles River"
+2025-12-02 14:10:16,067 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Harvard Bridge" | Results: 3
+2025-12-02 14:10:16,068 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Harvard Bridge" | Found: 3 candidates | Time: 540ms
+2025-12-02 14:10:16,088 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "songs about crossing the Charles River" | Results: 3
+2025-12-02 14:10:16,090 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "songs about crossing the Charles River" | Found: 3 candidates | Time: 424ms
+2025-12-02 14:10:16,090 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Many Rivers To Cross" from 9 candidates
+2025-12-02 14:10:16,268 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 6MQuAYJgRwUn44gCdOcFIm | Reason: ranked top
+2025-12-02 14:10:16,268 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Many Rivers To Cross" | Time: 177ms
+2025-12-02 14:10:16,269 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 2655ms | Queries: 3 | Candidates: 9 | Selected: "Many Rivers To Cross"
+2025-12-02 14:10:16,371 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=751.2
+2025-12-02 14:10:16,371 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 4 | location=MIT Stata Center | source=LLM | queries=["MIT campus architecture tour 2023" | "Frank Gehry MIT Stata Center building" | "MIT campus and student life"]
+2025-12-02 14:10:16,371 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['MIT campus architecture tour 2023', 'Frank Gehry MIT Stata Center building', 'MIT campus and student life']
+2025-12-02 14:10:16,371 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:10:16,371 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "MIT campus architecture tour 2023" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:10:16,389 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:10:16,389 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Frank Gehry MIT Stata Center building" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:10:16,389 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:10:16,389 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "MIT campus and student life" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:10:16,389 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 4 | No candidates found after 3 queries
+2025-12-02 14:10:16,505 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Smoots MIT lore" | Results: 3
+2025-12-02 14:10:16,505 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Smoots MIT lore" | Found: 3 candidates | Time: 438ms
+2025-12-02 14:10:16,923 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=1303.0
+2025-12-02 14:10:16,923 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 4 | location=MIT Stata Center | source=LLM | queries=["MIT Stata Center architecture Frank Gehry" | "instrumental music inspired by MIT Stata Center" | "ambient electronica songs that evoke modern architecture"]
+2025-12-02 14:10:16,923 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['MIT Stata Center architecture Frank Gehry', 'instrumental music inspired by MIT Stata Center', 'ambient electronica songs that evoke modern architecture']
+2025-12-02 14:10:17,071 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Harvard Bridge history" | Results: 3
+2025-12-02 14:10:17,071 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Harvard Bridge history" | Found: 3 candidates | Time: 565ms
+2025-12-02 14:10:17,071 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Harvard Bridge" from 7 candidates
+2025-12-02 14:10:17,203 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "MIT Stata Center architecture Frank Gehry" | Results: 3
+2025-12-02 14:10:17,203 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "MIT Stata Center architecture Frank Gehry" | Found: 3 candidates | Time: 280ms
+2025-12-02 14:10:17,420 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 102602 | Reason: ranked top
+2025-12-02 14:10:17,421 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Harvard Bridge" | Time: 349ms
+2025-12-02 14:10:17,422 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3808ms | Queries: 3 | Candidates: 7 | Selected: "Harvard Bridge"
+2025-12-02 14:10:17,572 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "instrumental music inspired by MIT Stata Center" | Results: 3
+2025-12-02 14:10:17,572 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "instrumental music inspired by MIT Stata Center" | Found: 3 candidates | Time: 369ms
+2025-12-02 14:10:17,857 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=2236.7
+2025-12-02 14:10:17,857 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 4 | location=MIT Stata Center | source=LLM | queries=["MIT Stata Center" | "Frank Gehry MIT Stata Center" | "history MIT Stata Center"]
+2025-12-02 14:10:17,858 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['MIT Stata Center', 'Frank Gehry MIT Stata Center', 'history MIT Stata Center']
+2025-12-02 14:10:17,890 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "ambient electronica songs that evoke modern architecture" | Results: 3
+2025-12-02 14:10:17,890 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "ambient electronica songs that evoke modern architecture" | Found: 3 candidates | Time: 318ms
+2025-12-02 14:10:17,891 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Happiness Is Too Finesse" from 9 candidates
+2025-12-02 14:10:18,022 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 5q3gq7OmfCjUZTECaLieQ1 | Reason: ranked top
+2025-12-02 14:10:18,022 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Happiness Is Too Finesse" | Time: 131ms
+2025-12-02 14:10:18,022 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 2403ms | Queries: 3 | Candidates: 9 | Selected: "Happiness Is Too Finesse"
+2025-12-02 14:10:18,495 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "MIT Stata Center" | Results: 3
+2025-12-02 14:10:18,495 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "MIT Stata Center" | Found: 3 candidates | Time: 637ms
+2025-12-02 14:10:19,034 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Frank Gehry MIT Stata Center" | Results: 3
+2025-12-02 14:10:19,034 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Frank Gehry MIT Stata Center" | Found: 3 candidates | Time: 539ms
+2025-12-02 14:10:19,641 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "history MIT Stata Center" | Results: 3
+2025-12-02 14:10:19,641 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "history MIT Stata Center" | Found: 3 candidates | Time: 607ms
+2025-12-02 14:10:19,642 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Stata Center" from 6 candidates
+2025-12-02 14:10:19,988 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 145664 | Reason: ranked top
+2025-12-02 14:10:19,988 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Stata Center" | Time: 346ms
+2025-12-02 14:10:19,988 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 4369ms | Queries: 3 | Candidates: 6 | Selected: "Stata Center"
+2025-12-02 14:11:23,852 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 14:11:23,852 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 14:11:23,852 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 14:11:24,931 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Boston Common | tid=demo_boston_mit | queries=3 | ms=1078.5
+2025-12-02 14:11:24,931 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 1 | location=Boston Common | source=LLM | queries=["Boston Common history Swan Boats" | "things to do at Boston Common" | "Boston Common"]
+2025-12-02 14:11:24,931 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Boston Common history Swan Boats', 'things to do at Boston Common', 'Boston Common']
+2025-12-02 14:11:25,018 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for Boston Common | tid=demo_boston_mit | queries=3 | ms=1166.1
+2025-12-02 14:11:25,018 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 1 | location=Boston Common | source=LLM | queries=["boston common history swan boats" | "boston common chill acoustic songs" | "songs about boston"]
+2025-12-02 14:11:25,018 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['boston common history swan boats', 'boston common chill acoustic songs', 'songs about boston']
+2025-12-02 14:11:25,087 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:11:25,442 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "boston common history swan boats" | Results: 3
+2025-12-02 14:11:25,442 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "boston common history swan boats" | Found: 3 candidates | Time: 423ms
+2025-12-02 14:11:25,745 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 2/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:11:25,784 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "boston common chill acoustic songs" | Results: 3
+2025-12-02 14:11:25,784 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "boston common chill acoustic songs" | Found: 3 candidates | Time: 342ms
+2025-12-02 14:11:25,831 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for Boston Common | tid=demo_boston_mit | queries=3 | ms=1979.0
+2025-12-02 14:11:25,832 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 1 | location=Boston Common | source=LLM | queries=["Boston Common" | "History of Boston Common" | "Swan Boats Boston Common"]
+2025-12-02 14:11:25,832 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Boston Common', 'History of Boston Common', 'Swan Boats Boston Common']
+2025-12-02 14:11:25,855 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 14:11:25,855 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 14:11:25,855 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 14:11:26,115 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "songs about boston" | Results: 3
+2025-12-02 14:11:26,115 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "songs about boston" | Found: 3 candidates | Time: 331ms
+2025-12-02 14:11:26,115 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Something About You" from 9 candidates
+2025-12-02 14:11:26,261 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 1KxNmUInjFsoDFrLaTtpLZ | Reason: ranked top
+2025-12-02 14:11:26,261 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Something About You" | Time: 145ms
+2025-12-02 14:11:26,261 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 2409ms | Queries: 3 | Candidates: 9 | Selected: "Something About You"
+2025-12-02 14:11:26,351 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Boston Common" | Results: 3
+2025-12-02 14:11:26,351 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Boston Common" | Found: 3 candidates | Time: 519ms
+2025-12-02 14:11:26,910 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 3/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:11:26,910 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Boston Common history Swan Boats" | Found: 0 candidates | Time: 1979ms
+2025-12-02 14:11:27,002 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Charles River Esplanade | tid=demo_boston_mit | queries=3 | ms=1146.0
+2025-12-02 14:11:27,002 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 2 | location=Charles River Esplanade | source=LLM | queries=["charles river esplanade scenic views kayaking" | "boston charles river parks" | "things to do charles river boston"]
+2025-12-02 14:11:27,002 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['charles river esplanade scenic views kayaking', 'boston charles river parks', 'things to do charles river boston']
+2025-12-02 14:11:27,070 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "History of Boston Common" | Results: 3
+2025-12-02 14:11:27,070 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "History of Boston Common" | Found: 3 candidates | Time: 718ms
+2025-12-02 14:11:27,075 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=things+to+do+at+Boston+Common&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:11:27,161 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=charles+river+esplanade+scenic+views+kayaking&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:11:27,429 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for Charles River Esplanade | tid=demo_boston_mit | queries=3 | ms=1572.9
+2025-12-02 14:11:27,429 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 2 | location=Charles River Esplanade | source=LLM | queries=["Charles River Esplanade" | "scenic views Charles River Boston" | "kayaking Charles River Esplanade"]
+2025-12-02 14:11:27,429 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Charles River Esplanade', 'scenic views Charles River Boston', 'kayaking Charles River Esplanade']
+2025-12-02 14:11:27,581 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:11:27,581 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "things to do at Boston Common" | Found: 0 candidates | Time: 671ms
+2025-12-02 14:11:27,581 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:11:27,581 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Boston Common" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:11:27,582 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 1 | No candidates found after 3 queries
+2025-12-02 14:11:27,664 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:11:27,665 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "charles river esplanade scenic views kayaking" | Found: 0 candidates | Time: 662ms
+2025-12-02 14:11:27,665 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:11:27,665 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "boston charles river parks" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:11:27,665 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:11:27,665 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "things to do charles river boston" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:11:27,676 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Swan Boats Boston Common" | Results: 3
+2025-12-02 14:11:27,676 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Swan Boats Boston Common" | Found: 3 candidates | Time: 606ms
+2025-12-02 14:11:27,676 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 2 | No candidates found after 3 queries
+2025-12-02 14:11:27,678 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Boston Common" from 8 candidates
+2025-12-02 14:11:27,721 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for Charles River Esplanade | tid=demo_boston_mit | queries=3 | ms=1864.8
+2025-12-02 14:11:27,721 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 2 | location=Charles River Esplanade | source=LLM | queries=["Charles River esplanade music" | "Boston indie folk music" | "songs about the Charles River"]
+2025-12-02 14:11:27,721 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Charles River esplanade music', 'Boston indie folk music', 'songs about the Charles River']
+2025-12-02 14:11:27,864 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 14:11:27,867 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 14:11:27,868 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 14:11:27,921 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Charles River Esplanade" | Results: 3
+2025-12-02 14:11:27,921 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Charles River Esplanade" | Found: 3 candidates | Time: 492ms
+2025-12-02 14:11:28,027 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 400334 | Reason: ranked top
+2025-12-02 14:11:28,027 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Boston Common" | Time: 348ms
+2025-12-02 14:11:28,027 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 4175ms | Queries: 3 | Candidates: 8 | Selected: "Boston Common"
+2025-12-02 14:11:28,140 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Charles River esplanade music" | Results: 3
+2025-12-02 14:11:28,140 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Charles River esplanade music" | Found: 3 candidates | Time: 419ms
+2025-12-02 14:11:28,461 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Boston indie folk music" | Results: 3
+2025-12-02 14:11:28,462 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Boston indie folk music" | Found: 3 candidates | Time: 321ms
+2025-12-02 14:11:28,480 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "scenic views Charles River Boston" | Results: 3
+2025-12-02 14:11:28,480 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "scenic views Charles River Boston" | Found: 3 candidates | Time: 559ms
+2025-12-02 14:11:28,717 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "songs about the Charles River" | Results: 3
+2025-12-02 14:11:28,718 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "songs about the Charles River" | Found: 3 candidates | Time: 256ms
+2025-12-02 14:11:28,718 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Dirty Love" from 9 candidates
+2025-12-02 14:11:28,883 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 6bON0csSf7G4LDsUrBwQ54 | Reason: ranked top
+2025-12-02 14:11:28,883 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Dirty Love" | Time: 165ms
+2025-12-02 14:11:28,884 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3028ms | Queries: 3 | Candidates: 9 | Selected: "Dirty Love"
+2025-12-02 14:11:28,957 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "kayaking Charles River Esplanade" | Results: 3
+2025-12-02 14:11:28,957 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "kayaking Charles River Esplanade" | Found: 3 candidates | Time: 477ms
+2025-12-02 14:11:28,957 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Charles River Esplanade" from 7 candidates
+2025-12-02 14:11:29,315 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 3432111 | Reason: ranked top
+2025-12-02 14:11:29,315 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Charles River Esplanade" | Time: 357ms
+2025-12-02 14:11:29,315 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3460ms | Queries: 3 | Candidates: 7 | Selected: "Charles River Esplanade"
+2025-12-02 14:11:29,729 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Harvard Bridge | tid=demo_boston_mit | queries=3 | ms=1863.5
+2025-12-02 14:11:29,729 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 3 | location=Harvard Bridge | source=LLM | queries=["Harvard Bridge smoots MIT lore" | "Boston bridges MIT tours" | "MIT landmarks Cambridge"]
+2025-12-02 14:11:29,729 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Harvard Bridge smoots MIT lore', 'Boston bridges MIT tours', 'MIT landmarks Cambridge']
+2025-12-02 14:11:29,729 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:11:29,729 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Harvard Bridge smoots MIT lore" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:11:29,729 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:11:29,730 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Boston bridges MIT tours" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:11:29,730 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:11:29,730 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "MIT landmarks Cambridge" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:11:29,730 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 3 | No candidates found after 3 queries
+2025-12-02 14:11:29,865 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 14:11:29,865 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 14:11:29,865 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 14:11:30,106 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for Harvard Bridge | tid=demo_boston_mit | queries=3 | ms=2237.0
+2025-12-02 14:11:30,106 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 3 | location=Harvard Bridge | source=LLM | queries=["Harvard Bridge" | "Harvard Bridge MIT smoots" | "Harvard Bridge construction history"]
+2025-12-02 14:11:30,106 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Harvard Bridge', 'Harvard Bridge MIT smoots', 'Harvard Bridge construction history']
+2025-12-02 14:11:30,522 | ERROR    | hw4_tourguide.agent.song | Agent_LLM_Validation_Error | LLM response missing valid queries list for Harvard Bridge | parsed_type=dict | parsed_keys=['query', 'quality_reflection', 'mood'] | queries_type=None | raw_response=```json
+[
+  {
+    "query": "Harvard Bridge smoots MIT lore songs",
+    "quality_reflection": "This search focuses on the unique cultural identity of the Harvard Bridge, which is known for its 'smoots' measurement markings and MIT lore. Songs that reflect this quirky, intellectual, and tradition-rich location would be ideal.",
+    "mood": "cultural/heritage"
+  },
+  {
+    "query": "instrumental study music Boston",
+    "quality_reflection": "The Harvard Bridge is in a college town near MIT, so mus
+2025-12-02 14:11:30,522 | WARNING  | hw4_tourguide.agent.song | Agent | Song LLM query gen failed | Step 3 | Error: LLM response missing 'queries' or 'search_queries' list | Falling back to heuristic
+2025-12-02 14:11:30,522 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Harvard Bridge, MIT', 'Harvard Bridge music', 'MIT music']
+2025-12-02 14:11:30,597 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Harvard Bridge" | Results: 3
+2025-12-02 14:11:30,597 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Harvard Bridge" | Found: 3 candidates | Time: 491ms
+2025-12-02 14:11:30,668 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=803.3
+2025-12-02 14:11:30,668 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 4 | location=MIT Stata Center | source=LLM | queries=["MIT campus architecture Frank Gehry" | "MIT Stata Center design and features" | "Best of MIT Stata Center 2023"]
+2025-12-02 14:11:30,668 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['MIT campus architecture Frank Gehry', 'MIT Stata Center design and features', 'Best of MIT Stata Center 2023']
+2025-12-02 14:11:30,669 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:11:30,669 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "MIT campus architecture Frank Gehry" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:11:30,669 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:11:30,669 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "MIT Stata Center design and features" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:11:30,669 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:11:30,669 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Best of MIT Stata Center 2023" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:11:30,669 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 4 | No candidates found after 3 queries
+2025-12-02 14:11:30,754 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Harvard Bridge, MIT" | Results: 3
+2025-12-02 14:11:30,754 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Harvard Bridge, MIT" | Found: 3 candidates | Time: 232ms
+2025-12-02 14:11:31,034 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Harvard Bridge music" | Results: 3
+2025-12-02 14:11:31,034 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Harvard Bridge music" | Found: 3 candidates | Time: 280ms
+2025-12-02 14:11:31,074 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Harvard Bridge MIT smoots" | Results: 3
+2025-12-02 14:11:31,074 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Harvard Bridge MIT smoots" | Found: 3 candidates | Time: 478ms
+2025-12-02 14:11:31,297 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "MIT music" | Results: 3
+2025-12-02 14:11:31,297 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "MIT music" | Found: 3 candidates | Time: 263ms
+2025-12-02 14:11:31,297 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "מדע בדיוני" from 9 candidates
+2025-12-02 14:11:31,414 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 6YEcDPO0mxYoUOZx5cZleT | Reason: ranked top
+2025-12-02 14:11:31,414 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "מדע בדיוני" | Time: 117ms
+2025-12-02 14:11:31,414 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3547ms | Queries: 3 | Candidates: 9 | Selected: "מדע בדיוני"
+2025-12-02 14:11:31,523 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=1657.2
+2025-12-02 14:11:31,523 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 4 | location=MIT Stata Center | source=LLM | queries=["MIT Stata Center" | "Frank Gehry MIT Stata Center" | "history of the MIT Stata Center"]
+2025-12-02 14:11:31,523 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['MIT Stata Center', 'Frank Gehry MIT Stata Center', 'history of the MIT Stata Center']
+2025-12-02 14:11:31,614 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Harvard Bridge construction history" | Results: 3
+2025-12-02 14:11:31,614 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Harvard Bridge construction history" | Found: 3 candidates | Time: 540ms
+2025-12-02 14:11:31,614 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Harvard Bridge" from 6 candidates
+2025-12-02 14:11:31,617 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=1751.9
+2025-12-02 14:11:31,617 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 4 | location=MIT Stata Center | source=LLM | queries=["MIT Stata Center architecture Frank Gehry" | "songs about MIT campus" | "Cambridge MA music scene"]
+2025-12-02 14:11:31,617 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['MIT Stata Center architecture Frank Gehry', 'songs about MIT campus', 'Cambridge MA music scene']
+2025-12-02 14:11:31,892 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "MIT Stata Center architecture Frank Gehry" | Results: 3
+2025-12-02 14:11:31,892 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "MIT Stata Center architecture Frank Gehry" | Found: 3 candidates | Time: 274ms
+2025-12-02 14:11:31,970 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 102602 | Reason: ranked top
+2025-12-02 14:11:31,970 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Harvard Bridge" | Time: 356ms
+2025-12-02 14:11:31,970 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 4103ms | Queries: 3 | Candidates: 6 | Selected: "Harvard Bridge"
+2025-12-02 14:11:31,986 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "MIT Stata Center" | Results: 3
+2025-12-02 14:11:31,986 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "MIT Stata Center" | Found: 3 candidates | Time: 464ms
+2025-12-02 14:11:32,277 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "songs about MIT campus" | Results: 3
+2025-12-02 14:11:32,277 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "songs about MIT campus" | Found: 3 candidates | Time: 385ms
+2025-12-02 14:11:32,526 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Frank Gehry MIT Stata Center" | Results: 3
+2025-12-02 14:11:32,526 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Frank Gehry MIT Stata Center" | Found: 3 candidates | Time: 539ms
+2025-12-02 14:11:32,681 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Cambridge MA music scene" | Results: 3
+2025-12-02 14:11:32,681 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Cambridge MA music scene" | Found: 3 candidates | Time: 404ms
+2025-12-02 14:11:32,681 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Cambridge, 1963" from 9 candidates
+2025-12-02 14:11:32,847 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 7iLVpb0WAgeVRn2wSdmdrd | Reason: ranked top
+2025-12-02 14:11:32,847 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Cambridge, 1963" | Time: 166ms
+2025-12-02 14:11:32,848 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 2983ms | Queries: 3 | Candidates: 9 | Selected: "Cambridge, 1963"
+2025-12-02 14:11:33,040 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "history of the MIT Stata Center" | Results: 3
+2025-12-02 14:11:33,040 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "history of the MIT Stata Center" | Found: 3 candidates | Time: 514ms
+2025-12-02 14:11:33,040 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Stata Center" from 7 candidates
+2025-12-02 14:11:33,392 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 145664 | Reason: ranked top
+2025-12-02 14:11:33,392 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Stata Center" | Time: 352ms
+2025-12-02 14:11:33,392 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3527ms | Queries: 3 | Candidates: 7 | Selected: "Stata Center"
+2025-12-02 14:23:57,724 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 14:23:57,724 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 14:23:57,724 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 1 | Location: Boston Common | Search Hint: Boston Common history Swan Boats | Route Context: MIT
+2025-12-02 14:23:58,600 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Boston Common | tid=demo_boston_mit | queries=3 | ms=875.2
+2025-12-02 14:23:58,600 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 1 | location=Boston Common | source=LLM | queries=["Boston Common history swan boats" | "Boston Common walking tour" | "Boston Common"]
+2025-12-02 14:23:58,600 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Boston Common history swan boats', 'Boston Common walking tour', 'Boston Common']
+2025-12-02 14:23:58,844 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:23:59,272 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for Boston Common | tid=demo_boston_mit | queries=3 | ms=1546.9
+2025-12-02 14:23:59,272 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 1 | location=Boston Common | source=LLM | queries=["Boston Common music" | "Swan Boats Boston music" | "Chill acoustic music for MIT"]
+2025-12-02 14:23:59,272 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Boston Common music', 'Swan Boats Boston music', 'Chill acoustic music for MIT']
+2025-12-02 14:23:59,507 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 2/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:23:59,676 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Boston Common music" | Results: 3
+2025-12-02 14:23:59,676 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Boston Common music" | Found: 3 candidates | Time: 404ms
+2025-12-02 14:23:59,729 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 14:23:59,729 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 14:23:59,730 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 2 | Location: Charles River Esplanade | Search Hint: Charles River esplanade scenic views kayaking | Route Context: MIT
+2025-12-02 14:23:59,792 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for Boston Common | tid=demo_boston_mit | queries=3 | ms=2067.1
+2025-12-02 14:23:59,792 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 1 | location=Boston Common | source=LLM | queries=["Boston Common" | "history of Boston Common" | "Boston Swan Boats"]
+2025-12-02 14:23:59,792 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Boston Common', 'history of Boston Common', 'Boston Swan Boats']
+2025-12-02 14:24:00,002 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Swan Boats Boston music" | Results: 3
+2025-12-02 14:24:00,002 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Swan Boats Boston music" | Found: 3 candidates | Time: 326ms
+2025-12-02 14:24:00,440 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Boston Common" | Results: 3
+2025-12-02 14:24:00,441 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Boston Common" | Found: 3 candidates | Time: 649ms
+2025-12-02 14:24:00,442 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Chill acoustic music for MIT" | Results: 3
+2025-12-02 14:24:00,442 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Chill acoustic music for MIT" | Found: 3 candidates | Time: 440ms
+2025-12-02 14:24:00,443 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "טאטע תטהר - גרסה אקוסטית" from 9 candidates
+2025-12-02 14:24:00,663 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 5bFrsEk5efTVlOTwtLBLn2 | Reason: ranked top
+2025-12-02 14:24:00,663 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "טאטע תטהר - גרסה אקוסטית" | Time: 220ms
+2025-12-02 14:24:00,664 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 2941ms | Queries: 3 | Candidates: 9 | Selected: "טאטע תטהר - גרסה אקוסטית"
+2025-12-02 14:24:00,674 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 3/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:24:00,674 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Boston Common history swan boats" | Found: 0 candidates | Time: 2074ms
+2025-12-02 14:24:00,688 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Charles River Esplanade | tid=demo_boston_mit | queries=3 | ms=958.6
+2025-12-02 14:24:00,688 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 2 | location=Charles River Esplanade | source=LLM | queries=["charles river esplanade boston kayaking" | "charles river esplanade views boston" | "things to do charles river esplanade boston"]
+2025-12-02 14:24:00,688 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['charles river esplanade boston kayaking', 'charles river esplanade views boston', 'things to do charles river esplanade boston']
+2025-12-02 14:24:00,829 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+walking+tour&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:24:00,848 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=charles+river+esplanade+boston+kayaking&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:24:01,103 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "history of Boston Common" | Results: 3
+2025-12-02 14:24:01,103 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "history of Boston Common" | Found: 3 candidates | Time: 662ms
+2025-12-02 14:24:01,334 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:24:01,335 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Boston Common walking tour" | Found: 0 candidates | Time: 661ms
+2025-12-02 14:24:01,335 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:24:01,335 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Boston Common" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:24:01,337 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 1 | No candidates found after 3 queries
+2025-12-02 14:24:01,353 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:24:01,354 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "charles river esplanade boston kayaking" | Found: 0 candidates | Time: 665ms
+2025-12-02 14:24:01,354 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:24:01,354 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "charles river esplanade views boston" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:24:01,354 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:24:01,354 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "things to do charles river esplanade boston" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:24:01,356 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 2 | No candidates found after 3 queries
+2025-12-02 14:24:01,667 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for Charles River Esplanade | tid=demo_boston_mit | queries=3 | ms=1936.9
+2025-12-02 14:24:01,667 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Boston Swan Boats" | Results: 3
+2025-12-02 14:24:01,667 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 2 | location=Charles River Esplanade | source=LLM | queries=["Charles River Boston music" | "songs about scenic Boston views" | "relaxing instrumental playlists for outdoor adventures"]
+2025-12-02 14:24:01,667 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Charles River Boston music', 'songs about scenic Boston views', 'relaxing instrumental playlists for outdoor adventures']
+2025-12-02 14:24:01,667 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Boston Swan Boats" | Found: 3 candidates | Time: 564ms
+2025-12-02 14:24:01,668 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Boston Common" from 8 candidates
+2025-12-02 14:24:01,734 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 14:24:01,734 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 14:24:01,734 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 3 | Location: Harvard Bridge | Search Hint: Harvard Bridge smoots MIT lore | Route Context: MIT
+2025-12-02 14:24:02,008 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 400334 | Reason: ranked top
+2025-12-02 14:24:02,008 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Boston Common" | Time: 341ms
+2025-12-02 14:24:02,009 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 4285ms | Queries: 3 | Candidates: 8 | Selected: "Boston Common"
+2025-12-02 14:24:02,017 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Charles River Boston music" | Results: 3
+2025-12-02 14:24:02,017 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Charles River Boston music" | Found: 3 candidates | Time: 350ms
+2025-12-02 14:24:02,386 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "songs about scenic Boston views" | Results: 3
+2025-12-02 14:24:02,386 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "songs about scenic Boston views" | Found: 3 candidates | Time: 369ms
+2025-12-02 14:24:02,894 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "relaxing instrumental playlists for outdoor adventures" | Results: 3
+2025-12-02 14:24:02,894 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "relaxing instrumental playlists for outdoor adventures" | Found: 3 candidates | Time: 508ms
+2025-12-02 14:24:02,905 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Boston" from 9 candidates
+2025-12-02 14:24:02,983 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Harvard Bridge | tid=demo_boston_mit | queries=3 | ms=1248.5
+2025-12-02 14:24:02,983 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 3 | location=Harvard Bridge | source=LLM | queries=["harvard bridge smoots mit lore" | "mit campus tour" | "cambridge massachusetts landmarks"]
+2025-12-02 14:24:02,983 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['harvard bridge smoots mit lore', 'mit campus tour', 'cambridge massachusetts landmarks']
+2025-12-02 14:24:02,983 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:24:02,983 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "harvard bridge smoots mit lore" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:24:02,983 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:24:02,983 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "mit campus tour" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:24:02,983 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:24:02,983 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "cambridge massachusetts landmarks" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:24:02,984 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 3 | No candidates found after 3 queries
+2025-12-02 14:24:03,019 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 2WZyfujzMweFLnozyUJBkW | Reason: ranked top
+2025-12-02 14:24:03,020 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Boston" | Time: 114ms
+2025-12-02 14:24:03,020 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3290ms | Queries: 3 | Candidates: 9 | Selected: "Boston"
+2025-12-02 14:24:03,132 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for Charles River Esplanade | tid=demo_boston_mit | queries=1 | ms=3401.6
+2025-12-02 14:24:03,132 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 2 | location=Charles River Esplanade | source=LLM | queries=["https://en.wikipedia.org/wiki/Charles_River_Esplanade"]
+2025-12-02 14:24:03,132 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 1 | Queries: ['https://en.wikipedia.org/wiki/Charles_River_Esplanade']
+2025-12-02 14:24:03,612 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for Harvard Bridge | tid=demo_boston_mit | queries=3 | ms=1877.5
+2025-12-02 14:24:03,612 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for Harvard Bridge | tid=demo_boston_mit | queries=3 | ms=1877.5
+2025-12-02 14:24:03,612 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 3 | location=Harvard Bridge | source=LLM | queries=["Harvard Bridge" | "history of the Harvard Bridge" | "Harvard Bridge smoots MIT lore"]
+2025-12-02 14:24:03,612 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['Harvard Bridge', 'history of the Harvard Bridge', 'Harvard Bridge smoots MIT lore']
+2025-12-02 14:24:03,612 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 3 | location=Harvard Bridge | source=LLM | queries=["songs about Harvard Bridge in Cambridge MA" | "Cambridge MA local artists" | "music inspired by MIT and Harvard"]
+2025-12-02 14:24:03,614 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['songs about Harvard Bridge in Cambridge MA', 'Cambridge MA local artists', 'music inspired by MIT and Harvard']
+2025-12-02 14:24:03,681 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "https://en.wikipedia.org/wiki/Charles_River_Esplanade" | Results: 3
+2025-12-02 14:24:03,681 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "https://en.wikipedia.org/wiki/Charles_River_Esplanade" | Found: 3 candidates | Time: 549ms
+2025-12-02 14:24:03,682 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Kuching" from 3 candidates
+2025-12-02 14:24:03,734 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 14:24:03,735 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 14:24:03,735 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: demo_boston_mit | Step 4 | Location: MIT Stata Center | Search Hint: MIT Stata Center architecture Frank Gehry | Route Context: MIT
+2025-12-02 14:24:04,033 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 153216 | Reason: ranked top
+2025-12-02 14:24:04,033 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Kuching" | Time: 351ms
+2025-12-02 14:24:04,033 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 4303ms | Queries: 3 | Candidates: 3 | Selected: "Kuching"
+2025-12-02 14:24:04,136 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Harvard Bridge" | Results: 3
+2025-12-02 14:24:04,136 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "Harvard Bridge" | Found: 3 candidates | Time: 522ms
+2025-12-02 14:24:04,166 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "songs about Harvard Bridge in Cambridge MA" | Results: 3
+2025-12-02 14:24:04,167 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "songs about Harvard Bridge in Cambridge MA" | Found: 3 candidates | Time: 553ms
+2025-12-02 14:24:04,516 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=781.2
+2025-12-02 14:24:04,516 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 4 | location=MIT Stata Center | source=LLM | queries=["MIT campus tour 2024" | "Boston university campuses" | "MIT"]
+2025-12-02 14:24:04,516 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['MIT campus tour 2024', 'Boston university campuses', 'MIT']
+2025-12-02 14:24:04,516 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:24:04,516 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "MIT campus tour 2024" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:24:04,516 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:24:04,516 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Boston university campuses" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:24:04,516 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:24:04,517 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "MIT" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:24:04,517 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: demo_boston_mit | Step 4 | No candidates found after 3 queries
+2025-12-02 14:24:04,595 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Cambridge MA local artists" | Results: 3
+2025-12-02 14:24:04,595 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "Cambridge MA local artists" | Found: 3 candidates | Time: 429ms
+2025-12-02 14:24:04,732 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "history of the Harvard Bridge" | Results: 3
+2025-12-02 14:24:04,732 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "history of the Harvard Bridge" | Found: 3 candidates | Time: 596ms
+2025-12-02 14:24:05,156 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "music inspired by MIT and Harvard" | Results: 3
+2025-12-02 14:24:05,156 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "music inspired by MIT and Harvard" | Found: 3 candidates | Time: 560ms
+2025-12-02 14:24:05,156 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "מוזיקה מרגיעה למדיטציה, הרפיה ויוגה - Relaxing music for med" from 9 candidates
+2025-12-02 14:24:05,243 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Harvard Bridge smoots MIT lore" | Results: 2
+2025-12-02 14:24:05,243 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "Harvard Bridge smoots MIT lore" | Found: 2 candidates | Time: 511ms
+2025-12-02 14:24:05,243 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Harvard Bridge" from 6 candidates
+2025-12-02 14:24:05,285 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 5UyWjoxSelg5cBqNv44jr5 | Reason: ranked top
+2025-12-02 14:24:05,285 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "מוזיקה מרגיעה למדיטציה, הרפיה ויוגה - Relaxing music for med" | Time: 129ms
+2025-12-02 14:24:05,285 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3551ms | Queries: 3 | Candidates: 9 | Selected: "מוזיקה מרגיעה למדיטציה, הרפיה ויוגה - Re"
+2025-12-02 14:24:05,290 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=1555.1
+2025-12-02 14:24:05,290 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 4 | location=MIT Stata Center | source=LLM | queries=["MIT Stata Center architecture Frank Gehry songs" | "relaxing ambient electronic music" | "instrumental music for college campuses"]
+2025-12-02 14:24:05,290 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['MIT Stata Center architecture Frank Gehry songs', 'relaxing ambient electronic music', 'instrumental music for college campuses']
+2025-12-02 14:24:05,590 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 102602 | Reason: ranked top
+2025-12-02 14:24:05,590 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Harvard Bridge" | Time: 347ms
+2025-12-02 14:24:05,590 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3856ms | Queries: 3 | Candidates: 6 | Selected: "Harvard Bridge"
+2025-12-02 14:24:05,618 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "MIT Stata Center architecture Frank Gehry songs" | Results: 3
+2025-12-02 14:24:05,618 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "MIT Stata Center architecture Frank Gehry songs" | Found: 3 candidates | Time: 328ms
+2025-12-02 14:24:06,069 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "relaxing ambient electronic music" | Results: 3
+2025-12-02 14:24:06,069 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "relaxing ambient electronic music" | Found: 3 candidates | Time: 451ms
+2025-12-02 14:24:06,080 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for MIT Stata Center | tid=demo_boston_mit | queries=3 | ms=2344.6
+2025-12-02 14:24:06,080 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 4 | location=MIT Stata Center | source=LLM | queries=["MIT Stata Center" | "architecture of MIT Stata Center" | "history of MIT Stata Center"]
+2025-12-02 14:24:06,080 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: demo_boston_mit | Mode: LLM | Count: 3 | Queries: ['MIT Stata Center', 'architecture of MIT Stata Center', 'history of MIT Stata Center']
+2025-12-02 14:24:06,577 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "MIT Stata Center" | Results: 3
+2025-12-02 14:24:06,577 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 1/3: "MIT Stata Center" | Found: 3 candidates | Time: 497ms
+2025-12-02 14:24:06,611 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "instrumental music for college campuses" | Results: 3
+2025-12-02 14:24:06,611 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "instrumental music for college campuses" | Found: 3 candidates | Time: 542ms
+2025-12-02 14:24:06,611 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "O.C.B." from 9 candidates
+2025-12-02 14:24:06,934 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 3cTjrgUbe9WzdEvkLJQE5d | Reason: ranked top
+2025-12-02 14:24:06,934 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "O.C.B." | Time: 322ms
+2025-12-02 14:24:06,935 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 3200ms | Queries: 3 | Candidates: 9 | Selected: "O.C.B."
+2025-12-02 14:24:07,072 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "architecture of MIT Stata Center" | Results: 3
+2025-12-02 14:24:07,072 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 2/3: "architecture of MIT Stata Center" | Found: 3 candidates | Time: 495ms
+2025-12-02 14:24:07,579 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "history of MIT Stata Center" | Results: 3
+2025-12-02 14:24:07,579 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: demo_boston_mit | Query 3/3: "history of MIT Stata Center" | Found: 3 candidates | Time: 507ms
+2025-12-02 14:24:07,579 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: demo_boston_mit | Selected: "Stata Center" from 6 candidates
+2025-12-02 14:24:07,928 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 145664 | Reason: ranked top
+2025-12-02 14:24:07,928 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: demo_boston_mit | Success: "Stata Center" | Time: 349ms
+2025-12-02 14:24:07,928 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: demo_boston_mit | Status: ok | Total Time: 4194ms | Queries: 3 | Candidates: 6 | Selected: "Stata Center"
+2025-12-02 14:26:01,570 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: 1764678360_d738b619 | Step 1 | Location: Broadway | Search Hint: Broadway, MIT Museum, Cambridge, MA | Route Context: MIT Museum, Cambridge, MA
+2025-12-02 14:26:01,570 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: 1764678360_d738b619 | Step 1 | Location: Broadway | Search Hint: Broadway, MIT Museum, Cambridge, MA | Route Context: MIT Museum, Cambridge, MA
+2025-12-02 14:26:01,570 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: 1764678360_d738b619 | Step 1 | Location: Broadway | Search Hint: Broadway, MIT Museum, Cambridge, MA | Route Context: MIT Museum, Cambridge, MA
+2025-12-02 14:26:02,825 | INFO     | hw4_tourguide.agent.video | Agent | LLM query generation for Broadway | tid=1764678360_d738b619 | queries=3 | ms=1255.2
+2025-12-02 14:26:02,825 | INFO     | hw4_tourguide.agent.video | Agent_LLM_Queries | Agent_LLM_Queries | video | Step 1 | location=Broadway | source=LLM | queries=["MIT campus tour 2024" | "Cambridge MA attractions" | "MIT"]
+2025-12-02 14:26:02,825 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: 1764678360_d738b619 | Mode: LLM | Count: 3 | Queries: ['MIT campus tour 2024', 'Cambridge MA attractions', 'MIT']
+2025-12-02 14:26:02,976 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=MIT+campus+tour+2024&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:26:03,033 | INFO     | hw4_tourguide.agent.song | Agent | LLM query generation for Broadway | tid=1764678360_d738b619 | queries=3 | ms=1462.5
+2025-12-02 14:26:03,033 | INFO     | hw4_tourguide.agent.song | Agent_LLM_Queries | Agent_LLM_Queries | song | Step 1 | location=Broadway | source=LLM | queries=["Cambridge, MA music" | "indie music Cambridge MA" | "songs about MIT Cambridge MA"]
+2025-12-02 14:26:03,033 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: 1764678360_d738b619 | Mode: LLM | Count: 3 | Queries: ['Cambridge, MA music', 'indie music Cambridge MA', 'songs about MIT Cambridge MA']
+2025-12-02 14:26:03,543 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Cambridge, MA music" | Results: 3
+2025-12-02 14:26:03,543 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 1/3: "Cambridge, MA music" | Found: 3 candidates | Time: 510ms
+2025-12-02 14:26:03,575 | INFO     | hw4_tourguide.agent.video | Agent_Input | Agent_Input | TID: 1764678360_d738b619 | Step 2 | Location: Kendall/MIT | Search Hint: Kendall/MIT, MIT Museum, Cambridge, MA | Route Context: MIT Museum, Cambridge, MA
+2025-12-02 14:26:03,575 | INFO     | hw4_tourguide.agent.song | Agent_Input | Agent_Input | TID: 1764678360_d738b619 | Step 2 | Location: Kendall/MIT | Search Hint: Kendall/MIT, MIT Museum, Cambridge, MA | Route Context: MIT Museum, Cambridge, MA
+2025-12-02 14:26:03,576 | INFO     | hw4_tourguide.agent.knowledge | Agent_Input | Agent_Input | TID: 1764678360_d738b619 | Step 2 | Location: Kendall/MIT | Search Hint: Kendall/MIT, MIT Museum, Cambridge, MA | Route Context: MIT Museum, Cambridge, MA
+2025-12-02 14:26:03,628 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 2/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=MIT+campus+tour+2024&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:26:03,820 | ERROR    | hw4_tourguide.agent.knowledge | Agent_LLM_Validation_Error | LLM response missing valid queries list for Broadway | parsed_type=dict | parsed_keys=['query', 'source', 'url', 'title', 'description'] | queries_type=None | raw_response=```json
+[
+  {
+    "query": "Broadway, MIT Museum, Cambridge, MA",
+    "source": "Wikipedia",
+    "url": "https://en.wikipedia.org/wiki/Broadway,_Cambridge,_Massachusetts",
+    "title": "Broadway, Cambridge, Massachusetts",
+    "description": "Broadway is a major street in Cambridge, Massachusetts, running roughly parallel to the Charles River. It is home to several notable institutions, including the MIT Museum."
+  },
+  {
+    "query": "MIT Museum Cambridge MA",
+    "source": "Wikipedia",
+    "ur
+2025-12-02 14:26:03,821 | WARNING  | hw4_tourguide.agent.knowledge | Agent | Knowledge LLM query gen failed | Step 1 | Error: LLM response missing 'queries' or 'search_queries' list | Falling back to heuristic
+2025-12-02 14:26:03,821 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: 1764678360_d738b619 | Mode: LLM | Count: 3 | Queries: ['Broadway, MIT Museum, Cambridge, MA', 'Broadway history', 'MIT Museum, Cambridge, MA history']
+2025-12-02 14:26:04,043 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "indie music Cambridge MA" | Results: 3
+2025-12-02 14:26:04,043 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 2/3: "indie music Cambridge MA" | Found: 3 candidates | Time: 500ms
+2025-12-02 14:26:04,278 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "songs about MIT Cambridge MA" | Results: 3
+2025-12-02 14:26:04,278 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 3/3: "songs about MIT Cambridge MA" | Found: 3 candidates | Time: 235ms
+2025-12-02 14:26:04,278 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: 1764678360_d738b619 | Selected: "Modern Love" from 8 candidates
+2025-12-02 14:26:04,290 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Broadway, MIT Museum, Cambridge, MA" | Results: 3
+2025-12-02 14:26:04,290 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 1/3: "Broadway, MIT Museum, Cambridge, MA" | Found: 3 candidates | Time: 470ms
+2025-12-02 14:26:04,392 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 0RZsGLJGovonnUdW2STs23 | Reason: ranked top
+2025-12-02 14:26:04,393 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: 1764678360_d738b619 | Success: "Modern Love" | Time: 114ms
+2025-12-02 14:26:04,393 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: 1764678360_d738b619 | Status: ok | Total Time: 2823ms | Queries: 3 | Candidates: 8 | Selected: "Modern Love"
+2025-12-02 14:26:04,848 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Broadway history" | Results: 3
+2025-12-02 14:26:04,848 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 2/3: "Broadway history" | Found: 3 candidates | Time: 558ms
+2025-12-02 14:26:04,864 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 3/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=MIT+campus+tour+2024&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:26:04,864 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 1/3: "MIT campus tour 2024" | Found: 0 candidates | Time: 2038ms
+2025-12-02 14:26:05,016 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Cambridge+MA+attractions&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:26:05,381 | ERROR    | hw4_tourguide.agent.song | Agent_LLM_Validation_Error | LLM response missing valid queries list for Kendall/MIT | parsed_type=dict | parsed_keys=['query', 'mood', 'genre'] | queries_type=None | raw_response=```json
+[
+  {
+    "query": "Kendall Square MIT musicians",
+    "mood": "cultural/heritage",
+    "genre": "indie, electronic"
+  },
+  {
+    "query": "upbeat songs for Cambridge MA",
+    "mood": "energetic/upbeat",
+    "genre": "indie rock, electronic"
+  },
+  {
+    "query": "instrumental ambient music MIT Museum"
+    "mood": "nature/exploration",
+    "genre": "ambient, post-rock"
+  }
+]
+```
+2025-12-02 14:26:05,382 | WARNING  | hw4_tourguide.agent.song | Agent | Song LLM query gen failed | Step 2 | Error: LLM response missing 'queries' or 'search_queries' list | Falling back to heuristic
+2025-12-02 14:26:05,382 | INFO     | hw4_tourguide.agent.song | Agent_Queries | Agent_Queries | TID: 1764678360_d738b619 | Mode: LLM | Count: 3 | Queries: ['Kendall/MIT, MIT Museum, Cambridge, MA', 'Kendall/MIT music', 'MIT Museum, Cambridge, MA music']
+2025-12-02 14:26:05,402 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "MIT Museum, Cambridge, MA history" | Results: 3
+2025-12-02 14:26:05,402 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 3/3: "MIT Museum, Cambridge, MA history" | Found: 3 candidates | Time: 554ms
+2025-12-02 14:26:05,403 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: 1764678360_d738b619 | Selected: "Cambridge, Massachusetts" from 8 candidates
+2025-12-02 14:26:05,662 | ERROR    | hw4_tourguide.agent.video | Agent_LLM_Validation_Error | LLM response missing valid queries list for Kendall/MIT | parsed_type=dict | parsed_keys=['query', 'quality_reflection'] | queries_type=None | raw_response=```json
+[
+  {
+    "query": "MIT campus tour 2024",
+    "quality_reflection": "This query captures the essence of the location (MIT) and aligns with the search hint of a campus tour. The addition of '2024' helps ensure recent, high-quality video content."
+  },
+  {
+    "query": "MIT Museum Cambridge MA",
+    "quality_reflection": "This broader query focuses on the MIT Museum, which is relevant to the route context. It casts a wider net for content related to the institution and local area."
+  },
+ 
+2025-12-02 14:26:05,662 | WARNING  | hw4_tourguide.agent.video | Agent | Video LLM query gen failed | Step 2 | Error: LLM response missing 'queries' or 'search_queries' list | Falling back to heuristic
+2025-12-02 14:26:05,662 | INFO     | hw4_tourguide.agent.video | Agent_Queries | Agent_Queries | TID: 1764678360_d738b619 | Mode: LLM | Count: 3 | Queries: ['Kendall/MIT, MIT Museum, Cambridge, MA', 'Kendall/MIT walking tour', 'MIT Museum, Cambridge, MA walking tour']
+2025-12-02 14:26:05,670 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 2/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Cambridge+MA+attractions&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:26:05,721 | INFO     | hw4_tourguide.agent.knowledge | Agent | LLM query generation for Kendall/MIT | tid=1764678360_d738b619 | queries=3 | ms=2145.5
+2025-12-02 14:26:05,721 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Kendall/MIT, MIT Museum, Cambridge, MA" | Results: 3
+2025-12-02 14:26:05,722 | INFO     | hw4_tourguide.agent.knowledge | Agent_LLM_Queries | Agent_LLM_Queries | knowledge | Step 2 | location=Kendall/MIT | source=LLM | queries=["Kendall/MIT MIT" | "MIT Museum Cambridge MA" | "history Kendall/MIT Cambridge MA"]
+2025-12-02 14:26:05,722 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 1/3: "Kendall/MIT, MIT Museum, Cambridge, MA" | Found: 3 candidates | Time: 340ms
+2025-12-02 14:26:05,722 | INFO     | hw4_tourguide.agent.knowledge | Agent_Queries | Agent_Queries | TID: 1764678360_d738b619 | Mode: LLM | Count: 3 | Queries: ['Kendall/MIT MIT', 'MIT Museum Cambridge MA', 'history Kendall/MIT Cambridge MA']
+2025-12-02 14:26:05,741 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 5685 | Reason: ranked top
+2025-12-02 14:26:05,741 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: 1764678360_d738b619 | Success: "Cambridge, Massachusetts" | Time: 338ms
+2025-12-02 14:26:05,741 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: 1764678360_d738b619 | Status: ok | Total Time: 4172ms | Queries: 3 | Candidates: 8 | Selected: "Cambridge, Massachusetts"
+2025-12-02 14:26:05,812 | WARNING  | hw4_tourguide.agent.video | Agent | Video search failed (attempt 1/3): 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Kendall%2FMIT%2C+MIT+Museum%2C+Cambridge%2C+MA&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:26:06,233 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "Kendall/MIT MIT" | Results: 3
+2025-12-02 14:26:06,234 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 1/3: "Kendall/MIT MIT" | Found: 3 candidates | Time: 512ms
+2025-12-02 14:26:06,235 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "Kendall/MIT music" | Results: 3
+2025-12-02 14:26:06,235 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 2/3: "Kendall/MIT music" | Found: 3 candidates | Time: 513ms
+2025-12-02 14:26:06,320 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:26:06,320 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 1/3: "Kendall/MIT, MIT Museum, Cambridge, MA" | Found: 0 candidates | Time: 658ms
+2025-12-02 14:26:06,321 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:26:06,321 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 2/3: "Kendall/MIT walking tour" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:26:06,321 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:26:06,321 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 3/3: "MIT Museum, Cambridge, MA walking tour" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:26:06,321 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: 1764678360_d738b619 | Step 2 | No candidates found after 3 queries
+2025-12-02 14:26:06,478 | INFO     | hw4_tourguide.agent.song | Agent | SEARCH | Query: "MIT Museum, Cambridge, MA music" | Results: 3
+2025-12-02 14:26:06,478 | INFO     | hw4_tourguide.agent.song | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 3/3: "MIT Museum, Cambridge, MA music" | Found: 3 candidates | Time: 243ms
+2025-12-02 14:26:06,479 | INFO     | hw4_tourguide.agent.song | Agent_Select | Agent_Select | TID: 1764678360_d738b619 | Selected: "Meine Posse" from 9 candidates
+2025-12-02 14:26:06,616 | INFO     | hw4_tourguide.agent.song | Agent | FETCH | Selected: 4GwahM79iwk0EvUok9XKiE | Reason: ranked top
+2025-12-02 14:26:06,616 | INFO     | hw4_tourguide.agent.song | Agent_Fetch | Agent_Fetch | TID: 1764678360_d738b619 | Success: "Meine Posse" | Time: 137ms
+2025-12-02 14:26:06,616 | INFO     | hw4_tourguide.agent.song | Agent_Complete | Agent_Complete | TID: 1764678360_d738b619 | Status: ok | Total Time: 3041ms | Queries: 3 | Candidates: 9 | Selected: "Meine Posse"
+2025-12-02 14:26:06,675 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:26:06,675 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 2/3: "Cambridge MA attractions" | Found: 0 candidates | Time: 1811ms
+2025-12-02 14:26:06,675 | WARNING  | hw4_tourguide.agent.video | Agent | Circuit open for video, phase=search
+2025-12-02 14:26:06,675 | INFO     | hw4_tourguide.agent.video | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 3/3: "MIT" | Found: 0 candidates | Time: 0ms
+2025-12-02 14:26:06,676 | WARNING  | hw4_tourguide.agent.video | Agent_NoResults | Agent_NoResults | TID: 1764678360_d738b619 | Step 1 | No candidates found after 3 queries
+2025-12-02 14:26:06,758 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "MIT Museum Cambridge MA" | Results: 3
+2025-12-02 14:26:06,758 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 2/3: "MIT Museum Cambridge MA" | Found: 3 candidates | Time: 524ms
+2025-12-02 14:26:07,309 | INFO     | hw4_tourguide.agent.knowledge | Agent | SEARCH | Query: "history Kendall/MIT Cambridge MA" | Results: 3
+2025-12-02 14:26:07,309 | INFO     | hw4_tourguide.agent.knowledge | Agent_Search | Agent_Search | TID: 1764678360_d738b619 | Query 3/3: "history Kendall/MIT Cambridge MA" | Found: 3 candidates | Time: 551ms
+2025-12-02 14:26:07,309 | INFO     | hw4_tourguide.agent.knowledge | Agent_Select | Agent_Select | TID: 1764678360_d738b619 | Selected: "Massachusetts Institute of Technology" from 7 candidates
+2025-12-02 14:26:07,652 | INFO     | hw4_tourguide.agent.knowledge | Agent | FETCH | Selected: 18879 | Reason: ranked top
+2025-12-02 14:26:07,652 | INFO     | hw4_tourguide.agent.knowledge | Agent_Fetch | Agent_Fetch | TID: 1764678360_d738b619 | Success: "Massachusetts Institute of Technology" | Time: 343ms
+2025-12-02 14:26:07,652 | INFO     | hw4_tourguide.agent.knowledge | Agent_Complete | Agent_Complete | TID: 1764678360_d738b619 | Status: ok | Total Time: 4077ms | Queries: 3 | Candidates: 7 | Selected: "Massachusetts Institute of Technology"

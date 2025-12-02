@@ -1,0 +1,15 @@
+2025-12-02 12:59:47,410 | WARNING  | hw4_tourguide.agent.video | Setup | Video running in STUB mode (no live API)
+2025-12-02 12:59:47,410 | WARNING  | hw4_tourguide.agent.song | Setup | Song running in STUB mode (no live API)
+2025-12-02 12:59:47,410 | WARNING  | hw4_tourguide.agent.knowledge | Setup | Knowledge running in STUB mode (no live API)
+2025-12-02 12:59:47,411 | INFO     | hw4_tourguide.agent.video | Agent | RETURN | Boston Common
+2025-12-02 12:59:47,411 | INFO     | hw4_tourguide.agent.song | Agent | RETURN | Boston Common
+2025-12-02 12:59:47,411 | INFO     | hw4_tourguide.agent.knowledge | Agent | RETURN | Boston Common
+2025-12-02 12:59:49,413 | INFO     | hw4_tourguide.agent.video | Agent | RETURN | Charles River Esplanade
+2025-12-02 12:59:49,413 | INFO     | hw4_tourguide.agent.song | Agent | RETURN | Charles River Esplanade
+2025-12-02 12:59:49,413 | INFO     | hw4_tourguide.agent.knowledge | Agent | RETURN | Charles River Esplanade
+2025-12-02 12:59:51,413 | INFO     | hw4_tourguide.agent.video | Agent | RETURN | Harvard Bridge
+2025-12-02 12:59:51,413 | INFO     | hw4_tourguide.agent.song | Agent | RETURN | Harvard Bridge
+2025-12-02 12:59:51,413 | INFO     | hw4_tourguide.agent.knowledge | Agent | RETURN | Harvard Bridge
+2025-12-02 12:59:53,418 | INFO     | hw4_tourguide.agent.video | Agent | RETURN | MIT Stata Center
+2025-12-02 12:59:53,419 | INFO     | hw4_tourguide.agent.song | Agent | RETURN | MIT Stata Center
+2025-12-02 12:59:53,419 | INFO     | hw4_tourguide.agent.knowledge | Agent | RETURN | MIT Stata Center

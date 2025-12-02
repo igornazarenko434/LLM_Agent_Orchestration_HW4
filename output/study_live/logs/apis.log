@@ -1,0 +1,368 @@
+2025-12-02 13:00:07,577 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common history Swan Boats" | Max Results: 3
+2025-12-02 13:00:07,608 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "Boston Common" | Max Results: 3
+2025-12-02 13:00:07,740 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:00:08,246 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common history Swan Boats" | Max Results: 3
+2025-12-02 13:00:08,296 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 688ms
+2025-12-02 13:00:08,296 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: DuckDuckGo Search | Query: "Boston Common" | Max Results: 3
+2025-12-02 13:00:08,403 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:00:08,717 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: DuckDuckGo Search | Results: 3 | Time: 420ms
+2025-12-02 13:00:08,718 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "History of Boston Common" | Max Results: 3
+2025-12-02 13:00:09,408 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common history Swan Boats" | Max Results: 3
+2025-12-02 13:00:09,424 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 706ms
+2025-12-02 13:00:09,424 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: DuckDuckGo Search | Query: "History of Boston Common" | Max Results: 3
+2025-12-02 13:00:09,557 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:00:09,557 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common top attractions" | Max Results: 3
+2025-12-02 13:00:09,661 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "Boston music history" | Max Results: 3
+2025-12-02 13:00:09,682 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: DuckDuckGo Search | Results: 0 | Time: 257ms
+2025-12-02 13:00:09,683 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "Swan Boats Boston Common" | Max Results: 3
+2025-12-02 13:00:09,710 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+top+attractions&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:00:10,185 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 502ms
+2025-12-02 13:00:10,186 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: DuckDuckGo Search | Query: "Swan Boats Boston Common" | Max Results: 3
+2025-12-02 13:00:10,187 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "charles river esplanade boston music" | Max Results: 3
+2025-12-02 13:00:10,212 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 551ms
+2025-12-02 13:00:10,212 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common top attractions" | Max Results: 3
+2025-12-02 13:00:10,213 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "Boston Common swan boat songs" | Max Results: 3
+2025-12-02 13:00:10,433 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 247ms
+2025-12-02 13:00:10,434 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "relaxing music for scenic views boston" | Max Results: 3
+2025-12-02 13:00:10,451 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+top+attractions&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 13:00:10,461 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: DuckDuckGo Search | Results: 0 | Time: 274ms
+2025-12-02 13:00:10,462 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Fetch | Article ID: 400334
+2025-12-02 13:00:10,552 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 338ms
+2025-12-02 13:00:10,553 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "Indie folk songs for MIT campus" | Max Results: 3
+2025-12-02 13:00:10,802 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Boston Common" | Time: 340ms
+2025-12-02 13:00:10,928 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 494ms
+2025-12-02 13:00:10,929 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "songs about massachusetts nature and outdoors" | Max Results: 3
+2025-12-02 13:00:10,981 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 429ms
+2025-12-02 13:00:10,983 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Fetch | Track ID: 4MrW3lMdMpKUZ2Cn2mMvBX
+2025-12-02 13:00:11,140 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "בחוף של טראפטוני" | Time: 157ms
+2025-12-02 13:00:11,259 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 330ms
+2025-12-02 13:00:11,261 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Fetch | Track ID: 0bejS6MPPwoi6pYKwzM6DF
+2025-12-02 13:00:11,466 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "Montauk Sunsets" | Time: 206ms
+2025-12-02 13:00:12,131 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "songs about Harvard Bridge Boston" | Max Results: 3
+2025-12-02 13:00:12,475 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 344ms
+2025-12-02 13:00:12,478 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "Cambridge MA indie folk music" | Max Results: 3
+2025-12-02 13:00:12,797 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "Harvard Bridge" | Max Results: 3
+2025-12-02 13:00:12,820 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 341ms
+2025-12-02 13:00:12,821 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "upbeat electronic dance music MIT area" | Max Results: 3
+2025-12-02 13:00:12,965 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "Charles River Esplanade, MIT" | Max Results: 3
+2025-12-02 13:00:13,281 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 484ms
+2025-12-02 13:00:13,282 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: DuckDuckGo Search | Query: "Harvard Bridge" | Max Results: 3
+2025-12-02 13:00:13,339 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 518ms
+2025-12-02 13:00:13,340 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Fetch | Track ID: 1dzQoRqT5ucxXVaAhTcT0J
+2025-12-02 13:00:13,447 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 482ms
+2025-12-02 13:00:13,448 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: DuckDuckGo Search | Query: "Charles River Esplanade, MIT" | Max Results: 3
+2025-12-02 13:00:13,492 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "Just Dance" | Time: 151ms
+2025-12-02 13:00:13,542 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: DuckDuckGo Search | Results: 3 | Time: 260ms
+2025-12-02 13:00:13,543 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "MIT smoots" | Max Results: 3
+2025-12-02 13:00:13,702 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: DuckDuckGo Search | Error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-12-02 13:00:13,973 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 430ms
+2025-12-02 13:00:13,974 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: DuckDuckGo Search | Query: "MIT smoots" | Max Results: 3
+2025-12-02 13:00:14,207 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "Charles River Esplanade, MIT" | Max Results: 3
+2025-12-02 13:00:14,242 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: DuckDuckGo Search | Results: 0 | Time: 268ms
+2025-12-02 13:00:14,243 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "Harvard Bridge history" | Max Results: 3
+2025-12-02 13:00:14,332 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "MIT Stata Center" | Max Results: 3
+2025-12-02 13:00:14,386 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "songs inspired by MIT Stata Center architecture" | Max Results: 3
+2025-12-02 13:00:14,689 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 482ms
+2025-12-02 13:00:14,690 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: DuckDuckGo Search | Query: "Charles River Esplanade, MIT" | Max Results: 3
+2025-12-02 13:00:14,745 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 358ms
+2025-12-02 13:00:14,745 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "cambridge massachusetts indie music" | Max Results: 3
+2025-12-02 13:00:14,856 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 524ms
+2025-12-02 13:00:14,857 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: DuckDuckGo Search | Query: "MIT Stata Center" | Max Results: 3
+2025-12-02 13:00:14,923 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 680ms
+2025-12-02 13:00:14,923 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: DuckDuckGo Search | Query: "Harvard Bridge history" | Max Results: 3
+2025-12-02 13:00:14,951 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: DuckDuckGo Search | Error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-12-02 13:00:15,106 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: DuckDuckGo Search | Results: 0 | Time: 249ms
+2025-12-02 13:00:15,107 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "architecture of MIT Stata Center" | Max Results: 3
+2025-12-02 13:00:15,192 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: DuckDuckGo Search | Results: 0 | Time: 269ms
+2025-12-02 13:00:15,193 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Fetch | Article ID: 102602
+2025-12-02 13:00:15,232 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 487ms
+2025-12-02 13:00:15,233 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "frank gehry buildings music" | Max Results: 3
+2025-12-02 13:00:15,547 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Harvard Bridge" | Time: 354ms
+2025-12-02 13:00:15,607 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 373ms
+2025-12-02 13:00:15,608 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Fetch | Track ID: 4CkgMiMqZ5JzW9iYXSTMTL
+2025-12-02 13:00:15,677 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 570ms
+2025-12-02 13:00:15,678 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: DuckDuckGo Search | Query: "architecture of MIT Stata Center" | Max Results: 3
+2025-12-02 13:00:15,741 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "I Bet You Think About Me (feat. Chris Stapleton) (" | Time: 133ms
+2025-12-02 13:00:15,937 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: DuckDuckGo Search | Results: 0 | Time: 260ms
+2025-12-02 13:00:15,938 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "history of MIT Stata Center" | Max Results: 3
+2025-12-02 13:00:15,956 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "Charles River Esplanade, MIT" | Max Results: 3
+2025-12-02 13:00:16,481 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 524ms
+2025-12-02 13:00:16,481 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 543ms
+2025-12-02 13:00:16,482 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: DuckDuckGo Search | Query: "Charles River Esplanade, MIT" | Max Results: 3
+2025-12-02 13:00:16,483 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: DuckDuckGo Search | Query: "history of MIT Stata Center" | Max Results: 3
+2025-12-02 13:00:16,740 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: DuckDuckGo Search | Results: 0 | Time: 257ms
+2025-12-02 13:00:16,741 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Fetch | Article ID: 145664
+2025-12-02 13:00:16,760 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: DuckDuckGo Search | Error: JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2025-12-02 13:00:16,760 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "Charles River Esplanade history" | Max Results: 3
+2025-12-02 13:00:17,085 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Stata Center" | Time: 344ms
+2025-12-02 13:00:17,295 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 535ms
+2025-12-02 13:00:17,296 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: DuckDuckGo Search | Query: "Charles River Esplanade history" | Max Results: 3
+2025-12-02 13:00:17,547 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: DuckDuckGo Search | Results: 0 | Time: 251ms
+2025-12-02 13:00:17,548 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "MIT history" | Max Results: 3
+2025-12-02 13:00:18,064 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 516ms
+2025-12-02 13:00:18,067 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: DuckDuckGo Search | Query: "MIT history" | Max Results: 3
+2025-12-02 13:00:18,328 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: DuckDuckGo Search | Results: 3 | Time: 261ms
+2025-12-02 13:00:18,329 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Fetch | Article ID: 3432111
+2025-12-02 13:00:18,668 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Charles River Esplanade" | Time: 339ms
+2025-12-02 14:10:10,537 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common history Swan Boats" | Max Results: 3
+2025-12-02 14:10:10,691 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:10:10,996 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "Boston Common history" | Max Results: 3
+2025-12-02 14:10:11,198 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common history Swan Boats" | Max Results: 3
+2025-12-02 14:10:11,356 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:10:11,918 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "Boston Common, MIT" | Max Results: 3
+2025-12-02 14:10:12,299 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 381ms
+2025-12-02 14:10:12,300 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "Boston Common music" | Max Results: 3
+2025-12-02 14:10:12,361 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common history Swan Boats" | Max Results: 3
+2025-12-02 14:10:12,508 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:10:12,509 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "things to do Boston Common" | Max Results: 3
+2025-12-02 14:10:12,551 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 250ms
+2025-12-02 14:10:12,551 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "MIT music" | Max Results: 3
+2025-12-02 14:10:12,657 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=things+to+do+Boston+Common&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:10:12,827 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 1831ms
+2025-12-02 14:10:12,828 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "Boston Common Swan Boats" | Max Results: 3
+2025-12-02 14:10:12,850 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 299ms
+2025-12-02 14:10:12,852 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Fetch | Track ID: 4TLXwgCmciX8sYIVj1b7Xg
+2025-12-02 14:10:12,862 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: YouTube Search | Query: "charles river esplanade scenic views kayaking" | Max Results: 3
+2025-12-02 14:10:12,970 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "Hartwell" | Time: 118ms
+2025-12-02 14:10:13,002 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=charles+river+esplanade+scenic+views+kayaking&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:10:13,404 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 576ms
+2025-12-02 14:10:13,405 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "Boston Common architecture" | Max Results: 3
+2025-12-02 14:10:13,813 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "charles river esplanade music" | Max Results: 3
+2025-12-02 14:10:13,910 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "Charles River Esplanade, MIT" | Max Results: 3
+2025-12-02 14:10:13,919 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 514ms
+2025-12-02 14:10:13,920 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Fetch | Article ID: 400334
+2025-12-02 14:10:14,051 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 238ms
+2025-12-02 14:10:14,052 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "boston indie folk playlist" | Max Results: 3
+2025-12-02 14:10:14,258 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Boston Common" | Time: 338ms
+2025-12-02 14:10:14,299 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 247ms
+2025-12-02 14:10:14,299 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "songs about the charles river boston" | Max Results: 3
+2025-12-02 14:10:14,454 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 544ms
+2025-12-02 14:10:14,454 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "Charles River Esplanade history" | Max Results: 3
+2025-12-02 14:10:14,638 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 339ms
+2025-12-02 14:10:14,640 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Fetch | Track ID: 3NINDFPIYnyT26cWWRomOQ
+2025-12-02 14:10:14,787 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "Dirty Water" | Time: 147ms
+2025-12-02 14:10:15,011 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 557ms
+2025-12-02 14:10:15,018 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "MIT history" | Max Results: 3
+2025-12-02 14:10:15,018 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "Harvard Bridge MIT lore songs" | Max Results: 3
+2025-12-02 14:10:15,307 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 288ms
+2025-12-02 14:10:15,309 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "Cambridge Massachusetts indie rock" | Max Results: 3
+2025-12-02 14:10:15,527 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "Harvard Bridge" | Max Results: 3
+2025-12-02 14:10:15,544 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 525ms
+2025-12-02 14:10:15,548 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Fetch | Article ID: 146280
+2025-12-02 14:10:15,663 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 353ms
+2025-12-02 14:10:15,665 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "songs about crossing the Charles River" | Max Results: 3
+2025-12-02 14:10:15,906 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Charles River" | Time: 358ms
+2025-12-02 14:10:16,064 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 537ms
+2025-12-02 14:10:16,068 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "Smoots MIT lore" | Max Results: 3
+2025-12-02 14:10:16,082 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 416ms
+2025-12-02 14:10:16,091 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Fetch | Track ID: 6MQuAYJgRwUn44gCdOcFIm
+2025-12-02 14:10:16,266 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "Many Rivers To Cross" | Time: 170ms
+2025-12-02 14:10:16,503 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 434ms
+2025-12-02 14:10:16,506 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "Harvard Bridge history" | Max Results: 3
+2025-12-02 14:10:16,923 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "MIT Stata Center architecture Frank Gehry" | Max Results: 3
+2025-12-02 14:10:17,070 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 564ms
+2025-12-02 14:10:17,071 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Fetch | Article ID: 102602
+2025-12-02 14:10:17,202 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 279ms
+2025-12-02 14:10:17,203 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "instrumental music inspired by MIT Stata Center" | Max Results: 3
+2025-12-02 14:10:17,420 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Harvard Bridge" | Time: 348ms
+2025-12-02 14:10:17,572 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 368ms
+2025-12-02 14:10:17,572 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "ambient electronica songs that evoke modern architecture" | Max Results: 3
+2025-12-02 14:10:17,858 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "MIT Stata Center" | Max Results: 3
+2025-12-02 14:10:17,890 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 317ms
+2025-12-02 14:10:17,891 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Fetch | Track ID: 5q3gq7OmfCjUZTECaLieQ1
+2025-12-02 14:10:18,021 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "Happiness Is Too Finesse" | Time: 130ms
+2025-12-02 14:10:18,494 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 636ms
+2025-12-02 14:10:18,495 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "Frank Gehry MIT Stata Center" | Max Results: 3
+2025-12-02 14:10:19,033 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 538ms
+2025-12-02 14:10:19,034 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "history MIT Stata Center" | Max Results: 3
+2025-12-02 14:10:19,641 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 606ms
+2025-12-02 14:10:19,642 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Fetch | Article ID: 145664
+2025-12-02 14:10:19,987 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Stata Center" | Time: 345ms
+2025-12-02 14:11:24,931 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common history Swan Boats" | Max Results: 3
+2025-12-02 14:11:25,019 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "boston common history swan boats" | Max Results: 3
+2025-12-02 14:11:25,086 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:11:25,441 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 422ms
+2025-12-02 14:11:25,442 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "boston common chill acoustic songs" | Max Results: 3
+2025-12-02 14:11:25,592 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common history Swan Boats" | Max Results: 3
+2025-12-02 14:11:25,745 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:11:25,784 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 342ms
+2025-12-02 14:11:25,784 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "songs about boston" | Max Results: 3
+2025-12-02 14:11:25,832 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "Boston Common" | Max Results: 3
+2025-12-02 14:11:26,114 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 329ms
+2025-12-02 14:11:26,115 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Fetch | Track ID: 1KxNmUInjFsoDFrLaTtpLZ
+2025-12-02 14:11:26,259 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "Something About You" | Time: 144ms
+2025-12-02 14:11:26,351 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 518ms
+2025-12-02 14:11:26,351 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "History of Boston Common" | Max Results: 3
+2025-12-02 14:11:26,750 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common history Swan Boats" | Max Results: 3
+2025-12-02 14:11:26,909 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+Swan+Boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:11:26,912 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "things to do at Boston Common" | Max Results: 3
+2025-12-02 14:11:27,002 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: YouTube Search | Query: "charles river esplanade scenic views kayaking" | Max Results: 3
+2025-12-02 14:11:27,068 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 716ms
+2025-12-02 14:11:27,070 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "Swan Boats Boston Common" | Max Results: 3
+2025-12-02 14:11:27,075 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=things+to+do+at+Boston+Common&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:11:27,160 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=charles+river+esplanade+scenic+views+kayaking&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:11:27,430 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "Charles River Esplanade" | Max Results: 3
+2025-12-02 14:11:27,663 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 592ms
+2025-12-02 14:11:27,679 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Fetch | Article ID: 400334
+2025-12-02 14:11:27,722 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "Charles River esplanade music" | Max Results: 3
+2025-12-02 14:11:27,919 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 489ms
+2025-12-02 14:11:27,924 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "scenic views Charles River Boston" | Max Results: 3
+2025-12-02 14:11:28,026 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Boston Common" | Time: 346ms
+2025-12-02 14:11:28,139 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 417ms
+2025-12-02 14:11:28,140 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "Boston indie folk music" | Max Results: 3
+2025-12-02 14:11:28,461 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 320ms
+2025-12-02 14:11:28,462 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "songs about the Charles River" | Max Results: 3
+2025-12-02 14:11:28,480 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 556ms
+2025-12-02 14:11:28,481 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "kayaking Charles River Esplanade" | Max Results: 3
+2025-12-02 14:11:28,717 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 255ms
+2025-12-02 14:11:28,718 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Fetch | Track ID: 6bON0csSf7G4LDsUrBwQ54
+2025-12-02 14:11:28,883 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "Dirty Love" | Time: 164ms
+2025-12-02 14:11:28,956 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 476ms
+2025-12-02 14:11:28,958 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Fetch | Article ID: 3432111
+2025-12-02 14:11:29,314 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Charles River Esplanade" | Time: 349ms
+2025-12-02 14:11:30,106 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "Harvard Bridge" | Max Results: 3
+2025-12-02 14:11:30,522 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "Harvard Bridge, MIT" | Max Results: 3
+2025-12-02 14:11:30,596 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 490ms
+2025-12-02 14:11:30,597 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "Harvard Bridge MIT smoots" | Max Results: 3
+2025-12-02 14:11:30,753 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 231ms
+2025-12-02 14:11:30,754 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "Harvard Bridge music" | Max Results: 3
+2025-12-02 14:11:31,033 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 279ms
+2025-12-02 14:11:31,034 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "MIT music" | Max Results: 3
+2025-12-02 14:11:31,074 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 477ms
+2025-12-02 14:11:31,075 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "Harvard Bridge construction history" | Max Results: 3
+2025-12-02 14:11:31,296 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 262ms
+2025-12-02 14:11:31,297 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Fetch | Track ID: 6YEcDPO0mxYoUOZx5cZleT
+2025-12-02 14:11:31,413 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "מדע בדיוני" | Time: 116ms
+2025-12-02 14:11:31,523 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "MIT Stata Center" | Max Results: 3
+2025-12-02 14:11:31,613 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 539ms
+2025-12-02 14:11:31,615 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Fetch | Article ID: 102602
+2025-12-02 14:11:31,618 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "MIT Stata Center architecture Frank Gehry" | Max Results: 3
+2025-12-02 14:11:31,891 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 273ms
+2025-12-02 14:11:31,892 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "songs about MIT campus" | Max Results: 3
+2025-12-02 14:11:31,969 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Harvard Bridge" | Time: 352ms
+2025-12-02 14:11:31,986 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 463ms
+2025-12-02 14:11:31,986 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "Frank Gehry MIT Stata Center" | Max Results: 3
+2025-12-02 14:11:32,276 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 383ms
+2025-12-02 14:11:32,277 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "Cambridge MA music scene" | Max Results: 3
+2025-12-02 14:11:32,525 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 538ms
+2025-12-02 14:11:32,526 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "history of the MIT Stata Center" | Max Results: 3
+2025-12-02 14:11:32,680 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 403ms
+2025-12-02 14:11:32,681 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Fetch | Track ID: 7iLVpb0WAgeVRn2wSdmdrd
+2025-12-02 14:11:32,846 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "Cambridge, 1963" | Time: 165ms
+2025-12-02 14:11:33,039 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 513ms
+2025-12-02 14:11:33,040 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Fetch | Article ID: 145664
+2025-12-02 14:11:33,391 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Stata Center" | Time: 351ms
+2025-12-02 14:23:58,600 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common history swan boats" | Max Results: 3
+2025-12-02 14:23:58,843 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:23:59,272 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "Boston Common music" | Max Results: 3
+2025-12-02 14:23:59,350 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common history swan boats" | Max Results: 3
+2025-12-02 14:23:59,506 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:23:59,675 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 403ms
+2025-12-02 14:23:59,676 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "Swan Boats Boston music" | Max Results: 3
+2025-12-02 14:23:59,792 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "Boston Common" | Max Results: 3
+2025-12-02 14:24:00,001 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 325ms
+2025-12-02 14:24:00,002 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "Chill acoustic music for MIT" | Max Results: 3
+2025-12-02 14:24:00,437 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 645ms
+2025-12-02 14:24:00,438 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 436ms
+2025-12-02 14:24:00,441 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "history of Boston Common" | Max Results: 3
+2025-12-02 14:24:00,444 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Fetch | Track ID: 5bFrsEk5efTVlOTwtLBLn2
+2025-12-02 14:24:00,512 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common history swan boats" | Max Results: 3
+2025-12-02 14:24:00,661 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "טאטע תטהר - גרסה אקוסטית" | Time: 217ms
+2025-12-02 14:24:00,673 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+history+swan+boats&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:24:00,674 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Boston Common walking tour" | Max Results: 3
+2025-12-02 14:24:00,689 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: YouTube Search | Query: "charles river esplanade boston kayaking" | Max Results: 3
+2025-12-02 14:24:00,828 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Boston+Common+walking+tour&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:24:00,847 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=charles+river+esplanade+boston+kayaking&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:24:01,101 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 660ms
+2025-12-02 14:24:01,103 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "Boston Swan Boats" | Max Results: 3
+2025-12-02 14:24:01,665 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 562ms
+2025-12-02 14:24:01,667 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "Charles River Boston music" | Max Results: 3
+2025-12-02 14:24:01,668 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Fetch | Article ID: 400334
+2025-12-02 14:24:02,007 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Boston Common" | Time: 340ms
+2025-12-02 14:24:02,016 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 349ms
+2025-12-02 14:24:02,017 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "songs about scenic Boston views" | Max Results: 3
+2025-12-02 14:24:02,385 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 368ms
+2025-12-02 14:24:02,386 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "relaxing instrumental playlists for outdoor adventures" | Max Results: 3
+2025-12-02 14:24:02,894 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 507ms
+2025-12-02 14:24:02,905 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Fetch | Track ID: 2WZyfujzMweFLnozyUJBkW
+2025-12-02 14:24:03,019 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "Boston" | Time: 113ms
+2025-12-02 14:24:03,132 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "https://en.wikipedia.org/wiki/Charles_River_Esplanade" | Max Results: 3
+2025-12-02 14:24:03,614 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "Harvard Bridge" | Max Results: 3
+2025-12-02 14:24:03,614 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "songs about Harvard Bridge in Cambridge MA" | Max Results: 3
+2025-12-02 14:24:03,680 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 548ms
+2025-12-02 14:24:03,682 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Fetch | Article ID: 153216
+2025-12-02 14:24:04,032 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Kuching" | Time: 350ms
+2025-12-02 14:24:04,135 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 521ms
+2025-12-02 14:24:04,136 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "history of the Harvard Bridge" | Max Results: 3
+2025-12-02 14:24:04,165 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 551ms
+2025-12-02 14:24:04,167 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "Cambridge MA local artists" | Max Results: 3
+2025-12-02 14:24:04,594 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 427ms
+2025-12-02 14:24:04,595 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Search | Query: "music inspired by MIT and Harvard" | Max Results: 3
+2025-12-02 14:24:04,731 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 595ms
+2025-12-02 14:24:04,732 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Search | Query: "Harvard Bridge smoots MIT lore" | Max Results: 3
+2025-12-02 14:24:05,155 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 560ms
+2025-12-02 14:24:05,156 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Spotify Fetch | Track ID: 5UyWjoxSelg5cBqNv44jr5
+2025-12-02 14:24:05,242 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 2 | Time: 510ms
+2025-12-02 14:24:05,243 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 3 | API: Wikipedia Fetch | Article ID: 102602
+2025-12-02 14:24:05,284 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "מוזיקה מרגיעה למדיטציה, הרפיה ויוגה - Relaxing mus" | Time: 128ms
+2025-12-02 14:24:05,290 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "MIT Stata Center architecture Frank Gehry songs" | Max Results: 3
+2025-12-02 14:24:05,589 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Harvard Bridge" | Time: 346ms
+2025-12-02 14:24:05,617 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 327ms
+2025-12-02 14:24:05,618 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "relaxing ambient electronic music" | Max Results: 3
+2025-12-02 14:24:06,068 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 450ms
+2025-12-02 14:24:06,069 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Search | Query: "instrumental music for college campuses" | Max Results: 3
+2025-12-02 14:24:06,080 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "MIT Stata Center" | Max Results: 3
+2025-12-02 14:24:06,576 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 496ms
+2025-12-02 14:24:06,577 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "architecture of MIT Stata Center" | Max Results: 3
+2025-12-02 14:24:06,610 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 541ms
+2025-12-02 14:24:06,611 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Spotify Fetch | Track ID: 3cTjrgUbe9WzdEvkLJQE5d
+2025-12-02 14:24:06,933 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "O.C.B." | Time: 322ms
+2025-12-02 14:24:07,071 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 494ms
+2025-12-02 14:24:07,072 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Search | Query: "history of MIT Stata Center" | Max Results: 3
+2025-12-02 14:24:07,578 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 506ms
+2025-12-02 14:24:07,579 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 4 | API: Wikipedia Fetch | Article ID: 145664
+2025-12-02 14:24:07,927 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Stata Center" | Time: 348ms
+2025-12-02 14:26:02,826 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "MIT campus tour 2024" | Max Results: 3
+2025-12-02 14:26:02,975 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=MIT+campus+tour+2024&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:26:03,033 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "Cambridge, MA music" | Max Results: 3
+2025-12-02 14:26:03,481 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "MIT campus tour 2024" | Max Results: 3
+2025-12-02 14:26:03,542 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 509ms
+2025-12-02 14:26:03,543 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "indie music Cambridge MA" | Max Results: 3
+2025-12-02 14:26:03,628 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=MIT+campus+tour+2024&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:26:03,821 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "Broadway, MIT Museum, Cambridge, MA" | Max Results: 3
+2025-12-02 14:26:04,042 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 499ms
+2025-12-02 14:26:04,043 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Search | Query: "songs about MIT Cambridge MA" | Max Results: 3
+2025-12-02 14:26:04,277 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 234ms
+2025-12-02 14:26:04,279 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Spotify Fetch | Track ID: 0RZsGLJGovonnUdW2STs23
+2025-12-02 14:26:04,290 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 469ms
+2025-12-02 14:26:04,291 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "Broadway history" | Max Results: 3
+2025-12-02 14:26:04,392 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "Modern Love" | Time: 113ms
+2025-12-02 14:26:04,633 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "MIT campus tour 2024" | Max Results: 3
+2025-12-02 14:26:04,847 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 557ms
+2025-12-02 14:26:04,848 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Search | Query: "MIT Museum, Cambridge, MA history" | Max Results: 3
+2025-12-02 14:26:04,864 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=MIT+campus+tour+2024&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:26:04,864 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Cambridge MA attractions" | Max Results: 3
+2025-12-02 14:26:05,016 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Cambridge+MA+attractions&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:26:05,382 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "Kendall/MIT, MIT Museum, Cambridge, MA" | Max Results: 3
+2025-12-02 14:26:05,402 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 553ms
+2025-12-02 14:26:05,404 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: Wikipedia Fetch | Article ID: 5685
+2025-12-02 14:26:05,522 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 1 | API: YouTube Search | Query: "Cambridge MA attractions" | Max Results: 3
+2025-12-02 14:26:05,662 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: YouTube Search | Query: "Kendall/MIT, MIT Museum, Cambridge, MA" | Max Results: 3
+2025-12-02 14:26:05,669 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Cambridge+MA+attractions&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:26:05,721 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 339ms
+2025-12-02 14:26:05,722 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "Kendall/MIT music" | Max Results: 3
+2025-12-02 14:26:05,722 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "Kendall/MIT MIT" | Max Results: 3
+2025-12-02 14:26:05,741 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Cambridge, Massachusetts" | Time: 337ms
+2025-12-02 14:26:05,811 | WARNING  | hw4_tourguide.api | API_Failure | API_Failure | API: YouTube Search | Error: HTTPError Unknown | Reason: 403 Client Error: Forbidden for url: https://www.googleapis.com/youtube/v3/search?part=snippet&q=Kendall%2FMIT%2C+MIT+Museum%2C+Cambridge%2C+MA&type=video&maxResults=3&key=AIzaSyChLR_6Vz9xyhO4sMVJbBLNuqubWDlkDDE&safeSearch=none
+2025-12-02 14:26:06,233 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 510ms
+2025-12-02 14:26:06,234 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 512ms
+2025-12-02 14:26:06,234 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "MIT Museum Cambridge MA" | Max Results: 3
+2025-12-02 14:26:06,235 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Search | Query: "MIT Museum, Cambridge, MA music" | Max Results: 3
+2025-12-02 14:26:06,477 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Search | Results: 3 | Time: 242ms
+2025-12-02 14:26:06,479 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Spotify Fetch | Track ID: 4GwahM79iwk0EvUok9XKiE
+2025-12-02 14:26:06,615 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Spotify Fetch | Track: "Meine Posse" | Time: 136ms
+2025-12-02 14:26:06,757 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 523ms
+2025-12-02 14:26:06,758 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Search | Query: "history Kendall/MIT Cambridge MA" | Max Results: 3
+2025-12-02 14:26:07,308 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Search | Results: 3 | Time: 550ms
+2025-12-02 14:26:07,309 | INFO     | hw4_tourguide.api | API_Call | API_Call | Step 2 | API: Wikipedia Fetch | Article ID: 18879
+2025-12-02 14:26:07,651 | INFO     | hw4_tourguide.api | API_Success | API_Success | API: Wikipedia Fetch | Article: "Massachusetts Institute of Technology" | Time: 341ms
