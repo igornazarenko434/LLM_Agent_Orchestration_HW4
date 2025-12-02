@@ -20,3 +20,6 @@ recursive-include tests *
 
 # Scripts (Source distribution only)
 recursive-include scripts *
+
+# Research Data (Source distribution only)
+recursive-include output *.log *.json
