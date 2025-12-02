@@ -1151,4 +1151,4 @@ See `docs/screenshots/` for terminal captures (coming in M6).
 
 ---
 
-*README generated for hw4_tourguide v0.1.0 | Last updated: 2024-11-22*
+*README generated for hw4_tourguide v0.1.1 | Last updated: 2025-12-02*
