@@ -1,9 +1,8 @@
 # Route Enrichment Tour-Guide System
 
-**Version:** 0.1.0  
+**Version:** 0.1.1  
 **Package Name:** `hw4_tourguide`  
-**Target Grade:** 95 (Outstanding Excellence)  
-**Status:** Phase 6 - Analysis & Documentation (Research pending)
+**Status:** Phase 7 - Preflight & Submission
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)  
 [![Pytest](https://img.shields.io/badge/pytest-passing-green.svg)](https://docs.pytest.org/)  
@@ -938,20 +937,21 @@ The system offers a superior Developer Experience (DX) and operational clarity.
 
 ## 16. Project Status & Roadmap
 
-### Current Status: Phase 6 - Analysis & Documentation
+### Current Status: Phase 7 - Preflight & Submission
 
 **Completed (highlights):**
 - ✅ M0-6: PRD, architecture (C4/ADRs), config/logging, schemas, UX heuristics
 - ✅ M7.0-7.11: Core pipeline (Route Provider -> Scheduler -> Orchestrator -> Agents -> Judge -> Output)
 - ✅ M7.12-7.19: Resilience tests, LLM query generation (ADR-013), Song Agent fallback, Circuit Breakers
 - ✅ Gate 4: Passed (Core Implementation Complete)
-- ✅ M8.4-8.5: Documentation cross-check, LLM Agent Architecture docs
+- ✅ M8.1-8.5: Research Analysis, Cost Analysis, Documentation cross-check
+- ✅ Phase 6: Research & Documentation complete
 
 **In Progress:**
-- 🟡 Phase 6: Research Analysis (M8.1) & Cost Analysis (M8.2)
+- 🟡 Phase 7: Final Package Verification & Submission
 
 **Upcoming:**
-- Phase 7: Preflight + live/cached demo archive + submission
+- Release v0.1.1 (Final Submission)
 
 See `PROGRESS_TRACKER.md` and `Missions_Route_Enrichment_Tour_Guide_System.md` for detailed roadmap.
 
