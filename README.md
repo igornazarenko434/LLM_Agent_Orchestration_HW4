@@ -733,8 +733,8 @@ agents:
 ## 11. Testing
 
 ### Overview
-- Pytest suite (~213 tests) covering unit logic, integration flows, concurrency, resilience, CLI, clients, and outputs.
-- Coverage gate: 85% (current ~87% on a clean run with dev deps).
+- Pytest suite (~215 tests) covering unit logic, integration flows, concurrency, resilience, CLI, clients, and outputs.
+- Coverage gate: 85% (current 86.21% on a clean run with dev deps).
 
 ### Test Suite Structure
 
@@ -810,7 +810,7 @@ The `pyproject.toml` defines strict markers for categorizing tests. Use `--no-co
 ### Test Coverage & Quality
 
 - **Target Coverage:** ≥85% (Enforced by CI)
-- **Current Coverage:** ~87%
+- **Current Coverage:** 86.21%
 - **Report:** Open `htmlcov/index.html` to view line-by-line coverage analysis.
 
 ### ISO/IEC 25010 Reliability Standards

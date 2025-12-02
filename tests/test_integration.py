@@ -106,6 +106,7 @@ def test_pipeline_with_mocked_clients(monkeypatch, tmp_path):
 @pytest.mark.skipif(os.getenv("RUN_LIVE_TESTS") != "1", reason="Live tests disabled; set RUN_LIVE_TESTS=1 to enable")
 def test_live_smoke(tmp_path):
     # Minimal live run with limits to avoid cost; requires keys present
+    # Use a very short route to ensure steps < 8 (default max_steps)
     output_path = tmp_path / "route_live.json"
     result = run_cli(
         [
@@ -113,9 +114,9 @@ def test_live_smoke(tmp_path):
             "-m",
             "hw4_tourguide",
             "--from",
-            "Boston, MA",
+            "Kendall Square, Cambridge, MA",
             "--to",
-            "MIT",
+            "MIT Museum, Cambridge, MA",
             "--mode",
             "live",
             "--output",
