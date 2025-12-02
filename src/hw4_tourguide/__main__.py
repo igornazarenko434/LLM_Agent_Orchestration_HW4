@@ -174,7 +174,7 @@ def run_pipeline(config: Dict[str, Any], args: argparse.Namespace, config_loader
         )
 
         # 4. Set up Route Provider
-        route_provider = _select_route_provider(config, mode, config_loader, run_base_dir / "checkpoints")
+        route_provider = _select_route_provider(config, mode, config_loader, run_base_dir / "checkpoints", metrics)
         try:
             route_payload = route_provider.get_route(args.origin, args.destination)
         except FileNotFoundError:
@@ -267,7 +267,7 @@ def run_pipeline(config: Dict[str, Any], args: argparse.Namespace, config_loader
         return 1
 
 
-def _select_route_provider(config: Dict[str, Any], mode: str, config_loader: ConfigLoader, checkpoint_dir: Path):
+def _select_route_provider(config: Dict[str, Any], mode: str, config_loader: ConfigLoader, checkpoint_dir: Path, metrics: MetricsCollector):
     if mode == "live":
         key = config_loader.get_secret("GOOGLE_MAPS_API_KEY")
         if key:
@@ -278,6 +278,7 @@ def _select_route_provider(config: Dict[str, Any], mode: str, config_loader: Con
                 max_steps=config["route_provider"].get("max_steps", 8),
                 checkpoints_enabled=config["output"].get("checkpoints_enabled", True),
                 checkpoint_dir=checkpoint_dir,
+                metrics=metrics,
             )
         get_logger("route_provider.live").warning(
             "GOOGLE_MAPS_API_KEY missing; falling back to stub route provider",
