@@ -8,6 +8,7 @@ import threading
 import time
 from collections import defaultdict
 from typing import Dict, Any, List
+from pathlib import Path # Added import
 
 
 class MetricsCollector:
@@ -71,10 +72,16 @@ class MetricsCollector:
     def flush(self) -> None:
         data = self.get_all()
         try:
-            with open(self.path, "w") as f:
+            # Ensure parent directory exists before writing
+            file_path = Path(self.path)
+            file_path.parent.mkdir(parents=True, exist_ok=True) # Create parent dirs
+
+            with open(file_path, "w") as f:
                 json.dump(data, f, indent=2)
-        except Exception:
-            pass
+        except Exception as e:
+            # Log error instead of silently passing
+            import sys
+            print(f"ERROR: Failed to write metrics to {self.path}: {e}", file=sys.stderr)
 
     def stop(self) -> None:
         self._stop_event.set()

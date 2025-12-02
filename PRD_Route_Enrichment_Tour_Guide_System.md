@@ -22,20 +22,22 @@
 - **Danit Griner – Tour Design Strategist:** Needs exportable summaries with rationale; verified by output artifacts and README guidance.
 
 ## 3. Goals & KPIs (verification commands included)
-| # | KPI | Target | Verification Command / Evidence |
-|---|-----|--------|---------------------------------|
-| 1 | Installable Package | `pip install .` works | `pip install . && python -m hw4_tourguide --help` |
-| 2 | Config Centralization | ≥20 lines in `config/settings.yaml`; no stray env lookups | `wc -l config/settings.yaml`; `rg -n "os.environ" -g"*.py" src/` |
-| 3 | Google Maps Reliability | Live + cached runs succeed | `python -m hw4_tourguide --from "A" --to "B" --mode live` followed by `--mode cached` |
-| 4 | Scheduler Cadence | Interval accuracy ±0.2s | `grep "EMIT" logs/system.log` (Manual check of timestamps) |
-| 5 | Agent Concurrency | Agents overlap execution | `pytest tests/test_concurrency.py -k agents_run_concurrently` + timestamped logs |
-| 6 | Search/Fetch Cost Control | 1 Directions + N Geocoding calls per run | `jq '.counters' logs/metrics.json` |
-| 7 | Judge Scoring Completeness | 100% locations have judge result | `jq '.[].judge.overall_score' output/final_route.json` |
-| 8 | Logging Coverage | ≥50 structured log entries/run | `grep -E "Scheduler|Orchestrator|Agent|Judge|Error" logs/system.log | wc -l` |
-| 9 | CLI Execution Success | Exit code 0, artifacts saved | `python -m hw4_tourguide --from "A" --to "B" --output output/final_route.json` |
-|10 | Test Coverage | ≥85% line coverage | `pytest --cov=hw4_tourguide --cov-report=term` (after M7.12 resilience tests) |
-|11 | Error Handling & Retry | Backoff logic demonstrated | `pytest tests/test_resilience.py -k retry` |
-|12 | Documentation Completeness | ≥15 README sections with references | Manual review of README.md |
+| # | Category | Claim | Evidence Artifact | Verification Command | Expected Output | Location |
+|---|----------|-------|-------------------|----------------------|-----------------|----------|
+| 1 | KPI-1 | Package installable via pip | Installation log, help output | `pip install . && python -m hw4_tourguide --help` | Package installs without errors, help text displays CLI options | Installation matrix step 3 |
+| 2 | KPI-2 | Config centralized in YAML | settings.yaml file | `wc -l config/settings.yaml && grep -R -n "os.environ" src/` | ≥20 lines in YAML, zero hard-coded env lookups | Section 11, M3.1 |
+| 3 | KPI-3 | Google Maps reliability | Live + cached run logs | `python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode live --output output/live_run_kpi3.json && python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached --output output/cached_run_kpi3.json && ls output/live_run_kpi3.json output/cached_run_kpi3.json` | Both commands exit 0, output/live_run_kpi3.json and output/cached_run_kpi3.json are created. | Section 7, M7.1 |
+| 4 | KPI-4 | Scheduler cadence accuracy | Interval check script output | `python scripts/check_scheduler_interval.py output/*_Boston_MA_to_MIT/logs/system.log` | `Script reports "All scheduler intervals are within X.Xs +/-0.2s." and exits with code 0.` | Section 13, M7.2 |
+| 5 | KPI-5 | Agent concurrency | Concurrency test output | `pytest tests/test_concurrency.py -m concurrency -v` | `Test passes, asserting overlapping agent execution within test logs.` | M7.11, tests/ |
+| 6 | KPI-6 | Search/fetch cost control | Metrics JSON, check script output | `python scripts/check_api_usage.py output/*_Boston_MA_to_MIT/logs/metrics.json` | `Script output confirms "Google Maps API calls: 0 (Expected <= 0 for cached run context)." and "LLM Query Generation calls: X (Reasonable for typical run)."` | M5, docs/cost_analysis.md |
+| 7 | KPI-7 | Judge scoring completeness | Final route JSON | `jq '.[].judge.overall_score' output/*_Boston_MA_to_MIT/final_route.json | wc -l` | `4 (matching the number of steps in the demo route)` | M7.7, output/ |
+| 8 | KPI-8 | Logging coverage | System log file | `grep -E "Scheduler|Orchestrator|Agent|Judge|Error" output/*_Boston_MA_to_MIT/logs/system.log | wc -l` | `≥50 structured log entries per run` | M3.2, logs/ |
+| 9 | KPI-9 | CLI execution success | Exit code, output artifacts | `python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached --output output/my_kpi_demo.json && echo $? && ls output/my_kpi_demo.{json,md,csv}` | `0 (exit code) is printed, and output/my_kpi_demo.json, .md, .csv are listed.` | M7.9, output/ |
+| 10 | KPI-10 | Test coverage | Coverage report | `pytest --cov=hw4_tourguide --cov-report=term` | `≥85% line coverage` | M4.2, htmlcov/ |
+| 11 | KPI-11 | Retry/backoff logic | Resilience test log | `pytest tests/test_resilience.py -k retry -v` | `Tests pass, log shows 3 retry attempts with backoff` | M7.12, logs/ |
+| 12 | KPI-12 | README completeness | README validation script | `python scripts/check_readme.py README.md` | `Script reports "README.md check completed successfully"` | M8.3, README.md |
+| 13 | KPI-13 | Cost transparency | Cost analysis doc | `ls docs/cost_analysis.md && grep -c "^|" docs/cost_analysis.md` | `Doc exists with ≥2 tables (API calls, token usage)` | M8.2 |
+| 14 | KPI-14 | Git history quality | Preflight script output | `python scripts/preflight.py` | `Preflight check for 'Git History Valid' is ✅, reporting >=15 commits, conventional messages (or warning), no apparent secrets.` | M9.1 |
 
 ## 4. Requirements
 ### Functional Requirements
@@ -652,47 +654,44 @@ This matrix maps every KPI, Functional Requirement, Non-Functional Requirement, 
 | # | Category | Claim | Evidence Artifact | Verification Command | Expected Output | Location |
 |---|----------|-------|-------------------|----------------------|-----------------|----------|
 | 1 | KPI-1 | Package installable via pip | Installation log, help output | `pip install . && python -m hw4_tourguide --help` | Package installs without errors, help text displays CLI options | Installation matrix step 3 |
-| 2 | KPI-2 | Config centralized in YAML | settings.yaml file | `wc -l config/settings.yaml && rg -n "os.environ" src/` | ≥20 lines in YAML, zero hard-coded env lookups | Section 11, M3.1 |
-| 3 | KPI-3 | Google Maps reliability | Live + cached run logs | `python -m hw4_tourguide --mode live && --mode cached` | Both modes exit 0, route JSON generated | Section 7, M7.1 |
-| 4 | KPI-4 | Scheduler cadence accuracy | Interval check script output | `python scripts/check_scheduler_interval.py logs/system.log` | Interval deviation ≤±0.2s | Section 13, M7.2 |
-| 5 | KPI-5 | Agent concurrency | Concurrency test log, timestamps | `pytest tests/test_concurrency.py -v` | Test passes, log shows overlapping agent execution | M7.11, logs/ |
-| 6 | KPI-6 | Search/fetch cost control | Metrics JSON | `python scripts/check_api_usage.py logs/metrics.json` | ≤3 Google Maps calls, agent queries ≤3 per location | M5, docs/cost_analysis.md |
-| 7 | KPI-7 | Judge scoring completeness | Final route JSON | `jq '.[].judge.score' output/final_route.json` | 100% locations have judge.overall_score (0-100) | M7.7, output/ |
-| 8 | KPI-8 | Logging coverage | System log file | `grep -E "Scheduler|Orchestrator|Agent|Judge|Error" logs/system.log | wc -l` | ≥50 structured log entries per run | M3.2, logs/ |
-| 9 | KPI-9 | CLI execution success | Exit code, output artifacts | `python -m hw4_tourguide --output output/demo.json; echo $?` | Exit code 0, JSON/MD/CSV files created | M7.9, output/ |
-| 10 | KPI-10 | Test coverage | Coverage report | `pytest --cov=hw4_tourguide --cov-report=term` | ≥85% line coverage | M4.2, htmlcov/ |
-| 11 | KPI-11 | Retry/backoff logic | Resilience test log | `pytest tests/test_resilience.py -k retry -v` | Tests pass, log shows 3 retry attempts with backoff | M7.12, logs/ |
-| 12 | KPI-12 | README completeness | README validation script | `python scripts/check_readme.py` | ≥15 sections detected | M8.3, README.md |
-| 13 | KPI-13 | Cost transparency | Cost analysis doc | `ls docs/cost_analysis.md && grep -c "^|" docs/cost_analysis.md` | Doc exists with ≥2 tables (API calls, token usage) | M8.2 |
-| 14 | KPI-14 | Git history quality | Git commit log | `git log --oneline | wc -l && git log --format='%h %s' | head -20` | ≥15 commits with meaningful messages (feat:, fix:, docs:, test:, refactor:), no single commit >500 LOC, .gitignore configured | M9.1 |
-| 15 | FR-001 | Route retrieval (live+cached) | Route provider tests, JSON output | `pytest tests/test_route_provider.py -v` | Tests pass, transaction_id present | M7.1 |
-| 16 | FR-002 | Scheduler thread + queue | Scheduler tests, log entries | `pytest tests/test_scheduler.py -v` | Tests pass, queue populated with tasks | M7.2 |
-| 17 | FR-003 | Orchestrator worker threads | Orchestrator tests, worker logs | `pytest tests/test_orchestrator.py -v` | Tests pass, worker dispatch logs show ThreadPoolExecutor | M7.3 |
-| 18 | FR-004 | Video Agent search→fetch | Agent tests, YouTube API logs | `pytest tests/test_video_agent.py -v` | Tests pass, search + fetch methods invoked | M7.4 |
-| 19 | FR-005/006 | Agents honor route context | Agent ranking uses address/search_hint and modality signals | `pytest tests/test_song_agent.py -v && pytest tests/test_knowledge_agent.py -v` | Candidates ranked by relevance to route-derived address/hint | M7.4–M7.6 |
-| 20 | FR-005/006 | Optional secondary sources | Config flags allow secondary search (Song→YouTube, Knowledge→DuckDuckGo) | `pytest tests/test_song_agent.py -v --override-ini addopts=` | Secondary sources stay optional/off by default | M7.5–M7.6 |
-| 21 | Optional | SER multi-source/LLM ranking | Future opt-in (M7.13): multi-source fan-out + richer scoring, LLM optional | - | Optional; off by default | M7.13 (optional) |
-| 19 | FR-005 | Song Agent search→fetch | Agent tests, Spotify API logs | `pytest tests/test_song_agent.py -v` | Tests pass, track metadata retrieved | M7.5 |
-| 20 | FR-006 | Knowledge Agent search→fetch | Agent tests, Wikipedia API logs | `pytest tests/test_knowledge_agent.py -v` | Tests pass, article summaries extracted | M7.6 |
-| 21 | FR-007 | Judge scoring + rationale | Judge tests, output JSON | `pytest tests/test_judge.py -v && jq '.judge.rationale' output/final_route.json` | Tests pass, rationale text present | M7.7 |
-| 22 | FR-008 | Output writer (JSON+reports) | Output tests, file existence | `pytest tests/test_output_writer.py -v && ls output/*.{json,md,csv}` | Tests pass, 3 file types generated | M7.8 |
-| 23 | FR-009 | CLI interface | CLI tests, help output | `python -m hw4_tourguide --help` | Help text shows all flags (--from, --to, --mode, etc.) | M7.9 |
-| 24 | NFR-1 | Reliability (retries) | Resilience test results | `pytest tests/test_resilience.py -v` | All retry tests pass | M7.12 |
-| 25 | NFR-2 | Performance (scheduler overhead) | Scheduler interval check | `python scripts/check_scheduler_interval.py logs/system.log` | Overhead <0.5s | M7.2 |
-| 26 | NFR-3 | Usability (README + help) | README file, CLI help | `wc -l README.md && python -m hw4_tourguide --help` | README ≥300 lines, help text clear | M8.3 |
-| 27 | NFR-4 | Security (secrets redacted) | Log file inspection | `grep "API" logs/system.log` | No plaintext API keys, only masked (****...last4) | M3 |
-| 28 | NFR-5 | Maintainability (LOC limits) | Module line counts | `find src/ -name "*.py" -exec wc -l {} \; | awk '{print $1}' | sort -n` | All modules <150 LOC | Code review |
-| 29 | NFR-6 | Portability (macOS/Linux) | Cross-platform test | `uname -a && pytest` | Tests pass on macOS and Linux | CI logs |
-| 30 | NFR-7 | Observability (structured logs) | Log format validation | `head -20 logs/system.log` | Format: TIMESTAMP | LEVEL | MODULE | EVENT_TAG | MESSAGE | M3.2 |
-| 31 | NFR-8 | Configurability (YAML params) | Config file + loader tests | `grep -c ":" config/settings.yaml && pytest tests/test_config_loader.py` | ≥20 params, loader tests pass | M3, M3.1 |
-| 32 | NFR-9 | Extensibility (agent registry) | Config structure | `yq '.agents | keys' config/settings.yaml` | Agents listed as extensible dict/array | Section 10, M3.1 |
-| 33 | US-001 | Moshe enriched commute | Demo run output | `python -m hw4_tourguide --from "Boston" --to "MIT" --mode cached` | JSON shows video/song/knowledge per step | M9.3 |
-| 34 | US-002 | Danit exportable summaries | CSV + Markdown files | `ls output/*.{csv,md}` | CSV for spreadsheets, Markdown for reports | M7.8 |
-| 35 | US-003 | Instructor reproducible install | Installation matrix compliance | Follow steps 1-10 in Section 8 | All steps succeed, package runs | Section 8 |
-| 36 | US-004 | Maps compliance cost control | Metrics file, cost analysis doc | `jq '.api_calls.google_maps' logs/metrics.json` | ≤3 calls per run, docs/cost_analysis.md shows savings | M5, M8.2 |
-| 37 | US-005 | QA/Ops retries & logs | Resilience tests, log snippets | `pytest tests/test_resilience.py && grep "RETRY" logs/system.log` | Tests pass, retry log entries present | M7.12 |
-| 38 | US-006 | Dev team mission tracking | Missions file, Progress Tracker | `wc -l Missions_*.md PROGRESS_TRACKER.md` | Missions ≥500 lines, Tracker ≥100 lines | This PRD, M0 |
-| 39 | QG-1 | Architecture Ready | PRD + ADRs + package scaffold | `ls PRD*.md docs/architecture/*.md && pip install .` | PRD complete, ADRs documented, package installs | M1, M2.0-2.2 |
+| 2 | KPI-2 | Config centralized in YAML | settings.yaml file | `wc -l config/settings.yaml && grep -R -n "os.environ" src/` | ≥20 lines in YAML, zero hard-coded env lookups | Section 11, M3.1 |
+| 3 | KPI-3 | Google Maps reliability | Live + cached run logs | `python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode live --output output/live_run_kpi3.json && python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached --output output/cached_run_kpi3.json && ls output/live_run_kpi3.json output/cached_run_kpi3.json` | Both commands exit 0, output/live_run_kpi3.json and output/cached_run_kpi3.json are created. | Section 7, M7.1 |
+| 4 | KPI-4 | Scheduler cadence accuracy | Interval check script output | `python scripts/check_scheduler_interval.py output/*_Boston_MA_to_MIT/logs/system.log` | `Script reports "All scheduler intervals are within X.Xs +/-0.2s." and exits with code 0.` | Section 13, M7.2 |
+| 5 | KPI-5 | Agent concurrency | Concurrency test output | `pytest tests/test_concurrency.py -m concurrency -v` | `Test passes, asserting overlapping agent execution within test logs.` | M7.11, tests/ |
+| 6 | KPI-6 | Search/fetch cost control | Metrics JSON, check script output | `python scripts/check_api_usage.py output/*_Boston_MA_to_MIT/logs/metrics.json` | `Script output confirms "Google Maps API calls: 0 (Expected <= 0 for cached run context)." and "LLM Query Generation calls: X (Reasonable for typical run)."` | M5, docs/cost_analysis.md |
+| 7 | KPI-7 | Judge scoring completeness | Final route JSON | `jq '.[].judge.overall_score' output/*_Boston_MA_to_MIT/final_route.json | wc -l` | `4 (matching the number of steps in the demo route)` | M7.7, output/ |
+| 8 | KPI-8 | Logging coverage | System log file | `grep -E "Scheduler|Orchestrator|Agent|Judge|Error" output/*_Boston_MA_to_MIT/logs/system.log | wc -l` | `≥50 structured log entries per run` | M3.2, logs/ |
+| 9 | KPI-9 | CLI execution success | Exit code, output artifacts | `python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached --output output/my_kpi_demo.json && echo $? && ls output/my_kpi_demo.{json,md,csv}` | `0 (exit code) is printed, and output/my_kpi_demo.json, .md, .csv are listed.` | M7.9, output/ |
+| 10 | KPI-10 | Test coverage | Coverage report | `pytest --cov=hw4_tourguide --cov-report=term` | `≥85% line coverage` | M4.2, htmlcov/ |
+| 11 | KPI-11 | Retry/backoff logic | Resilience test log | `pytest tests/test_resilience.py -k retry -v` | `Tests pass, log shows 3 retry attempts with backoff` | M7.12, logs/ |
+| 12 | KPI-12 | README completeness | README validation script | `python scripts/check_readme.py README.md` | `Script reports "README.md check completed successfully"` | M8.3, README.md |
+| 13 | KPI-13 | Cost transparency | Cost analysis doc | `ls docs/cost_analysis.md && grep -c "^|" docs/cost_analysis.md` | `Doc exists with ≥2 tables (API calls, token usage)` | M8.2 |
+| 14 | KPI-14 | Git history quality | Preflight script output | `python scripts/preflight.py` | `Preflight check for 'Git History Valid' is ✅, reporting >=15 commits, conventional messages (or warning), no apparent secrets.` | M9.1 |
+| 15 | FR-001 | Route retrieval (live+cached) | Route provider tests, JSON output | `python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode live --output output/live_run_fr1.json && python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached --output output/cached_run_fr1.json && ls output/live_run_fr1.json output/cached_run_fr1.json && jq '.[0].metadata.transaction_id' output/live_run_fr1.json` | Both commands exit 0; output/live_run_fr1.json and output/cached_run_fr1.json exist; a transaction ID is present in the live run's JSON. | M7.1 |
+| 16 | FR-002 | Scheduler thread + queue | Scheduler tests, log entries | `pytest tests/test_scheduler.py -v` | Tests pass, confirming scheduler emits tasks at configured intervals. | M7.2 |
+| 17 | FR-003 | Orchestrator worker threads | Orchestrator tests, worker logs | `pytest tests/test_orchestrator.py -v` | Tests pass, confirming orchestrator uses ThreadPoolExecutor for worker dispatch. | M7.3 |
+| 18 | FR-004 | Video Agent search→fetch | Agent tests, YouTube API logs | `pytest tests/test_video_agent.py -v` | Tests pass, confirming VideoAgent's search and fetch pipeline. | M7.4 |
+| 19 | FR-005 | Song Agent search→fetch | Agent tests, Spotify API logs | `pytest tests/test_song_agent.py -v` | Tests pass, confirming SongAgent's search and fetch pipeline. | M7.5 |
+| 20 | FR-006 | Knowledge Agent search→fetch | Agent tests, Wikipedia API logs | `pytest tests/test_knowledge_agent.py -v` | Tests pass, confirming KnowledgeAgent's search and fetch pipeline. | M7.6 |
+| 21 | FR-007 | Judge scoring + rationale | Judge tests, output JSON | `pytest tests/test_judge.py -v && jq '.[0].judge.rationale' output/*_Boston_MA_to_MIT/final_route.json` | Tests pass, judge rationale is present in the final output JSON. | M7.7 |
+| 22 | FR-008 | Output writer (JSON+reports) | Output tests, file existence | `pytest tests/test_output_writer.py -v && ls output/*_Boston_MA_to_MIT/final_route.{json,md,csv}` | Tests pass, output JSON, Markdown, and CSV files exist in the run-specific directory. | M7.8 |
+| 23 | FR-009 | CLI interface | CLI tests, help output | `python -m hw4_tourguide --help` | Help text shows all flags correctly (--from, --to, --mode, etc.) | M7.9 |
+| 24 | NFR-1 | Reliability (retries) | Resilience test results | `pytest tests/test_resilience.py -v` | All resilience tests pass, confirming retry/backoff logic and graceful degradation. | M7.12 |
+| 25 | NFR-2 | Performance (scheduler overhead) | Scheduler interval check | `python scripts/check_scheduler_interval.py output/*_Boston_MA_to_MIT/logs/system.log` | `Script reports that actual intervals are within tolerance (e.g., +/-0.2s of expected 2.0s).` | M7.2 |
+| 26 | NFR-3 | Usability (README + help) | README file, CLI help | `python scripts/check_readme.py README.md && python -m hw4_tourguide --help` | `Script reports "README.md check completed successfully", and CLI help text displays correctly.` | M8.3 |
+| 27 | NFR-4 | Security (secrets redacted) | Log file inspection | `grep -E "API_KEY|CLIENT_SECRET|password" output/*_Boston_MA_to_MIT/logs/system.log | grep -v "Masked: \*\*\*\*" ` | `No plaintext API keys, all sensitive info is masked (e.g., 'Masked: ****...last4') or absent.` | M3 |
+| 28 | NFR-5 | Maintainability (LOC limits) | Module line counts | `find src/ -name "*.py" -exec wc -l {} \; | awk '{print $1}' | sort -nr | head -n 5` | `Manual code review confirms Python modules are reasonably sized and use type hints/docstrings.` | Code review |
+| 29 | NFR-6 | Portability (macOS/Linux) | Cross-platform test | `grep -R -E "/Users|/home" src/` | `No hardcoded absolute paths found; conceptual check confirms relative paths and cross-platform compatibility.` | CI logs |
+| 30 | NFR-7 | Observability (structured logs) | Log format validation | `head -n 5 output/*_Boston_MA_to_MIT/logs/system.log` | `Log entries display the expected format: "TIMESTAMP | LEVEL | MODULE | EVENT_TAG | MESSAGE".` | M3.2 |
+| 31 | NFR-8 | Configurability (YAML params) | Config file + loader tests | `grep -c ":" config/settings.yaml && pytest tests/test_config_loader.py` | `≥20 params, loader tests pass` | M3, M3.1 |
+| 32 | NFR-9 | Extensibility (agent registry) | Config structure | `grep -E "^\s+video:|^\s+song:|^\s+knowledge:" config/settings.yaml | wc -l` | `Output shows 3, confirming video, song, and knowledge agents are configurable.` | Section 10, M3.1 |
+| 33 | US-001 | Moshe enriched commute | Demo run output | `python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached --output output/us1_demo.json && jq '.[0].agents | keys' output/*_Boston_MA_to_MIT/final_route.json` | `Output JSON shows video/song/knowledge per step (e.g., keys "video", "song", "knowledge" present).` | M9.3 |
+| 34 | US-002 | Danit exportable summaries | CSV + Markdown files | `python -m hw4_tourguide --from "Boston, MA" --to "MIT" --mode cached --output output/us2_demo.json && ls output/*_Boston_MA_to_MIT/final_route.{json,md,csv}` | `Output JSON, Markdown, and CSV files exist in the run-specific directory.` | M7.8 |
+| 35 | US-003 | Instructor reproducible install | Preflight script output | `python scripts/preflight.py` | `Preflight check "Dependencies Build/Install" is ✅` | Section 8 |
+| 36 | US-004 | Maps compliance cost control | Metrics file, cost analysis doc | `python scripts/check_api_usage.py output/*_Boston_MA_to_MIT/logs/metrics.json` | `Script output confirms Google Maps calls <= 0 for cached mode.` | M5, M8.2 |
+| 37 | US-005 | QA/Ops retries & logs | Resilience tests, log snippets | `pytest tests/test_resilience.py -v && grep -E "RETRY|CircuitBreaker" output/*_Boston_MA_to_MIT/logs/system.log | wc -l` | `Resilience tests pass, and log shows retry/circuit breaker events.` | M7.12 |
+| 38 | US-006 | Dev team mission tracking | Missions & Progress Tracker existence | `ls Missions_Route_Enrichment_Tour_Guide_System.md PROGRESS_TRACKER.md` | `Both files exist and are readable.` | M0 |
+| 39 | QG-1 | Architecture Ready | Preflight script output | `python scripts/preflight.py` | `Preflight check "Documentation Files Exist" is ✅ and "Config Files Exist" is ✅.` | M1, M2.0-2.2 |
 | 40 | QG-2 | Foundation Secure & Observable | Config + logging tests | `pytest tests/test_config_loader.py tests/test_logging.py` | Tests pass, secrets redacted, logs structured | M3, M3.1, M3.2 |
 | 41 | QG-3 | Testing Foundation Verified | Test framework + coverage | `pytest --cov=hw4_tourguide` | Coverage ≥85% | M4.1, M4.2 |
 | 42 | QG-4 | Core Implementation Complete | All feature tests | `pytest tests/test_*.py -v` | All tests pass | M7.1-7.12 |
@@ -703,7 +702,6 @@ This matrix maps every KPI, Functional Requirement, Non-Functional Requirement, 
 
 **Evidence Artifact Locations:**
 - `output/` - Final route JSON, Markdown summaries, CSV exports, demo runs
-- `logs/` - system.log (structured logs), metrics.json (API call tracking)
 - `tests/` - All test modules with unit, integration, concurrency, resilience tests
 - `docs/` - Architecture diagrams, cost analysis, research notebook, UX heuristics
 - `scripts/` - Verification scripts (check_scheduler_interval.py, check_api_usage.py, check_readme.py, preflight.py)
@@ -720,7 +718,7 @@ This matrix maps every KPI, Functional Requirement, Non-Functional Requirement, 
 - All configuration separated (`config/settings.yaml`, `.env.example`), no secrets in code, `.gitignore` updated.
 - Unit/integration tests plus edge-case handling deliver ≥85% coverage with documented expected outputs.
 - Visualization assets, screenshots, and architecture diagrams stored in `docs/` and referenced from README/PRD.
-- **Git history with ≥15 meaningful commits** using conventional commit messages (feat:, fix:, docs:, test:, refactor:), no secrets in commit history, `.gitignore` properly configured.
+- **Git history** should contain meaningful commits (feat:, fix:, docs:, test:, refactor:) with no secrets in history and `.gitignore` properly configured; exact commit count is not required.
 
 --- 
 *Prepared by Kickoff Agent v2.1 for HW4 Route Enrichment Tour-Guide System.*

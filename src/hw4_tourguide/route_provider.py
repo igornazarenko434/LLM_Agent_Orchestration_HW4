@@ -32,6 +32,7 @@ class RouteProvider(ABC):
                 "tasks": [task_dict, ...],  # ready for scheduler queue
                 "metadata": {origin, destination, distance, duration, transaction_id, route_context, timestamp}
             }
+        }
         """
 
 
@@ -65,6 +66,8 @@ class GoogleMapsProvider(RouteProvider):
             f"Checkpoints: {'enabled' if self.checkpoints_enabled else 'disabled'}",
             extra={"event_tag": "RouteProvider_Init", "max_steps": self.max_steps}
         )
+        self.logger.debug(f"DEBUG: GoogleMapsProvider initialized with checkpoint_dir: {self.checkpoint_dir}")
+
 
     def get_route(self, origin: str, destination: str) -> Dict[str, Any]:
         route_start = time.time()
@@ -346,7 +349,7 @@ class GoogleMapsProvider(RouteProvider):
         path = self.checkpoint_dir / tid / filename
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(payload, indent=2))
-        self.logger.info(f"Wrote checkpoint {path}", extra={"event_tag": "Config"})
+        self.logger.info(f"Wrote checkpoint {path}", extra={"event_tag": "Checkpoint"})
 
     def _call_with_breaker(self, func):
         if self.circuit_breaker:
@@ -379,6 +382,8 @@ class CachedRouteProvider(RouteProvider):
         self.checkpoints_enabled = checkpoints_enabled
         self.checkpoint_dir = checkpoint_dir
         self.logger = get_logger("route_provider.cached")
+        self.logger.debug(f"DEBUG: CachedRouteProvider initialized with checkpoint_dir: {self.checkpoint_dir}")
+
 
     def get_route(self, origin: str, destination: str) -> Dict[str, Any]:
         path = self._select_file(origin, destination)
@@ -439,7 +444,7 @@ class CachedRouteProvider(RouteProvider):
         path = self.checkpoint_dir / tid / filename
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(payload, indent=2))
-        self.logger.info(f"Wrote checkpoint {path}", extra={"event_tag": "Config"})
+        self.logger.info(f"Wrote checkpoint {path}", extra={"event_tag": "Config"}) # DEBUG: Check this line
 
     def _to_tasks(self, route_doc: Dict[str, Any], origin: str, destination: str) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
         route_context = route_doc.get("route_context") or destination or origin
@@ -458,7 +463,7 @@ class CachedRouteProvider(RouteProvider):
                     "timestamp": step.get("timestamp", route_timestamp),
                     "address": step.get("address"),
                     "search_hint": step.get("search_hint") or (f"{step.get('location_name')}, {route_context}" if route_context else step.get("location_name")),
-                    "route_context": step.get("route_context") or route_context,
+                    "route_context": route_context,
                 }
             )
         metadata = {

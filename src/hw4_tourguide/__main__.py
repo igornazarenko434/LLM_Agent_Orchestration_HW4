@@ -133,129 +133,138 @@ def run_pipeline(config: Dict[str, Any], args: argparse.Namespace, config_loader
     if use_run_specific_dir:
         run_dir_name = _create_run_directory_name(args.origin, args.destination)
         run_base_dir = Path(config["output"].get("base_dir", "output")) / run_dir_name
+        final_output_base_message = str(run_base_dir) # For logging info message
     else:
-        # Use custom output path as-is (for tests and explicit user paths)
-        run_base_dir = output_path.parent
+        run_base_dir = output_path.parent # This is the custom base directory
+        final_output_base_message = str(output_path) # For logging info message, show the user's explicit path
 
-    # 2. Reconfigure logging with run-specific directory (if applicable)
-    # This moves all logs (system, errors, module logs) into the run directory
-    if use_run_specific_dir:
-        setup_logging(config.get("logging", {}), reset_existing=True, log_base_dir=run_base_dir)
-
-    # Now safe to get logger after reconfiguration
-    logger = get_logger("main")
-
-    if use_run_specific_dir:
-        logger.info(
-            f"Using run-specific directory | Path: {run_base_dir} | Origin: {args.origin} | Destination: {args.destination}",
-            extra={"event_tag": "Setup", "run_directory": str(run_base_dir)}
-        )
-    else:
-        logger.info(
-            f"Using custom output path | Path: {output_path}",
-            extra={"event_tag": "Setup"}
-        )
-
-    # 3. Centralize shared components
-    metrics = MetricsCollector(
-        path=config.get("metrics", {}).get("file", "logs/metrics.json"),
-        update_interval=float(config.get("metrics", {}).get("update_interval", 5.0)),
-    ) if config.get("metrics", {}).get("enabled", True) else None
-
-    checkpoint_writer = CheckpointWriter(
-        base_dir=run_base_dir / "checkpoints",
-        retention_days=config["output"].get("checkpoint_retention_days", 7),
-    )
-
-    # 4. Set up Route Provider
-    route_provider = _select_route_provider(config, mode, config_loader, run_base_dir / "checkpoints")
+    # All pipeline logic moved here
     try:
-        route_payload = route_provider.get_route(args.origin, args.destination)
-    except FileNotFoundError:
-        logger.warning(
-            f"No cached route found for '{args.origin}' to '{args.destination}'. Falling back to stub provider.",
-            extra={"event_tag": "Error"},
+        # ALWAYS set up logging to use run_base_dir as its anchor
+        # setup_logging will handle creating 'logs' subdirectory within run_base_dir
+        setup_logging(config.get("logging", {}), reset_existing=True, log_base_dir=run_base_dir)
+        logger = get_logger("main") # Get logger after it's been set up
+
+        # ALWAYS update config["metrics"]["file"] to be relative to run_base_dir
+        # This will put metrics.json into 'run_base_dir/logs/'
+        metrics_filename = Path(config.get("metrics", {}).get("file", "logs/metrics.json")).name
+        metrics_full_path = run_base_dir / "logs" / metrics_filename
+        metrics_full_path.parent.mkdir(parents=True, exist_ok=True) # Ensure the logs dir exists for metrics
+        config["metrics"]["file"] = str(metrics_full_path)
+
+        if use_run_specific_dir:
+            logger.info(
+                f"Using run-specific directory | Path: {final_output_base_message} | Origin: {args.origin} | Destination: {args.destination}",
+                extra={"event_tag": "Setup", "run_directory": str(run_base_dir)}
+            )
+        else:
+            logger.info(
+                f"Using custom output path | Main output: {final_output_base_message} | Logs/Metrics root: {run_base_dir}", # Clarify where logs/metrics go
+                extra={"event_tag": "Setup"}
+            )
+            
+        metrics = MetricsCollector( # MetricsCollector initialization needs to be here
+            path=config.get("metrics", {}).get("file", "logs/metrics.json"),
+            update_interval=float(config.get("metrics", {}).get("update_interval", 5.0)),
+        ) if config.get("metrics", {}).get("enabled", True) else None
+
+        checkpoint_writer = CheckpointWriter(
+            base_dir=run_base_dir / "checkpoints",
+            retention_days=config["output"].get("checkpoint_retention_days", 7),
         )
-        route_payload = StubRouteProvider().get_route(args.origin, args.destination)
 
-    # 5. Initialize Scheduler
-    tasks = route_payload.get("tasks", [])
-    task_queue: Queue = Queue()
-    scheduler = Scheduler(
-        tasks=tasks,
-        interval=config["scheduler"]["interval"],
-        queue=task_queue,
-        checkpoints_enabled=config["output"].get("checkpoints_enabled", True),
-        checkpoint_dir=run_base_dir / "checkpoints",
-        metrics=metrics,
-    )
+        # 4. Set up Route Provider
+        route_provider = _select_route_provider(config, mode, config_loader, run_base_dir / "checkpoints")
+        try:
+            route_payload = route_provider.get_route(args.origin, args.destination)
+        except FileNotFoundError:
+            logger.warning(
+                f"No cached route found for '{args.origin}' to '{args.destination}'. Falling back to stub provider.",
+                extra={"event_tag": "Error"},
+            )
+            route_payload = StubRouteProvider().get_route(args.origin, args.destination)
 
-    # 6. Build Agents and Judge
-    agents = _build_agents(config_loader, config, metrics, checkpoint_writer, mode)
-    judge = JudgeAgent(
-        config=config.get("judge", {}),
-        logger=get_logger("judge"),
-        metrics_collector=metrics,
-        secrets_fn=config_loader.get_secret,
-    )
-
-    # 7. Initialize Orchestrator
-    orchestrator = Orchestrator(
-        queue=task_queue,
-        agents=agents,
-        judge=judge,
-        max_workers=config["orchestrator"]["max_workers"],
-        checkpoint_writer=checkpoint_writer,
-        metrics=metrics,
-    )
-
-    # 8. Run pipeline
-    scheduler.start()
-    logger.info("Scheduler started, pipeline running...", extra={"event_tag": "Scheduler"})
-    results = orchestrator.run()
-
-    # 9. Write output and clean up
-    if use_run_specific_dir:
-        # Use run-specific directory structure with configurable filenames
-        json_filename = Path(config["output"].get("json_file", "output/final_route.json")).name
-        md_filename = Path(config["output"].get("markdown_file", "output/summary.md")).name
-        csv_filename = Path(config["output"].get("csv_file", "output/tour_export.csv")).name
-
-        output_json_path = run_base_dir / json_filename
-        output_report_path = run_base_dir / md_filename
-        output_csv_path = run_base_dir / csv_filename
-    else:
-        # Respect custom output path
-        output_json_path = output_path
-        output_report_path = output_path.parent / f"{output_path.stem}.md"
-        output_csv_path = output_path.parent / f"{output_path.stem}.csv"
-
-    output_writer = OutputWriter(
-        json_path=output_json_path,
-        report_path=output_report_path,
-        csv_path=output_csv_path,
-        checkpoint_writer=checkpoint_writer
-    )
-    output_writer.write_json(results)
-    output_writer.write_report(results)
-    output_writer.write_csv(results)
-    
-    if metrics:
-        metrics.flush()
-        metrics.stop()
-
-    if use_run_specific_dir:
-        logger.info(
-            f"Pipeline complete | Run Directory: {run_base_dir} | "
-            f"Outputs: JSON={output_json_path.name}, MD={output_report_path.name}, CSV={output_csv_path.name}",
-            extra={"event_tag": "Orchestrator", "run_directory": str(run_base_dir)}
+        # 5. Initialize Scheduler
+        tasks = route_payload.get("tasks", [])
+        task_queue: Queue = Queue()
+        scheduler = Scheduler(
+            tasks=tasks,
+            interval=config["scheduler"]["interval"],
+            queue=task_queue,
+            checkpoints_enabled=config["output"].get("checkpoints_enabled", True),
+            checkpoint_dir=run_base_dir / "checkpoints",
+            metrics=metrics,
         )
-    else:
-        logger.info(
-            f"Pipeline complete | Outputs: JSON={output_json_path}, MD={output_report_path}, CSV={output_csv_path}",
-            extra={"event_tag": "Orchestrator"}
+
+        # 6. Build Agents and Judge
+        agents = _build_agents(config_loader, config, metrics, checkpoint_writer, mode)
+        judge = JudgeAgent(
+            config=config.get("judge", {}),
+            logger=get_logger("judge"),
+            metrics_collector=metrics,
+            secrets_fn=config_loader.get_secret,
         )
-    return 0
+
+        # 7. Initialize Orchestrator
+        orchestrator = Orchestrator(
+            queue=task_queue,
+            agents=agents,
+            judge=judge,
+            max_workers=config["orchestrator"]["max_workers"],
+            checkpoint_writer=checkpoint_writer,
+            metrics=metrics,
+        )
+
+        # 8. Run pipeline
+        scheduler.start()
+        logger.info("Scheduler started, pipeline running...", extra={"event_tag": "Scheduler"})
+        results = orchestrator.run()
+
+        # 9. Write output and clean up
+        if use_run_specific_dir:
+            # Use run-specific directory structure with configurable filenames
+            json_filename = Path(config["output"].get("json_file", "output/final_route.json")).name
+            md_filename = Path(config["output"].get("markdown_file", "output/summary.md")).name
+            csv_filename = Path(config["output"].get("csv_file", "output/tour_export.csv")).name
+
+            output_json_path = run_base_dir / json_filename
+            output_report_path = run_base_dir / md_filename
+            output_csv_path = run_base_dir / csv_filename
+        else:
+            # Respect custom output path
+            output_json_path = output_path
+            output_report_path = output_path.parent / f"{output_path.stem}.md"
+            output_csv_path = output_path.parent / f"{output_path.stem}.csv"
+
+        output_writer = OutputWriter(
+            json_path=output_json_path,
+            report_path=output_report_path,
+            csv_path=output_csv_path,
+            checkpoint_writer=checkpoint_writer
+        )
+        output_writer.write_json(results)
+        output_writer.write_report(results)
+        output_writer.write_csv(results)
+        
+        if metrics:
+            metrics.flush()
+            metrics.stop()
+
+        if use_run_specific_dir:
+            logger.info(
+                f"Pipeline complete | Run Directory: {run_base_dir} | "
+                f"Outputs: JSON={output_json_path.name}, MD={output_report_path.name}, CSV={output_csv_path.name}",
+                extra={"event_tag": "Orchestrator", "run_directory": str(run_base_dir)}
+            )
+        else:
+            logger.info(
+                f"Pipeline complete | Outputs: JSON={output_json_path}, MD={output_report_path}, CSV={output_csv_path}",
+                extra={"event_tag": "Orchestrator"}
+            )
+        return 0
+    except Exception as e: # Catch any exceptions that occur during pipeline execution
+        logger.exception("An unexpected error occurred during pipeline execution.")
+        return 1
 
 
 def _select_route_provider(config: Dict[str, Any], mode: str, config_loader: ConfigLoader, checkpoint_dir: Path):
@@ -417,15 +426,43 @@ def main() -> int:
     args = parser.parse_args()
 
     try:
+        # Early determination of run_base_dir for consistent logging from the start
         config_loader = ConfigLoader(config_path=args.config, cli_overrides={"logging.level": args.log_level})
-        config = config_loader.get_all()
-        setup_logging(config.get("logging", {}))
+        config = config_loader.get_all() # Load config first to get output settings
+
+        # 1. Determine if using run-specific directory organization
+        output_path = Path(args.output) if not isinstance(args.output, Path) else args.output
+        default_output = Path("output/final_route.json")
+        use_run_specific_dir = (output_path == default_output)
+
+        if use_run_specific_dir:
+            run_dir_name = _create_run_directory_name(args.origin, args.destination)
+            run_base_dir = Path(config["output"].get("base_dir", "output")) / run_dir_name
+        else:
+            run_base_dir = output_path.parent
+
+        # Only setup logging once, with the correct run_base_dir
+        setup_logging(config.get("logging", {}), reset_existing=True, log_base_dir=run_base_dir if use_run_specific_dir else None)
+        logger = get_logger("main") # Get logger after it's been set up
+
+        # Now print the initial info message about the run directory
+        if use_run_specific_dir:
+            logger.info(
+                f"Using run-specific directory | Path: {run_base_dir} | Origin: {args.origin} | Destination: {args.destination}",
+                extra={"event_tag": "Setup", "run_directory": str(run_base_dir)}
+            )
+        else:
+            logger.info(
+                f"Using custom output path | Path: {output_path}",
+                extra={"event_tag": "Setup"}
+            )
+            
         return run_pipeline(config, args, config_loader)
     except FileNotFoundError:
         print(f"ERROR: Configuration file not found at '{args.config}'", file=sys.stderr)
         return 1
     except Exception as e:
-        # Fallback for when logger fails
+        # Fallback for when logger fails or other unexpected error
         print(f"An unexpected error occurred: {e}", file=sys.stderr)
         return 1
 
