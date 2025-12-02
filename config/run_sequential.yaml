@@ -1,0 +1,103 @@
+scheduler:
+  interval: 2.0
+  enabled: true
+
+orchestrator:
+  max_workers: 1
+  queue_timeout: 1.0
+  shutdown_timeout: 60.0
+
+agents:
+  use_llm_for_queries: false
+  llm_provider: "mock"
+  llm_query_timeout: 30.0
+  llm_retries: 3
+  llm_backoff: "exponential"
+  llm_max_prompt_chars: 5000
+  llm_max_tokens: 4000
+  llm_fallback: true
+  use_secondary_source: true
+  video:
+    name: "VideoAgent"
+    enabled: true
+    search_limit: 3
+    timeout: 10.0
+    retry_attempts: 3
+    retry_backoff: "exponential"
+    use_live: false
+    mock_mode: true
+    max_search_calls_per_run: 32
+    prompt_file: ".claude/agents/video_agent.md"
+  song:
+    name: "SongAgent"
+    enabled: true
+    search_limit: 3
+    timeout: 15.0
+    retry_attempts: 3
+    retry_backoff: "exponential"
+    use_live: false
+    mock_mode: true
+    use_youtube_secondary: true
+    max_search_calls_per_run: 32
+    prompt_file: ".claude/agents/song_agent.md"
+  knowledge:
+    name: "KnowledgeAgent"
+    enabled: true
+    search_limit: 3
+    timeout: 15.0
+    retry_attempts: 3
+    retry_backoff: "exponential"
+    use_live: false
+    mock_mode: true
+    use_secondary_source: true
+    boost_authority_domains: true
+    max_search_calls_per_run: 32
+    prompt_file: ".claude/agents/knowledge_agent.md"
+
+judge:
+  scoring_mode: "heuristic"
+  use_llm: false
+  llm_provider: "mock"
+  llm_timeout: 40.0
+  llm_max_tokens: 12000
+  llm_fallback: true
+
+logging:
+  level: "INFO"
+  file: "logs/system.log"
+  error_file: "logs/errors.log"
+  max_file_size_mb: 10
+  backup_count: 5
+  format: "%(asctime)s | %(levelname)-8s | %(name)s | %(event_tag)s | %(message)s"
+  console_enabled: true
+  modules:
+    agents: {enabled: true, file: "logs/agents.log", level: "INFO"}
+    judge: {enabled: true, file: "logs/judge.log", level: "INFO"}
+    apis: {enabled: true, file: "logs/apis.log", level: "INFO"}
+    route_provider: {enabled: true, file: "logs/route_provider.log", level: "INFO"}
+
+output:
+  base_dir: "output"
+  json_file: "output/final_route.json"
+  markdown_file: "output/summary.md"
+  csv_file: "output/tour_export.csv"
+  checkpoint_dir: "output/checkpoints"
+  checkpoints_enabled: true
+  checkpoint_retention_days: 7
+
+route_provider:
+  mode: "cached"
+  max_steps: 8
+  cache_dir: "data/routes"
+  api_retry_attempts: 3
+  api_timeout: 20.0
+
+circuit_breaker:
+  enabled: true
+  failure_threshold: 5
+  timeout: 60.0
+
+metrics:
+  enabled: true
+  file: "logs/metrics.json"
+  update_interval: 5.0

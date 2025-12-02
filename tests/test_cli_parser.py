@@ -51,7 +51,7 @@ def test_cli_main_cached_flow(monkeypatch, tmp_path):
     monkeypatch.setattr(cli, "Scheduler", mock.MagicMock(start=lambda: None))
     monkeypatch.setattr(cli, "Orchestrator", mock.MagicMock(run=lambda self=None: []))
     monkeypatch.setattr(cli, "OutputWriter", mock.MagicMock(write_json=lambda *a, **k: None, write_report=lambda *a, **k: None, write_csv=lambda *a, **k: None))
-    monkeypatch.setattr(cli, "_select_route_provider", lambda c, m, l, cp_dir: mock.MagicMock(get_route=lambda o, d: {"tasks": [], "metadata": {}}))
+    monkeypatch.setattr(cli, "_select_route_provider", lambda c, m, l, cp_dir, metrics: mock.MagicMock(get_route=lambda o, d: {"tasks": [], "metadata": {}}))
     monkeypatch.setattr(cli, "_build_agents", lambda *a, **k: {})
     monkeypatch.setattr(cli, "JudgeAgent", mock.MagicMock())
 
@@ -89,7 +89,7 @@ def test_cli_logging_and_metrics(monkeypatch, tmp_path):
     monkeypatch.setattr(cli, "Scheduler", mock.MagicMock(start=lambda: None))
     monkeypatch.setattr(cli, "Orchestrator", mock.MagicMock(run=lambda self=None: []))
     monkeypatch.setattr(cli, "OutputWriter", mock.MagicMock(write_json=lambda *a, **k: None, write_report=lambda *a, **k: None, write_csv=lambda *a, **k: None))
-    monkeypatch.setattr(cli, "_select_route_provider", lambda c, m, l, cp_dir: mock.MagicMock(get_route=lambda o, d: {"tasks": [], "metadata": {}}))
+    monkeypatch.setattr(cli, "_select_route_provider", lambda c, m, l, cp_dir, metrics: mock.MagicMock(get_route=lambda o, d: {"tasks": [], "metadata": {}}))
     monkeypatch.setattr(cli, "_build_agents", lambda *a, **k: {})
     monkeypatch.setattr(cli, "JudgeAgent", mock.MagicMock())
 

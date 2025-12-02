@@ -10,7 +10,9 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [
-    {name = "Route Enrichment Team", email = "team@example.com"}
+    {name = "Igor Nazarenko", email = "igor.nazarenko@post.runi.ac.il"},
+    {name = "Tom Ron", email = "tom.ron@post.runi.ac.il"},
+    {name = "Roie Gilad", email = "roie.gilad@post.runi.ac.il"},
 ]
 keywords = [
     "route-enrichment",
@@ -57,10 +59,10 @@ all = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/hw4_tourguide"
-Documentation = "https://github.com/yourusername/hw4_tourguide/blob/main/README.md"
-Repository = "https://github.com/yourusername/hw4_tourguide"
-"Bug Tracker" = "https://github.com/yourusername/hw4_tourguide/issues"
+Homepage = "https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4"
+Documentation = "https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4/blob/main/README.md"
+Repository = "https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4"
+"Bug Tracker" = "https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
