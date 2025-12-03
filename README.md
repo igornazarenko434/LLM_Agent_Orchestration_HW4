@@ -4,11 +4,8 @@
 **Package Name:** `hw4_tourguide`  
 **Status:** Phase 7 - Preflight & Submission
 
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)  
-[![Pytest](https://img.shields.io/badge/pytest-passing-green.svg)](https://docs.pytest.org/)  
-[![Coverage](https://img.shields.io/badge/coverage-87%25-green.svg)](htmlcov/index.html)  
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/) [![Pytest](https://img.shields.io/badge/pytest-passing-green.svg)](https://docs.pytest.org/) [![Coverage](https://img.shields.io/badge/coverage-87%25-green.svg)](htmlcov/index.html) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-black?logo=github)](https://github.com/igornazarenko434/LLM_Agent_Orchestration_HW4)
+
 
 ---
 
@@ -24,6 +21,7 @@
 - [Usage](#8-usage)
 - [Configuration](#9-configuration)
 - [Technical Architecture](#10-technical-architecture)
+- [Agent Intelligence](#10a-agent-intelligence-llm-based-query-generation)
 - [Testing](#11-testing)
 - [Troubleshooting](#12-troubleshooting)
 - [Research & Analysis](#13-research--analysis)
@@ -35,6 +33,7 @@
 - [Contributing](#19-contributing)
 - [License & Attribution](#20-license--attribution)
 - [Screenshots](#21-screenshots--sample-outputs)
+- [Support & Contact](#22-support--contact)
 
 ---
 
@@ -120,6 +119,7 @@ LLM_Agent_Orchestration_HW4/
 ├── scripts/                            # Developer Tools
 │   ├── check_readme.py                 # Documentation validator
 │   ├── check_api_usage.py              # Verifies API call counts and cost limits
+│   ├── create_full_notebook.py         # Generates full research notebook from study output files
 │   ├── check_scheduler_interval.py     # Verifies scheduler timing accuracy
 │   ├── diagnose_llm_query_generation.py     # alidates LLM query generation logic
 │   └── preflight.py                    # Pre-submission verification suite
@@ -127,9 +127,10 @@ LLM_Agent_Orchestration_HW4/
 │   └── hw4_tourguide/                  # Main Package Source
 │       ├── agents/                     # Agent implementations (Video, Song, Knowledge)
 │       ├── config/                     # Packaged fallback configuration
-│       ├── data/                       # Packaged fallback data
-│       ├── prompts/                    # Packaged runtime prompt templates
+│       ├── data/                       # Packaged fallback data and demo route
+│       ├── prompts/                    # Packaged runtime prompt templates with agents definitions
 │       ├── tools/                      # Shared tools (Search, Fetch, LLM Client, Metrics, CircuitBreaker)
+│       ├── __main__.py                 # main  entrypoint (CLI parsing & pipeline kick-off)
 │       ├── config_loader.py            # Configuration management
 │       ├── file_interface.py           # Checkpoint & JSON handling
 │       ├── judge.py                    # Evaluation logic (Heuristic + LLM)
@@ -138,6 +139,8 @@ LLM_Agent_Orchestration_HW4/
 │       ├── output_writer.py            # Report generation
 │       ├── route_provider.py           # Google Maps & Cache integration
 │       ├── scheduler.py                # Task emission logic
+│       ├── stub_agents.py              # Stub agent implementations
+│       ├── stub_route_provider.py      # Cached route provider
 │       └── validators.py               # Schema validation
 ├── tests/                              # Test Suite (Pytest)
 │   ├── test_agent_*.py                 # Agent logic & LLM integration
@@ -148,6 +151,7 @@ LLM_Agent_Orchestration_HW4/
 ├── .env.example                        # Environment variable template
 ├── .gitignore                          # Git exclusion rules
 ├── MANIFEST.in                         # Source distribution rules
+├── pyproject.toml                      # Build system & dependencies
 ├── Missions_Route_Enrichment_Tour_Guide_System.md  # Mission tracker
 ├── PRD_Route_Enrichment_Tour_Guide_System.md       # Product Requirements
 ├── PROGRESS_TRACKER.md                 # Execution status
@@ -979,7 +983,7 @@ See `PROGRESS_TRACKER.md` and `Missions_Route_Enrichment_Tour_Guide_System.md` f
 
 ## 18. Documentation
 
-- **Core specs:** [PRD_Route_Enrichment_Tour_Guide_System.md](PRD_Route_Enrichment_Tour_Guide_System.md), [Missions_Route_Enrichment_Tour_Guide_System.md](Missions_Route_Enrichment_Tour_Guide_System.md), [HW4_Project_Mission.md](HW4_Project_Mission.md).
+- **Core specs:** [PRD_Route_Enrichment_Tour_Guide_System.md](PRD_Route_Enrichment_Tour_Guide_System.md), [Missions_Route_Enrichment_Tour_Guide_System.md](Missions_Route_Enrichment_Tour_Guide_System.md),[PROGRESS_TRACKER.md](PROGRESS_TRACKER.md),  [HW4_Project_Mission.md](HW4_Project_Mission.md).
 - **Architecture & APIs:** [docs/architecture/adr_register.md](docs/architecture/adr_register.md), [docs/architecture/c4_diagrams.md](docs/architecture/c4_diagrams.md), [docs/api_reference.md](docs/api_reference.md), contracts: [route_schema.json](docs/contracts/route_schema.json), [task_schema.json](docs/contracts/task_schema.json), [agent_result_schema.json](docs/contracts/agent_result_schema.json), [judge_decision_schema.json](docs/contracts/judge_decision_schema.json).
 - **Research & analysis:** [docs/research_plan.md](docs/research_plan.md), [docs/analysis/results.ipynb](docs/analysis/results.ipynb), [docs/cost_analysis.md](docs/cost_analysis.md).
 - **Quality & UX:** [docs/quality/iso_25010_assessment.md](docs/quality/iso_25010_assessment.md), [docs/ux/heuristics.md](docs/ux/heuristics.md).
@@ -1016,7 +1020,7 @@ See `PROGRESS_TRACKER.md` and `Missions_Route_Enrichment_Tour_Guide_System.md` f
 
 - **License:** MIT (educational use for M.Sc. Data Science coursework)
 - **Course:** LLMs and Multi-Agent Orchestration (Dr. Segal Yoram)
-- **Date:** November 2025
+- **Date:** December 2025
 - **Project:** Route Enrichment Tour-Guide System (HW4)
 - **Authors:** Igor Nazarenko, Tom Ron, Roie Gilad
 

@@ -12,7 +12,7 @@
 
 | ADR # | Title | Status | Date | Category | Impact |
 |-------|-------|--------|------|----------|--------|
-| ADR-001 | Python 3.11+ as Implementation Language | ✅ Accepted | 2024-11-20 | Language | High |
+| ADR-001 | Python 3.10+ as Implementation Language | ✅ Accepted | 2024-11-20 | Language | High |
 | ADR-002 | Threading (not AsyncIO) for Concurrency | ✅ Accepted | 2024-11-20 | Concurrency | High |
 | ADR-003 | Google Maps API with Aggressive Caching | ✅ Accepted | 2024-11-20 | External APIs | High |
 | ADR-004 | Search+Fetch Separation for Agent Architecture | ✅ Accepted | 2024-11-20 | Architecture | Medium |
@@ -34,7 +34,7 @@
 
 ---
 
-## ADR-001: Python 3.11+ as Implementation Language
+## ADR-001: Python 3.10+ as Implementation Language
 
 ### Status
 ✅ **Accepted** (2024-11-20)
@@ -43,7 +43,7 @@
 Need modern language with strong ecosystem for networking, threading, data processing, and testing. Project is educational but should use production-grade tools.
 
 ### Decision
-Use **Python 3.11+** (specifically targeting 3.11.x for development, compatible with 3.12+)
+Use **Python 3.10+** (minimum requirement 3.10, compatible with 3.11+ and 3.12+)
 
 ### Alternatives Considered
 
@@ -77,7 +77,7 @@ Use **Python 3.11+** (specifically targeting 3.11.x for development, compatible 
 - ❌ Slower than compiled languages (not critical for I/O-bound workload)
 
 ### Rationale
-Python 3.11+ strikes optimal balance for educational project with production characteristics:
+Python 3.10+ strikes optimal balance for educational project with production characteristics:
 - Instructor examples and course focus on Python
 - Fast development cycle for iterative agent design
 - Mature libraries for all required integrations (Google Maps, YouTube, etc.)
@@ -1028,7 +1028,7 @@ total_cost = cost_maps + cost_llm
 ## ADR Summary & Status
 
 ### Original ADRs (7) - From PRD
-- ✅ ADR-001: Python 3.11+
+- ✅ ADR-001: Python 3.10+
 - ✅ ADR-002: Threading (not AsyncIO)
 - ✅ ADR-003: Google Maps + Caching
 - ✅ ADR-004: Search+Fetch Separation
@@ -1043,7 +1043,7 @@ total_cost = cost_maps + cost_llm
 - ✅ **ADR-011:** Metrics Aggregator (Performance Monitoring++)
 - ✅ **ADR-012:** LLM Client Abstraction (Priority, Budget Guards)
 
-**Total: 12 ADRs** covering Language, Concurrency, APIs, Architecture, Configuration, Observability, Resilience, Performance Monitoring, and Optional LLM usage.
+**Total: 13 ADRs** covering Language, Concurrency, APIs, Architecture, Configuration, Observability, Resilience, Performance Monitoring, Agent Intelligence, and Optional LLM usage.
 
 ---
 
@@ -1082,7 +1082,7 @@ total_cost = cost_maps + cost_llm
 Judge can optionally use LLM scoring. We need a unified, cost-aware interface with provider priority, budget/timeout/backoff guards, prompt redaction, and heuristic fallback.
 
 ### Decision
-- Support providers via factory: **Claude > OpenAI > Gemini > Ollama (default `llama3.1:8b`) > Mock** when `llm_provider=auto`.
+- Support providers via factory: **Claude > OpenAI > Gemini > Ollama (factory default `llama3.1:8b`, class default `llama3`) > Mock** when `llm_provider=auto`.
 - Default **`use_llm=true`**; judge defaults to LLM scoring and falls back to heuristics on error/unavailability.
 - Enforce prompt-length/tokens guard (`llm_max_tokens`, truncation) and optional budget guard; redact prompts in logs; apply timeouts/retries/backoff per provider.
 

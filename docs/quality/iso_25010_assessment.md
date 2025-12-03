@@ -1,6 +1,6 @@
 # ISO/IEC 25010 Quality Assessment – Route Enrichment Tour-Guide System
 
-**System Version:** 0.1.0
+**System Version:** 0.1.1
 **Assessment Date:** 2025-11-30
 **Assessment Scope:** Full System (CLI, Agents, Core Pipeline, Infrastructure)
 

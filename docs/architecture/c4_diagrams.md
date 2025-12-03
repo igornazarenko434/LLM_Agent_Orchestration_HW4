@@ -49,7 +49,7 @@ Shows how the Route Enrichment Tour-Guide System fits into the world, focusing o
     │   enriches driving routes with curated         │
     │   video, music, and knowledge content"         │
     │                                                 │
-    │  [Python 3.11+ Application]                    │
+    │  [Python 3.10+ Application]                    │
     │                                                 │
     └────────────────────────────────────────────────┘
               │         │         │         │
@@ -135,7 +135,7 @@ Shows the high-level shape of the software architecture and how responsibilities
       ▼
 ┌─────────────────────────────────────────────────────────────────────────┐
 │  CLI Application                                                         │
-│  [Python 3.11+ Package: hw4_tourguide]                                  │
+│  [Python 3.10+ Package: hw4_tourguide]                                  │
 │                                                                          │
 │  Entry Point: src/hw4_tourguide/__main__.py                            │
 │  Role: Parse arguments, load config, orchestrate pipeline               │
@@ -174,7 +174,7 @@ Shows the high-level shape of the software architecture and how responsibilities
 ### Containers Detailed
 
 #### 1. CLI Application Container
-- **Technology:** Python 3.11+ (single process, multi-threaded)
+- **Technology:** Python 3.10+ (single process, multi-threaded)
 - **Responsibilities:**
   - Parse command-line arguments
   - Load configuration (YAML + .env)
@@ -399,25 +399,25 @@ Decompose the CLI Application container into components, showing their responsib
 13. **Validation & Determinism**
     - Warn-level schema validation; malformed agent results dropped before judge
     - Output writer sorts steps by `step_number` for deterministic JSON/MD/CSV
-14. **Transaction ID (TID) Service** (`src/hw4_tourguide/tid.py`)
+14. **Transaction ID (TID) Service** (implemented in `src/hw4_tourguide/route_provider.py`)
     - Generate unique TID at route fetch: `f"{timestamp}_{uuid4().hex[:8]}"`
-    - Propagate through all components
+    - Propagate through all components via task dictionaries
     - Log in every message for distributed tracing
 
-14. **File Checkpoint Manager** (`src/hw4_tourguide/checkpoints.py`)
+14. **File Checkpoint Manager** (`src/hw4_tourguide/file_interface.py`)
     - Create checkpoint directory: `output/checkpoints/{TID}/`
     - Write JSON files at each stage (00-05)
     - Read checkpoints for replay/debugging
     - Pruning: Auto-delete checkpoints >7 days old
 
-15. **Circuit Breaker** (`src/hw4_tourguide/circuit_breaker.py`)
+15. **Circuit Breaker** (`src/hw4_tourguide/tools/circuit_breaker.py`)
     - 3 states: CLOSED (normal), OPEN (failing), HALF_OPEN (testing recovery)
     - Failure threshold: 5 consecutive failures → OPEN
     - Timeout: 60s in OPEN state → HALF_OPEN
     - Success in HALF_OPEN → CLOSED
     - Wraps all external API calls
 
-16. **Metrics Collector** (`src/hw4_tourguide/metrics.py`)
+16. **Metrics Collector** (`src/hw4_tourguide/tools/metrics_collector.py`)
     - Counters: API call counts (per API), total requests
     - Timers: Latencies (API calls, agent execution, judge scoring)
     - Gauges: Queue depth, active workers, memory usage
@@ -437,7 +437,7 @@ Shows infrastructure, networking, and deployment topology.
 ┌─────────────────────────────────────────────────────────────────────────┐
 │                    Deployment Environment: MacBook Pro                   │
 │                    OS: macOS 14+ (Darwin)                                │
-│                    Runtime: Python 3.11+ (.venv)                         │
+│                    Runtime: Python 3.10+ (.venv)                         │
 └─────────────────────────────────────────────────────────────────────────┘
 
                            ┌─────────────────┐
@@ -448,7 +448,7 @@ Shows infrastructure, networking, and deployment topology.
                                     │ python -m hw4_tourguide
                                     ▼
             ┌───────────────────────────────────────────────┐
-            │  Python 3.11+ Virtual Environment (.venv)     │
+            │  Python 3.10+ Virtual Environment (.venv)     │
             │                                                │
             │  ┌──────────────────────────────────────┐    │
             │  │  hw4_tourguide Process               │    │
@@ -545,7 +545,7 @@ Shows infrastructure, networking, and deployment topology.
 
 #### Software Requirements
 - **OS:** macOS 14+, Linux (Ubuntu 20.04+), Windows 10+ (with WSL)
-- **Python:** 3.11 or higher
+- **Python:** 3.10 or higher
 - **Dependencies:** See `pyproject.toml` (requests, pyyaml, python-dotenv)
 
 #### Network Configuration
