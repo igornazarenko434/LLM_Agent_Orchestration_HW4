@@ -983,12 +983,36 @@ See `PROGRESS_TRACKER.md` and `Missions_Route_Enrichment_Tour_Guide_System.md` f
 
 ## 18. Documentation
 
-- **Core specs:** [PRD_Route_Enrichment_Tour_Guide_System.md](PRD_Route_Enrichment_Tour_Guide_System.md), [Missions_Route_Enrichment_Tour_Guide_System.md](Missions_Route_Enrichment_Tour_Guide_System.md),[PROGRESS_TRACKER.md](PROGRESS_TRACKER.md),  [HW4_Project_Mission.md](HW4_Project_Mission.md).
-- **Architecture & APIs:** [docs/architecture/adr_register.md](docs/architecture/adr_register.md), [docs/architecture/c4_diagrams.md](docs/architecture/c4_diagrams.md), [docs/api_reference.md](docs/api_reference.md), contracts: [route_schema.json](docs/contracts/route_schema.json), [task_schema.json](docs/contracts/task_schema.json), [agent_result_schema.json](docs/contracts/agent_result_schema.json), [judge_decision_schema.json](docs/contracts/judge_decision_schema.json).
-- **Research & analysis:** [docs/research_plan.md](docs/research_plan.md), [docs/analysis/results.ipynb](docs/analysis/results.ipynb), [docs/cost_analysis.md](docs/cost_analysis.md).
-- **Quality & UX:** [docs/quality/iso_25010_assessment.md](docs/quality/iso_25010_assessment.md), [docs/ux/heuristics.md](docs/ux/heuristics.md).
-- **Prompts & dev log:** [docs/prompt_log/](docs/prompt_log/) (e.g., [001_architecture_design_session.md](docs/prompt_log/001_architecture_design_session.md), [orchestrator_prompt.md](docs/prompt_log/orchestrator_prompt.md)); runtime prompt templates in [src/hw4_tourguide/prompts/agents/](src/hw4_tourguide/prompts/agents/) mirror `.claude/agents/`.
-- **Screenshots & evidence:** [docs/screenshots/GALLERY_TEMPLATE.md](docs/screenshots/GALLERY_TEMPLATE.md) (gallery placeholder for logs/CLI/output captures).
+### 📚 Project & Requirements
+| Document | Description |
+| :--- | :--- |
+| [**Product Requirements (PRD)**](PRD_Route_Enrichment_Tour_Guide_System.md) | Comprehensive functional specs, user stories, system constraints, and non-functional requirements. |
+| [**Mission Specifications**](Missions_Route_Enrichment_Tour_Guide_System.md) | Detailed breakdown of project phases, specific missions, and success criteria. |
+| [**Progress Tracker**](PROGRESS_TRACKER.md) | Live status dashboard of missions, quality gates, and development roadmap. |
+| [**Assignment Brief**](HW4_Project_Mission.md) | Original academic assignment definition and scope. |
+
+### 🏗️ Architecture & Engineering
+| Document | Description |
+| :--- | :--- |
+| [**Architecture Decision Records (ADR)**](docs/architecture/adr_register.md) | Log of 13 critical architectural decisions (e.g., Python 3.10+, Threading, Circuit Breakers). |
+| [**C4 System Diagrams**](docs/architecture/c4_diagrams.md) | Visual mapping of Context, Containers, Components, and Deployment topology. |
+| [**API & CLI Reference**](docs/api_reference.md) | Developer guide for CLI arguments, configuration settings, and public interfaces. |
+| [**Data Contracts**](docs/contracts/) | JSON schemas defining the system's data flow: [Route](docs/contracts/route_schema.json), [Task](docs/contracts/task_schema.json), [Agent Result](docs/contracts/agent_result_schema.json), [Judge Decision](docs/contracts/judge_decision_schema.json). |
+
+### 🔬 Research, Quality & UX
+| Document | Description |
+| :--- | :--- |
+| [**Research Plan**](docs/research_plan.md) | Methodology for evaluating system performance, cost efficiency, and scoring quality. |
+| [**Analysis Results**](docs/analysis/results.ipynb) | Jupyter notebook containing statistical analysis, performance metrics, and visualizations. |
+| [**Cost Analysis**](docs/cost_analysis.md) | Breakdown of API/LLM token usage, cost modeling, and optimization strategies. |
+| [**ISO 25010 Quality Assessment**](docs/quality/iso_25010_assessment.md) | Rigorous audit of reliability, maintainability, security, and performance standards. |
+| [**UX Heuristics Audit**](docs/ux/heuristics.md) | Evaluation of CLI usability against Nielsen’s 10 Usability Heuristics. |
+
+### 🛠️ Development & Evidence
+| Document | Description |
+| :--- | :--- |
+| [**Prompt Engineering Log**](docs/prompt_log/) | Archive of design sessions and LLM prompt iterations (e.g., [Orchestrator](docs/prompt_log/orchestrator_prompt.md)). |
+| [**Screenshots & Evidence**](docs/screenshots/GALLERY_TEMPLATE.md) | Gallery of terminal outputs, logs, and generated reports. |
 
 ---
 

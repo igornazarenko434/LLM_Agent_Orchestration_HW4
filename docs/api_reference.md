@@ -14,27 +14,27 @@ This reference summarizes runtime configuration for the tour-guide pipeline. All
 | --- | --- | --- |
 | `scheduler.interval` | `2.0` | Float `0.5-10.0` seconds |
 | `orchestrator.max_workers` | `5` | Int `1-20` thread pool size |
-| `agents.use_llm_for_queries` | `false` | Global toggle for agent LLM query gen |
+| `agents.use_llm_for_queries` | `true` | Global toggle for agent LLM query gen |
 | `agents.video.search_limit` | `3` | Int `1-10` candidates |
-| `agents.llm_provider` | `mock` | `ollama`, `openai`, `claude`, `gemini`, `mock`, `auto` |
-| `agents.llm_max_prompt_chars` | `4000` | Guardrail for query-gen prompts |
+| `agents.llm_provider` | `auto` | `ollama`, `openai`, `claude`, `gemini`, `mock`, `auto` |
+| `agents.llm_max_prompt_chars` | `5000` | Guardrail for query-gen prompts |
 | `agents.llm_max_tokens` | `4000` | Max tokens for agent LLM query gen |
-| `agents.llm_query_timeout` | `10.0` | Float `5.0-60.0` seconds |
+| `agents.llm_query_timeout` | `30.0` | Float `5.0-60.0` seconds |
 | `agents.llm_retries` | `3` | Int `1-5` |
 | `agents.llm_backoff` | `exponential` | `exponential` or `linear` |
-| `agents.use_secondary_source` | `false` | Global secondary-source toggle (e.g., YouTube/DDG) |
+| `agents.use_secondary_source` | `true` | Global secondary-source toggle (e.g., YouTube/DDG) |
 | `agents.infer_song_mood` | `false` | Heuristic mood/genre inference for SongAgent |
 | `agents.*.retry_backoff` | `exponential` | `exponential` or `linear` |
 | `agents.*.use_live` / `mock_mode` | `true` / `false` | Live clients vs stubs per agent |
-| `judge.scoring_mode` | `heuristic` | `heuristic`, `llm`, `hybrid` |
-| `judge.use_llm` | `false` | Requires LLM key when true |
+| `judge.scoring_mode` | `llm` | `heuristic`, `llm`, `hybrid` |
+| `judge.use_llm` | `true` | Requires LLM key when true |
 | `judge.llm_max_prompt_chars` | `6000` | Guardrail for judge prompt size |
 | `judge.llm_max_tokens` | `12000` | Max tokens for judge call |
 | `logging.level` | `INFO` | `DEBUG`, `INFO`, `WARNING`, `ERROR` |
 | `output.base_dir` | `output` | Root for per-run folders |
 | `output.checkpoint_retention_days` | `7` | Int `0-30` (0 = keep forever) |
 | `output.checkpoints_enabled` | `true` | Enable/disable writing checkpoints |
-| `route_provider.mode` | `cached` | `live` (Google Maps) or `cached` (local) |
+| `route_provider.mode` | `live` | `live` (Google Maps) or `cached` (local) |
 | `route_provider.cache_dir` | `data/routes` | Folder for cached routes |
 | `route_provider.api_timeout` | `20.0` | Float `5.0-30.0` seconds |
 | `route_provider.api_retry_attempts` | `3` | Int `1-5` retries per call |
